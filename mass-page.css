@@ -1,0 +1,203 @@
+/* ═══════════════════════════════════════
+   Mass page — color treatment
+   Scoped under body.mass-page. Typography
+   stays Garamond (inherited from styles.css);
+   only colour scheme is local.
+   ═══════════════════════════════════════ */
+
+.mass-page {
+    /* Mass-distinct accent tokens, scoped to this page only.
+       Indigo / steel-blue family — institutional, distinct from
+       the default gold and from Moxie's Cosmic Stream gradient. */
+    --mass-deep:        #11203a;   /* Hero panel, deep indigo navy */
+    --mass-deep-edge:   #1b2a4a;   /* Section rules, navy 2 */
+    --mass-steel:       #3b5278;   /* Accent, eyebrows, underlines */
+    --mass-steel-soft:  #6b7e9c;   /* Muted steel for secondary type */
+    --mass-cream:       #f4eee2;   /* Hero text on deep navy */
+    --mass-cream-dim:   rgba(244, 238, 226, 0.78);
+    --mass-cream-faint: rgba(244, 238, 226, 0.55);
+    --mass-paper-cool:  #f3f1ee;   /* Slightly cooler paper-dim for stats band */
+    --mass-rule-cool:   #d9d6d0;   /* Cooler hairline rule */
+}
+
+/* ── Hero band: deep indigo with cream serif type ── */
+.mass-page .hero {
+    background: var(--mass-deep);
+    color: var(--mass-cream);
+    margin-bottom: 0;
+    padding: var(--space-12) 0 var(--space-10);
+    position: relative;
+}
+
+.mass-page .hero::after {
+    /* Single hairline edge to mark transition into stats */
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--mass-deep-edge);
+}
+
+.mass-page .hero .hero-eyebrow {
+    color: var(--mass-cream-faint);
+}
+
+.mass-page .hero .hero-title {
+    color: var(--mass-cream);
+}
+
+.mass-page .hero .hero-subtitle {
+    color: var(--mass-cream-dim);
+}
+
+.mass-page .hero ::selection {
+    background: rgba(244, 238, 226, 0.25);
+    color: var(--mass-cream);
+}
+
+/* ── Stats band: cool paper, navy accents ── */
+.mass-page .stats-section {
+    background: var(--mass-paper-cool);
+    border-bottom: 1px solid var(--mass-rule-cool);
+}
+
+.mass-page .stats-section .stat-item + .stat-item::before {
+    background: var(--mass-rule-cool);
+}
+
+.mass-page .stats-section .stat-number {
+    color: var(--mass-deep);
+}
+
+.mass-page .stats-section .stat-label {
+    color: var(--mass-steel);
+}
+
+/* ── Bridge sections: navy eyebrows + steel rules ── */
+.mass-page .bridge-section .section-eyebrow {
+    color: var(--mass-steel);
+}
+
+.mass-page .bridge-section .section-title {
+    color: var(--mass-deep);
+}
+
+.mass-page .bridge-section a {
+    color: var(--mass-steel);
+    border-bottom-color: rgba(59, 82, 120, 0.4);
+}
+
+.mass-page .bridge-section a:hover {
+    color: var(--mass-deep);
+    border-color: var(--mass-deep);
+}
+
+/* ── Mass × Moxie band: deeper paper-dim with steel inset rule ── */
+.mass-page .mass-claims-band {
+    background: var(--mass-paper-cool);
+    padding: var(--space-10) 0;
+    border-top: 1px solid var(--mass-rule-cool);
+    border-bottom: 1px solid var(--mass-rule-cool);
+}
+
+.mass-page .mass-claims-band .container--narrow {
+    max-width: 64ch;
+    margin-inline: auto;
+}
+
+.mass-page .mass-claims-band .section-eyebrow {
+    color: var(--mass-steel);
+    display: block;
+    margin-bottom: var(--space-3);
+}
+
+.mass-page .mass-claims-band .section-title {
+    color: var(--mass-deep);
+    margin-bottom: var(--space-4);
+    margin-left: -0.03em;
+    line-height: 1.14;
+    letter-spacing: -0.015em;
+}
+
+.mass-page .mass-claims-band p {
+    max-width: var(--measure);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-base);
+    line-height: 1.72;
+    color: var(--ink);
+}
+
+.mass-page .mass-claims-band p:first-of-type {
+    font-size: clamp(18px, 1.06rem + 0.2vw, 21px);
+    color: var(--ink);
+}
+
+.mass-page .mass-claims-band p:not(:first-of-type) {
+    color: var(--ink-muted);
+}
+
+.mass-page .mass-claims-band p:last-child {
+    margin-bottom: 0;
+}
+
+/* Two-column division-of-labour panel inside the claims band */
+.mass-page .mass-claims-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: var(--space-6) 0 var(--space-4);
+    border-top: 1px solid var(--mass-rule-cool);
+    border-bottom: 1px solid var(--mass-rule-cool);
+}
+
+.mass-page .mass-claims-cell {
+    padding: var(--space-5) var(--space-5);
+    border-right: 1px solid var(--mass-rule-cool);
+}
+
+.mass-page .mass-claims-cell:last-child {
+    border-right: none;
+}
+
+.mass-page .mass-claims-cell-label {
+    font-family: var(--font-caption);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-caps);
+    font-variant-caps: all-small-caps;
+    font-feature-settings: "smcp" 1, "c2sc" 1, "cpsp" 1, "kern" 1, "liga" 1, "calt" 1;
+    color: var(--mass-steel);
+    margin-bottom: var(--space-2);
+}
+
+.mass-page .mass-claims-cell-body {
+    font-family: var(--font-text);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+    max-width: 32ch;
+}
+
+/* Tighten claims-band paragraph spacing inside cells */
+.mass-page .mass-claims-band .mass-claims-cell-body {
+    margin-bottom: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+    .mass-page .mass-claims-grid {
+        grid-template-columns: 1fr;
+    }
+    .mass-page .mass-claims-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--mass-rule-cool);
+    }
+    .mass-page .mass-claims-cell:last-child {
+        border-bottom: none;
+    }
+    .mass-page .hero {
+        padding: var(--space-10) 0 var(--space-8);
+    }
+}

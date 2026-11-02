@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Developer Portal — Momentum</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+
+    <meta name="description" content="Developer portal for Mass and Moxie: three-tier SDK (hand-maintained Rust/TypeScript/Python, OpenAPI codegen for Go/Java/C#/Kotlin/Swift, game-engine wrappers for Unity/Unreal/Godot/Roblox), REST surface, 23-domain compliance tensor, event-atomic settlement, and first-class agent callers.">
+    <meta name="author" content="Momentum">
+    <link rel="canonical" href="https://momentum.inc/developers.html">
+
+    <meta property="og:title" content="Developer Portal — Momentum">
+    <meta property="og:description" content="Three-tier SDK. REST. Agent store. 23-domain compliance tensor. Event-atomic settlement. One conformance corpus.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://momentum.inc/developers.html">
+    <meta property="og:image" content="https://momentum.inc/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Developer Portal — Momentum">
+    <meta name="twitter:description" content="Three-tier SDK. REST. Agent store. 23-domain compliance tensor. Event-atomic settlement. One conformance corpus.">
+    <meta name="twitter:image" content="https://momentum.inc/og-image.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+    <link rel="preload" href="https://use.typekit.net/zlu2quo.css" as="style">
+    <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+    <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+    <style>
+        :root {
+            --portal-ink: #1c1916;
+            --portal-accent: #8e2f20;
+            --portal-border: rgba(28, 25, 22, 0.12);
+            --portal-paper: rgba(255, 252, 245, 0.92);
+            --portal-tint: rgba(233, 224, 208, 0.82);
+        }
+
+        .developer-hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(201, 107, 79, 0.24), transparent 34%),
+                radial-gradient(circle at 84% 14%, rgba(156, 47, 32, 0.18), transparent 28%),
+                linear-gradient(180deg, #f7efe4 0%, #efe3d2 100%);
+            border-bottom: 1px solid var(--portal-border);
+        }
+
+        .developer-hero::after {
+            content: "";
+            position: absolute;
+            inset: auto -10% -25% 45%;
+            height: 18rem;
+            background: linear-gradient(90deg, rgba(142, 47, 32, 0), rgba(142, 47, 32, 0.16), rgba(142, 47, 32, 0));
+            transform: rotate(-7deg);
+            pointer-events: none;
+        }
+
+        .developer-hero-inner {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 2rem;
+            align-items: end;
+            padding: 5.5rem 0 4rem;
+        }
+
+        .developer-subtitle {
+            max-width: 46rem;
+        }
+
+        .developer-callout {
+            padding: 1.4rem;
+            background: var(--portal-paper);
+            border: 1px solid var(--portal-border);
+            box-shadow: 0 18px 48px rgba(28, 25, 22, 0.08);
+        }
+
+        .developer-callout h2,
+        .surface-card h3,
+        .artifact-card h3,
+        .surface-list-card h3 {
+            margin-top: 0;
+        }
+
+        .developer-grid,
+        .artifact-grid,
+        .surface-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .developer-grid {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+
+        .artifact-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .surface-grid {
+            grid-template-columns: 1.15fr 0.85fr;
+        }
+
+        .portal-stat,
+        .artifact-card,
+        .surface-card,
+        .surface-list-card,
+        .code-window {
+            background: var(--portal-paper);
+            border: 1px solid var(--portal-border);
+            box-shadow: 0 14px 34px rgba(28, 25, 22, 0.06);
+        }
+
+        .portal-stat,
+        .artifact-card,
+        .surface-card,
+        .surface-list-card {
+            padding: 1.2rem;
+        }
+
+        .portal-stat-value {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 1.85rem;
+            color: var(--portal-accent);
+        }
+
+        .portal-stat-label,
+        .artifact-meta,
+        .surface-meta,
+        .surface-link,
+        .developer-note,
+        .terminal-caption {
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .artifact-card {
+            min-height: 13rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .artifact-badge {
+            display: inline-flex;
+            align-self: flex-start;
+            padding: 0.25rem 0.55rem;
+            border: 1px solid rgba(142, 47, 32, 0.22);
+            background: rgba(142, 47, 32, 0.08);
+            color: var(--portal-accent);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .surface-card {
+            padding-bottom: 0;
+        }
+
+        .surface-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-top: 1px solid var(--portal-border);
+        }
+
+        .surface-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid var(--portal-border);
+        }
+
+        .surface-list li:last-child {
+            border-bottom: none;
+        }
+
+        .code-window {
+            overflow: hidden;
+        }
+
+        .code-window-header {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--portal-border);
+            background: rgba(28, 25, 22, 0.04);
+        }
+
+        .code-window-dot {
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background: rgba(28, 25, 22, 0.18);
+        }
+
+        .code-window pre {
+            margin: 0;
+            padding: 1.2rem;
+            overflow-x: auto;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--portal-ink);
+            background: linear-gradient(180deg, rgba(255, 250, 242, 0.98), rgba(247, 239, 228, 0.94));
+        }
+
+        .surface-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .surface-links a,
+        .artifact-card a,
+        .surface-list-card a {
+            text-decoration: none;
+        }
+
+        .surface-pill {
+            display: inline-flex;
+            padding: 0.45rem 0.7rem;
+            border: 1px solid var(--portal-border);
+            background: var(--portal-tint);
+            color: var(--portal-ink);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.74rem;
+        }
+
+        @media (max-width: 980px) {
+            .developer-hero-inner,
+            .surface-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .developer-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .artifact-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .developer-hero-inner {
+                padding: 4.5rem 0 3.25rem;
+            }
+
+            .developer-grid,
+            .artifact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-container">
+        <header class="site-header">
+          <div class="container">
+            <div class="header-inner">
+              <a href="/" class="logo">Momentum</a>
+              <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">Menu</button>
+              <nav class="nav-primary" id="primary-nav" aria-label="Primary navigation">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <main id="main">
+            <section class="developer-hero">
+                <div class="container">
+                    <div class="developer-hero-inner">
+                        <div>
+                            <span class="hero-eyebrow">Developer Surface</span>
+                            <h1 class="hero-title">Build against the platform, not the sprawl</h1>
+                            <p class="hero-subtitle developer-subtitle">Mass exposes five primitives, multi-step operations, the 23-domain compliance tensor, first-class instruments, and corridor infrastructure. Moxie exposes event-atomic settlement, portfolio margin, and Mass kernel integration. Both surface as SDK, REST, and agent-store inventory entries. Mass agent-store agents are first-class callers.</p>
+                        </div>
+                        <aside class="developer-callout">
+                            <p class="portal-stat-label">Developer lanes</p>
+                            <h2>Ten languages. Four engines. One core.</h2>
+                            <p>Rust, TypeScript, and Python hand-maintained. Go, Java, C#, Kotlin, and Swift from OpenAPI. Unity, Unreal, Godot, and Roblox wrap the Rust core. Every binding passes the same conformance corpus &mdash; if the core passes, they all pass.</p>
+                            <div class="surface-links">
+                                <a class="surface-pill" href="https://dev.momentum.inc/docs.html">API reference</a>
+                                <a class="surface-pill" href="/data/sdk-index.json">sdk-index.json</a>
+                                <a class="surface-pill" href="/data/openapi-index.json">openapi-index.json</a>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reveal">
+                <div class="container">
+                    <div class="developer-grid" id="developer-stats">
+                        <article class="portal-stat"><div class="portal-stat-value">-</div><div class="portal-stat-label">Curated clients</div></article>
+                        <article class="portal-stat"><div class="portal-stat-value">-</div><div class="portal-stat-label">Generated targets</div></article>
+                        <article class="portal-stat"><div class="portal-stat-value">-</div><div class="portal-stat-label">Operation families</div></article>
+                        <article class="portal-stat"><div class="portal-stat-value">-</div><div class="portal-stat-label">Schemas</div></article>
+                        <article class="portal-stat"><div class="portal-stat-value">-</div><div class="portal-stat-label">Zones</div></article>
+                        <article class="portal-stat"><div class="portal-stat-value">-</div><div class="portal-stat-label">CLI commands</div></article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reveal">
+                <div class="container">
+                    <span class="section-eyebrow">Quick Start &mdash; Mass</span>
+                    <h2 class="section-title">One Mass call drives a full jurisdiction-aware DAG</h2>
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <span class="code-window-dot"></span>
+                            <span class="code-window-dot"></span>
+                            <span class="code-window-dot"></span>
+                            <span class="terminal-caption">typescript &middot; @mass/primitives</span>
+                        </div>
+                        <pre><code>import { Mass } from '@mass/primitives';
+
+const mass = new Mass({
+  baseUrl: 'https://api.zone.mass.inc',
+  token: process.env.MASS_API_TOKEN!,
+});
+
+await mass.operations.execute('entity.rename', entityId, {
+  new_name: 'Acme Holdings Inc',
+});
+
+const note = await mass.instruments.create({
+  instrument_class: 'convertible',
+  jurisdiction_id: 'us-de',
+  issuer_entity_id: entityId,
+  metadata: { discount_rate: '20%', valuation_cap: '12000000' },
+});</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reveal">
+                <div class="container">
+                    <span class="section-eyebrow">Quick Start &mdash; Moxie</span>
+                    <h2 class="section-title">One Moxie call settles an oracle event, pays winners, issues assets, nets margin</h2>
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <span class="code-window-dot"></span>
+                            <span class="code-window-dot"></span>
+                            <span class="code-window-dot"></span>
+                            <span class="terminal-caption">typescript &middot; @moxie/sdk</span>
+                        </div>
+                        <pre><code>import { Moxie } from '@moxie/sdk';
+
+const moxie = new Moxie({
+  token: process.env.MOXIE_TOKEN!,
+  region: 'us-east-1',
+});
+
+// 1. Pre-flight the 23-domain compliance tensor.
+const preflight = await moxie.compliance.preflight({
+  brand_id: 'bout',
+  entity_ids: [entityId],
+});
+
+// 2. Atomic settlement: resolve event, pay winners, issue scarves, net margin.
+const batch = await moxie.settlements.batch({
+  idempotency_key: 'ufc-317-card-1',
+  items: [
+    { type: 'pay_winners', market_id, winners },
+    { type: 'issue_asset', template_id, to: winners },
+    { type: 'net_margin',  player_ids: winners },
+  ],
+  finality_target: 'finalized',
+  compliance_commitment: preflight.commitment,
+});
+
+// One block. One receipt. One replay hash.
+const receipt = await batch.receipt();</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reveal">
+                <div class="container">
+                    <span class="section-eyebrow">SDK Matrix</span>
+                    <h2 class="section-title">Curated surface plus generated lanes</h2>
+                    <div class="artifact-grid" id="sdk-grid"></div>
+                </div>
+            </section>
+
+            <section class="reveal">
+                <div class="container surface-grid">
+                    <article class="surface-card">
+                        <span class="section-eyebrow">Live Data</span>
+                        <h2 class="section-title">Platform surfaces that feed the portal</h2>
+                        <ul class="surface-list" id="surface-list"></ul>
+                    </article>
+
+                    <aside class="surface-list-card">
+                        <p class="portal-stat-label">Artifact paths</p>
+                        <h3>Machine-readable entry points</h3>
+                        <div class="surface-links" id="artifact-links"></div>
+                        <p class="developer-note" id="sdk-updated-at">Updated: loading</p>
+                    </aside>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+          <div class="container">
+            <div class="footer-inner">
+              <div class="footer-contact">
+                <p class="footer-label">Inquiries</p>
+                <a href="mailto:developers@momentum.inc">developers@momentum.inc</a>
+                <p class="footer-secondary">Saadiyat Island, Abu Dhabi · Miami, USA · Cape Town, South Africa · Shanghai, China</p>
+              </div>
+              <nav class="footer-nav" aria-label="Footer">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+            <div class="footer-legal">
+              <p>The materials on this website are for illustration and discussion purposes only and do not constitute an offer to sell, or a solicitation of an offer to buy, any securities or interests. Any such offering may be made only to eligible investors via one or more confidential offering documents. Past performance is not indicative of future results. &copy; 2026 Momentum</p>
+            </div>
+          </div>
+        </footer>
+    </div>
+
+    <script>
+        async function loadJson(path) {
+            const res = await fetch(path);
+            if (!res.ok) throw new Error(path + ' failed');
+            return res.json();
+        }
+
+        function statMarkup(value, label) {
+            return '<article class="portal-stat"><div class="portal-stat-value">' + value + '</div><div class="portal-stat-label">' + label + '</div></article>';
+        }
+
+        Promise.all([
+            loadJson('/data/sdk-index.json'),
+            loadJson('/data/operations.json'),
+            loadJson('/data/schemas.json'),
+            loadJson('/data/zones.json'),
+            loadJson('/data/cli.json'),
+            loadJson('/data/openapi-index.json')
+        ]).then(function ([sdk, operations, schemas, zones, cli, openapi]) {
+            var stats = document.getElementById('developer-stats');
+            var operationFamilies = Object.keys(operations || {}).length;
+            var cliCommands = Array.isArray(cli) ? cli.length : 0;
+            var endpointCount = Array.isArray(openapi)
+                ? openapi.reduce(function (sum, spec) { return sum + (spec.operation_count || 0); }, 0)
+                : 0;
+
+            stats.innerHTML = [
+                statMarkup(String((sdk.curated && sdk.curated.client_count) || 0), 'Curated clients'),
+                statMarkup(String((sdk.generated_targets || []).length), 'Generated targets'),
+                statMarkup(String(operationFamilies), 'Operation families'),
+                statMarkup(String((schemas || []).length), 'Schemas'),
+                statMarkup(String((zones || []).length), 'Zones'),
+                statMarkup(String(cliCommands), 'CLI commands')
+            ].join('');
+
+            var sdkGrid = document.getElementById('sdk-grid');
+            var curated = sdk.curated || {};
+            var cards = [];
+            cards.push(
+                '<article class="artifact-card">' +
+                '<span class="artifact-badge">Primary</span>' +
+                '<h3>' + (curated.name || '@mass/primitives') + '</h3>' +
+                '<p>Handwritten TypeScript SDK over the public `/v1/*` surface. Includes orchestration, primitives, corridors, governance, licensing, notifications, and instruments.</p>' +
+                '<div class="artifact-meta">Version ' + (curated.version || '0.1.0') + '</div>' +
+                '<div class="artifact-meta">' + ((curated.client_count || 0) + ' clients') + '</div>' +
+                '<a href="https://mass.inc">Browse Mass</a>' +
+                '</article>'
+            );
+            (sdk.generated_targets || []).forEach(function (target) {
+                cards.push(
+                    '<article class="artifact-card">' +
+                    '<span class="artifact-badge">Generated</span>' +
+                    '<h3>' + target.language + '</h3>' +
+                    '<p>OpenAPI-generated lane using <strong>' + target.generator + '</strong>. Package: <code>' + target.package_name + '</code>.</p>' +
+                    '<div class="artifact-meta">' + target.config_path + '</div>' +
+                    '<a href="' + (target.config_url || '/data/sdk-index.json') + '">Open generator config</a>' +
+                    '</article>'
+                );
+            });
+            sdkGrid.innerHTML = cards.join('');
+
+            document.getElementById('surface-list').innerHTML = [
+                ['Operation families', operationFamilies, '/data/operations.json'],
+                ['JSON schemas', (schemas || []).length, '/data/schemas.json'],
+                ['Zones', (zones || []).length, '/data/zones.json'],
+                ['CLI commands', cliCommands, '/data/cli.json'],
+                ['OpenAPI operations', endpointCount, '/data/openapi-index.json']
+            ].map(function (item) {
+                return '<li><div><h3>' + item[0] + '</h3><p class="surface-meta">' + item[1] + ' indexed items</p></div><a class="surface-link" href="' + item[2] + '">Open JSON</a></li>';
+            }).join('');
+
+            document.getElementById('artifact-links').innerHTML = (sdk.artifacts || []).map(function (item) {
+                return '<a class="surface-pill" href="' + (item.url || '#') + '">' + item.path.split('/').slice(-1)[0] + '</a>';
+            }).join('');
+
+            document.getElementById('sdk-updated-at').textContent = 'Updated: ' + (sdk.updated_at || 'unknown');
+        }).catch(function (err) {
+            document.getElementById('surface-list').innerHTML = '<li><div><h3>Portal data unavailable</h3><p class="surface-meta">' + err.message + '</p></div></li>';
+        });
+    </script>
+    <script src="/site.js" defer></script>
+</body>
+</html>

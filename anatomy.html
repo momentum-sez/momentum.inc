@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Operation Anatomy — Momentum</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+
+    <!-- SEO -->
+    <meta name="description" content="Watch one API call decompose into jurisdiction-specific steps, compliance evaluation, document generation, and filing. See how entity.incorporate becomes 10–13 steps across Delaware, ADGM, and Seychelles.">
+    <meta name="author" content="Momentum">
+    <link rel="canonical" href="https://momentum.inc/anatomy.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Operation Anatomy — Momentum">
+    <meta property="og:description" content="One API call. Mass decomposes it into jurisdiction-specific steps — compliance evaluation, document generation, registrar filing. Switch jurisdictions. Watch the entire DAG change.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://momentum.inc/anatomy.html">
+    <meta property="og:image" content="https://momentum.inc/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Operation Anatomy — Momentum">
+    <meta name="twitter:description" content="One API call. Mass decomposes it into jurisdiction-specific steps — compliance evaluation, document generation, registrar filing. Switch jurisdictions. Watch the entire DAG change.">
+    <meta name="twitter:image" content="https://momentum.inc/og-image.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <!-- Adobe Fonts: Garamond Premier Pro -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+    <link rel="preload" href="https://use.typekit.net/zlu2quo.css" as="style">
+    <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
+
+    <!-- Fallback + Monospace -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+    <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-container">
+        <!-- HEADER -->
+        <header class="site-header">
+          <div class="container">
+            <div class="header-inner">
+              <a href="/" class="logo">Momentum</a>
+              <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">Menu</button>
+              <nav class="nav-primary" id="primary-nav" aria-label="Primary navigation">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <main id="main">
+
+            <!-- HERO -->
+            <section class="article-header">
+                <div class="container">
+                    <span class="article-eyebrow">Interactive Reference</span>
+                    <h1 class="article-title">Operation Anatomy</h1>
+                    <p class="article-subtitle">One API call. Mass decomposes it into jurisdiction-specific steps &mdash; each with compliance evaluation, document generation, registrar filing, and attestation. Switch jurisdictions. Watch the entire DAG change.</p>
+                </div>
+            </section>
+
+            <!-- NOSCRIPT -->
+            <noscript>
+                <div style="max-width: 600px; margin: 0 auto; padding: 48px 24px; text-align: center;">
+                    <p style="font-family: serif; font-size: 18px; color: #1a1917;">The Operation Anatomy visualization requires JavaScript.</p>
+                    <p style="font-family: serif; font-size: 16px; color: #7a7672;"><a href="https://mass.inc" style="color: #8b4c3a;">Read about Mass</a></p>
+                </div>
+            </noscript>
+
+            <!-- INTERACTIVE PANEL -->
+            <section class="anatomy-section" aria-label="Operation anatomy visualization">
+                <div class="container">
+                    <div class="anatomy-panel">
+
+                        <!-- API Call -->
+                        <div class="code-block-header">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                            <span class="title">entity.incorporate</span>
+                        </div>
+                        <pre class="code-block anatomy-api-body" id="anatomy-api-call" aria-label="API request"></pre>
+
+                        <!-- Jurisdiction Tabs -->
+                        <div class="anatomy-tabs-row">
+                            <div id="anatomy-tabs" class="anatomy-tabs" role="tablist" aria-label="Select jurisdiction"></div>
+                            <div id="anatomy-legal-basis" class="anatomy-legal-basis"></div>
+                        </div>
+
+                        <!-- Step DAG + Details -->
+                        <div class="anatomy-main">
+                            <div class="anatomy-dag-col">
+                                <div class="anatomy-col-header">Step DAG</div>
+                                <div id="anatomy-dag" class="anatomy-dag" role="list" aria-label="Operation steps"></div>
+                            </div>
+                            <div class="anatomy-details-col">
+                                <div class="anatomy-col-header">Inspector</div>
+                                <div id="anatomy-details" class="anatomy-details" aria-live="polite"></div>
+                            </div>
+                        </div>
+
+                        <!-- Compliance Tensor -->
+                        <div id="anatomy-compliance" class="anatomy-compliance"></div>
+
+                        <!-- Fees -->
+                        <div id="anatomy-fees" class="anatomy-fees"></div>
+
+                        <!-- Summary -->
+                        <div id="anatomy-summary" class="anatomy-summary"></div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXPLANATION -->
+            <section class="reveal">
+                <div class="container narrow" style="padding: var(--space-8) 0 var(--space-6);">
+                    <h2>What you are seeing</h2>
+                    <p>When a developer calls <code>POST /v1/operations/execute</code>, Mass decomposes the operation into a directed acyclic graph of steps. Each step targets a specific Mass service, triggers compliance evaluation across relevant domains, and produces auditable artifacts &mdash; Verifiable Credentials, attestation records, and passport updates.</p>
+                    <p>The step DAG is jurisdiction-aware. Delaware incorporation requires 10 steps across 4 waves. ADGM requires 11 steps with a mandatory special resolution before name reservation. Seychelles IBC requires 13 steps including registered agent appointment, TIN registration with SRC, and IBC tax exemption evaluation under the IBC Act 2016.</p>
+                    <p>Every step that writes data passes through the compliance tensor &mdash; 23 domains, fail-closed. The tensor evaluates evidence (KYC attestations, sanctions screening, tax status) and blocks the operation if any mandatory domain returns NonCompliant. Steps within the same wave execute in parallel. Mass manages the dependency graph.</p>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="reveal" style="padding-bottom: var(--space-12);">
+                <div class="container narrow" style="display: flex; gap: var(--space-2); flex-wrap: wrap; justify-content: center;">
+                    <a href="https://dev.momentum.inc" class="anatomy-cta-link">For Builders</a>
+                    <a href="https://dev.momentum.inc/configure.html" class="anatomy-cta-link">Zone configurator</a>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+          <div class="container">
+            <div class="footer-inner">
+              <div class="footer-contact">
+                <p class="footer-label">Inquiries</p>
+                <a href="mailto:info@momentum.inc">info@momentum.inc</a>
+                <p class="footer-secondary">Saadiyat Island, Abu Dhabi · Miami, USA · Cape Town, South Africa · Shanghai, China</p>
+              </div>
+              <nav class="footer-nav" aria-label="Footer">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+            <div class="footer-legal">
+              <p>The materials on this website are for illustration and discussion purposes only and do not constitute an offer to sell, or a solicitation of an offer to buy, any securities or interests. Any such offering may be made only to eligible investors via one or more confidential offering documents. Past performance is not indicative of future results. &copy; 2026 Momentum</p>
+            </div>
+          </div>
+        </footer>
+    </div>
+
+    <script src="/site.js" defer></script>
+    <script src="/anatomy.js" defer></script>
+</body>
+</html>

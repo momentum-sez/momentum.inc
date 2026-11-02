@@ -1,0 +1,120 @@
+/* ═══════════════════════════════════════
+   RESET & BASE TYPOGRAPHY
+   Box-model, html/body, headings, links,
+   scrollbars, selection, utilities
+   ═══════════════════════════════════════ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scrollbar-width: thin;
+    scrollbar-color: var(--ink-whisper) transparent;
+    scrollbar-gutter: stable;
+}
+
+body {
+    font-family: var(--font-text);
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
+    color: var(--ink);
+    background: var(--paper);
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "calt" 1, "onum" 1, "pnum" 1;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+    font-kerning: normal;
+    hanging-punctuation: first allow-end last;
+}
+
+/* Paper grain — subtle texture overlay */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-texture);
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+/* Headings — display ligatures + swashes beyond body defaults */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    line-height: var(--leading-heading);
+    text-wrap: balance;
+    font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
+    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "hlig" 1, "calt" 1, "onum" 1, "pnum" 1, "swsh" 1;
+    font-kerning: normal;
+}
+
+p {
+    text-wrap: pretty;
+    orphans: 2;
+    widows: 2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--selection-bg);
+    color: var(--ink);
+}
+
+/* Dark-section selection — use high-contrast tokens on dark backgrounds */
+.code-immersive ::selection,
+.corridor-trace-section ::selection,
+.cta-section--dark ::selection,
+.explore-terminal ::selection,
+.docs-code-col ::selection,
+.code-panel ::selection,
+.configure-main ::selection {
+    background: var(--selection-bg-dark);
+    color: var(--selection-color-dark);
+}
+
+blockquote {
+    hanging-punctuation: first allow-end last;
+}
+
+/* Statistics — lining tabular numerals with titling alternates */
+.stat-number,
+[data-numeric="lining"] {
+    font-feature-settings: "lnum" 1, "tnum" 1, "kern" 1, "liga" 1, "titl" 1;
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* ── Scrollbars (webkit) ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--ink-whisper); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-ghost); }
+
+/* ── Utilities ── */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.text-center {
+    text-align: center;
+}

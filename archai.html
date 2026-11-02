@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Archai — Momentum</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+
+    <!-- SEO -->
+    <meta name="description" content="Archai: Programmable ownership for real estate. Scalable primitives enabling stake-to-live, stake-to-own, and earned equity. Buildings as programmable assets on the Momentum network.">
+    <meta name="author" content="Momentum">
+    <link rel="canonical" href="https://momentum.inc/archai.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Archai — Momentum">
+    <meta property="og:description" content="Programmable ownership for real estate. Buildings as programmable assets in the Momentum network.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://momentum.inc/archai.html">
+    <meta property="og:image" content="https://momentum.inc/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Archai — Momentum">
+    <meta name="twitter:description" content="Programmable ownership for real estate. Buildings as programmable assets in the Momentum network.">
+    <meta name="twitter:image" content="https://momentum.inc/og-image.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <!-- Adobe Fonts -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+    <link rel="preload" href="https://use.typekit.net/zlu2quo.css" as="style">
+    <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
+
+    <!-- Fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+    <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-container">
+        <header class="site-header">
+          <div class="container">
+            <div class="header-inner">
+              <a href="/" class="logo">Momentum</a>
+              <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">Menu</button>
+              <nav class="nav-primary" id="primary-nav" aria-label="Primary navigation">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <main id="main">
+            <!-- ARTICLE HEADER -->
+            <header class="article-header">
+                <div class="container">
+                    <span class="article-eyebrow">Built Environment · Protocol</span>
+                    <h1 class="article-title">Archai</h1>
+                    <p class="article-subtitle">Programmable ownership for land, housing, and community infrastructure. Scalable primitives enabling stake-to-live, stake-to-own, and earned equity models.</p>
+                    <p class="article-meta">Momentum · April 2026</p>
+                </div>
+            </header>
+
+            <!-- ARTICLE CONTENT -->
+            <article class="article-content">
+                <div class="container container--narrow">
+
+
+                    <nav class="toc">
+                        <p class="toc-title">Contents</p>
+                        <ol class="toc-list">
+                            <li><a href="#thesis">The Thesis</a></li>
+                            <li><a href="#problem">The Problem</a></li>
+                            <li><a href="#principles">Design Principles</a></li>
+                            <li><a href="#system">System Model</a></li>
+                            <li><a href="#architecture">Protocol Architecture</a></li>
+                            <li><a href="#economics">Vault Economics</a></li>
+                            <li><a href="#liquidity">Liquidity & Exit</a></li>
+                            <li><a href="#governance">Governance</a></li>
+                            <li><a href="#legal">Legal & Compliance</a></li>
+                            <li><a href="#security">Security & Risk</a></li>
+                            <li><a href="#instruments">Instrument Model</a></li>
+                            <li><a href="#roadmap">Roadmap</a></li>
+                        </ol>
+                    </nav>
+
+                    <h2 id="thesis">The Thesis</h2>
+
+                    <p>The built environment is the largest asset class humans maintain, yet its ownership rails are archaic: high friction, low transparency, rentier capture.</p>
+
+                    <p><strong>Archai</strong> turns land and buildings into programmable, arbitration-enabled institutions &mdash; where people enter by committing capital, earn ownership over time, and surplus flows by explicit constitutional logic. Compliant, auditable, and jurisdiction-portable through Mass primitives.</p>
+
+                    <div class="callout">
+                        <p class="callout-title">Why Now: The Enabling Stack</p>
+                        <p><strong>Mass</strong> makes entities, ownership, and consent programmable &mdash; the legal substrate. <strong>HomeOS</strong> makes buildings continuously measurable &mdash; the operational substrate. <strong>EZ Stack</strong> makes jurisdictional portability possible. Together: a real programmable institution, not paper deeds with a digital veneer.</p>
+                    </div>
+
+                    <h2 id="problem">The Problem</h2>
+
+                    <h3>Ownership is structurally exclusionary</h3>
+                    <p>Entry requires large down payments, creditworthiness, and legal sophistication. Exit is illiquid and expensive.</p>
+
+                    <h3>Rentier dynamics dominate housing markets</h3>
+                    <p>Default incentives reward holding scarce assets, restricting supply, and harvesting rent. Abundant, community-aligned housing requires different incentive architecture.</p>
+
+                    <h3>Buildings are opaque, so risk is mispriced</h3>
+                    <p>HomeOS flips this: buildings self-report occupancy, energy, maintenance, and revenue &mdash; the continuous operational evidence that programmable ownership requires.</p>
+
+                    <h3>The coordination problem</h3>
+                    <p>Land ownership encodes governance, cultural norms, and collective investment decisions. Archai expresses these as programmable institutional logic.</p>
+
+                    <h2 id="principles">Design Principles</h2>
+
+                    <p>A programmable institution. Must obey institutional physics.</p>
+
+                    <h3>Legal reality first</h3>
+                    <p>Every vault asset pairs with a real legal wrapper (SPV, trust, foundation, coop) holding title.</p>
+
+                    <h3>Yield first, not appreciation first</h3>
+                    <p>Built assets as cash-flow machines. Yield is the design target.</p>
+
+                    <h3>Anti-speculation must be engineered</h3>
+                    <p>Pricing rules, transfer constraints, premium capture, exit gates, governance limits.</p>
+
+                    <h3>Composability at the primitive level</h3>
+                    <p>Mass provides primitives. Archai composes them into built-asset institutions &mdash; the programmable-ownership layer for HomeOS buildings.</p>
+
+                    <h3>Continuous attestations, not annual audits</h3>
+                    <p>Cryptographically secured attestation streams. Compliance verified programmatically without exposing private data.</p>
+
+                    <h3>Governance with hard guardrails</h3>
+                    <p>Trustees, emergency powers, upgrade controls. Decentralization earned, not assumed.</p>
+
+                    <h2 id="system">System Model</h2>
+
+                    <h3>Archai is a network of "Vault Institutions"</h3>
+                    <p>Each Vault: programmatic contracts bound to a legal wrapper, holding land and buildings, issuing stake positions, distributing surplus by encoded policy.</p>
+
+                    <h3>Separating use from ownership</h3>
+                    <p>Archai unbundles occupancy, financial exposure, and governance power into separable primitives:</p>
+
+                    <div class="primitives-section">
+                        <p class="primitives-title">Separable Rights Architecture</p>
+                        <div class="primitives-grid">
+                            <div class="primitive-item">
+                                <div class="primitive-number">1</div>
+                                <div class="primitive-name">Use Rights</div>
+                            </div>
+                            <div class="primitive-item">
+                                <div class="primitive-number">2</div>
+                                <div class="primitive-name">Stake Positions</div>
+                            </div>
+                            <div class="primitive-item">
+                                <div class="primitive-number">3</div>
+                                <div class="primitive-name">Ownership Units</div>
+                            </div>
+                            <div class="primitive-item">
+                                <div class="primitive-number">4</div>
+                                <div class="primitive-name">Contribution Credits</div>
+                            </div>
+                            <div class="primitive-item">
+                                <div class="primitive-number">5</div>
+                                <div class="primitive-name">Governance Power</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>A policy engine for many civilizational models</h3>
+                    <p>Rent policy, surplus split, equity schedule, transfer constraints, commons obligations. Vaults select a model and can migrate with governance.</p>
+
+                    <h2 id="architecture">Protocol Architecture</h2>
+
+                    <div class="layers-section">
+                        <p class="layers-title">Six-Layer Protocol Stack</p>
+                        <div class="layers-grid">
+                            <div class="layer-item">
+                                <div class="layer-number">Layer 1</div>
+                                <div class="layer-name">Legal Wrapper</div>
+                                <div class="layer-description">Mass-native entity (SPV/Trust) holding title, bank accounts, and protocol-aligned charter</div>
+                            </div>
+                            <div class="layer-item">
+                                <div class="layer-number">Layer 2</div>
+                                <div class="layer-name">Vault Contracts</div>
+                                <div class="layer-description">Capital + rights engine managing deposits, stakes, redemptions, distributions, and issuance</div>
+                            </div>
+                            <div class="layer-item">
+                                <div class="layer-number">Layer 3</div>
+                                <div class="layer-name">Governance Module</div>
+                                <div class="layer-description">Polycentric governance: scoped, role-based, bicameral with trustee failsafes</div>
+                            </div>
+                            <div class="layer-item">
+                                <div class="layer-number">Layer 4</div>
+                                <div class="layer-name">Commons Treasury</div>
+                                <div class="layer-description">Network treasury funding new vaults, resident subsidies, R&D, and risk underwriting</div>
+                            </div>
+                            <div class="layer-item">
+                                <div class="layer-number">Layer 5</div>
+                                <div class="layer-name">Evidence Layer</div>
+                                <div class="layer-description">HomeOS operational data + attestation streams for continuous compliance verification</div>
+                            </div>
+                            <div class="layer-item">
+                                <div class="layer-number">Layer 6</div>
+                                <div class="layer-name">Arbitration</div>
+                                <div class="layer-description">Dispute resolution with defined paths, evidence admissibility, and emergency intervention</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 id="economics">Vault Economics</h2>
+
+                    <h3>The vault balance sheet</h3>
+                    <p>Capital stack:</p>
+                    <ul>
+                        <li><strong>Senior capital</strong>: bank debt/bonds, capped return, first claim</li>
+                        <li><strong>Resident stake</strong>: time-locked, compensated via rent discounts + earned equity</li>
+                        <li><strong>Programmatic equity</strong>: variable return, residual surplus</li>
+                        <li><strong>Sponsor/operator equity</strong>: absorbs early risk</li>
+                        <li><strong>Commons stake</strong>: protocol fee, insurance backstops</li>
+                    </ul>
+
+                    <h3>Two primary stake products</h3>
+
+                    <h4>A) Resident Stake (stake-to-live)</h4>
+                    <p>Stake capital for 3&ndash;7 years. Receive rent discounts, earned equity, scoped governance, principal redemption at maturity.</p>
+
+                    <h4>B) Capital Stake (stake-to-build)</h4>
+                    <p>Non-resident capital with defined term, coupon-like distributions, potential equity kicker, no occupancy rights. Scales supply without speculation.</p>
+
+                    <h3>Earned equity: from first principles</h3>
+                    <p>Accrual = f(stake, term, risk multiplier, contribution score, policy) &mdash; computed against vault NAV.</p>
+
+                    <h3>Surplus: the sacred object</h3>
+                    <p>Surplus = NOI &minus; Debt Service &minus; Reserves. Allocated by policy:</p>
+                    <ul>
+                        <li>Resident/staker distributions: 50–70%</li>
+                        <li>Reinvestment: 20–40%</li>
+                        <li>Protocol fee to Commons: 5–10%</li>
+                        <li>Insurance/contingency buffer</li>
+                    </ul>
+                    <p>Surplus allocation is the economic constitution.</p>
+
+                    <h2 id="liquidity">Liquidity & Exit</h2>
+
+                    <h3>Three exit paths (each with constraints)</h3>
+
+                    <p><strong>1. Redemption at maturity.</strong> Principal less fees, subject to solvency and redemption queues.</p>
+
+                    <p><strong>2. Secondary transfer.</strong> Whitelisted recipients only. Premium cap relative to NAV; excess routed to Commons.</p>
+
+                    <p><strong>3. Cross-vault portability.</strong> Stake exits one vault and enters another under rules, enabling mobility without liquidation cascades.</p>
+
+                    <h3>Redemption gates: preventing bank runs</h3>
+                    <p>Max redemption per epoch, variable queue times tied to liquidity, emergency halts when reserves breach threshold.</p>
+
+                    <h3>"Non-speculative" as a pricing rule</h3>
+                    <p><strong>NAV-bounded</strong>: tight band, excess premium taxed. <strong>Affordability-first</strong>: occupancy non-transferable or at-cost. <strong>Growth</strong>: capped appreciation with commons capture. </p>
+
+                    <h2 id="governance">Governance & Control Surfaces</h2>
+
+                    <h3>Polycentric governance</h3>
+
+                    <p><strong>Resident Council</strong> &mdash; community rules, service priorities, budget. Weight: occupancy + contribution.</p>
+
+                    <p><strong>Capital Council</strong> &mdash; leverage, reserves, capex, issuance. Weight: stake and ownership (bounded).</p>
+
+                    <p><strong>Trustee/Guardian</strong> &mdash; legal compliance, emergency actions, constitutional enforcement.</p>
+
+                    <h3>Constitutional constraints (hard-coded)</h3>
+                    <p>Leverage caps, reserve floors, affordability constraints, disclosure requirements. Upgrade-resistant by design.</p>
+
+                    <h3>Evidence-based governance</h3>
+                    <p>Proposals reference attested HomeOS metrics, audited financials, and risk reports.</p>
+
+                    <h2 id="legal">Legal & Compliance</h2>
+
+                    <h3>The Mass integration is not optional</h3>
+                    <p>SPV/trust is a Mass entity. Stake positions are Mass-native ownership. Transfers governed by identity gates and consent workflows. Distributions use Mass fiscal rails.</p>
+
+                    <h3>Assets carry legal modules</h3>
+                    <p>Each vault declares its jurisdictional module. Transfers compute the intersection of permissible actions. The asset enforces constraints programmatically.</p>
+
+                    <h3>Attestation streams are the regulator interface</h3>
+                    <p>Verifiable compliance without exposing private data: holder eligibility, transfer compliance, treasury flows, operating metrics integrity.</p>
+
+                    <h3>Jurisdiction SDK</h3>
+                    <p>Deployable legal + compliance modules per jurisdiction. Vaults instantiate within a chosen module. Upgradeable with governance and trustee oversight.</p>
+
+                    <h2 id="security">Security, Risk & Solvency</h2>
+
+                    <h3>Threat model</h3>
+                    <p>Title defects, operator fraud, valuation manipulation, data-feed corruption, governance capture, liquidity cascades, jurisdictional intervention, banking rail failure, executable contract bugs.</p>
+
+                    <h3>Controls</h3>
+                    <ul>
+                        <li>Segregated accounts (operating vs reserves vs distributions)</li>
+                        <li>Independent appraisal + HomeOS attested ops data feeding NAV</li>
+                        <li>Redemption gates + queues</li>
+                        <li>Role-based access control</li>
+                        <li>Operational + legal audit trails</li>
+                        <li>Emergency guardian powers with transparency constraints</li>
+                        <li>Insurance module (protocol-level underwriting)</li>
+                    </ul>
+
+                    <h3>Insurance and underwriting</h3>
+                    <p>Commons Treasury as first-loss backstop. Underwriting capital committed into risk-weighted pools. Vaults pay risk-based premiums from surplus. More vaults mean better risk modeling and cheaper capital.</p>
+
+                    <h2 id="instruments">Instrument Model</h2>
+
+                    <h3>Two instrument categories</h3>
+
+                    <p><strong>Vault Assets</strong>: stake positions, ownership units, use rights. Per-vault, jurisdiction-dependent.</p>
+
+                    <p><strong>Network instrument</strong>: protocol governance, underwriting collateral, commons fee capture.</p>
+
+                    <h3>Distribution design principles</h3>
+                    <ul>
+                        <li>Incentivize early vault bootstrapping, not permanent subsidy</li>
+                        <li>Reward verified contribution over passive speculation</li>
+                        <li>Fund long-term commons</li>
+                        <li>No short-term issuance schedules</li>
+                    </ul>
+
+                    <h3>Regulatory posture</h3>
+                    <p>Vault assets are regulated instruments; compliance embedded via Mass. The network instrument serves as governance weight and underwriting collateral. Jurisdiction-modular.</p>
+
+                    <h2 id="roadmap">Deployment Sequence</h2>
+
+                    <h4>Foundation</h4>
+                    <p>Legal wrapper, vault contracts, governance constitution, HomeOS evidence feed, Mass KYC gating.</p>
+
+                    <h4>Multi-vault registry + portability</h4>
+                    <p>Standard vault interfaces, cross-vault portability, redemption queue standardization.</p>
+
+                    <h4>Commons layer + underwriting</h4>
+                    <p>Protocol treasury, vault origination grants, insurance pools + risk scoring.</p>
+
+                    <h4>Jurisdiction SDK</h4>
+                    <p>Deployable templates per jurisdiction, EZ Stack integration hooks, attestation stream standards.</p>
+
+                    <h4>Resident and operator interface</h4>
+                    <p>Mobile dashboard, onboarding flows, contribution verification, governance UX.</p>
+
+                    <footer class="article-footer">
+                        <div class="author-info">
+                            <span class="author-name">Momentum</span>
+                        </div>
+
+                        <div class="further-reading">
+                            <h4>Related Infrastructure</h4>
+                            <ul>
+                                <li><a href="/smart-assets.html">Assets</a>: The foundational primitive Archai builds upon</li>
+                                <li><a href="/ez.html">Economic Zone Stack</a>: Jurisdictional infrastructure for vault deployment</li>
+                                <li><a href="/thesis.html">Thesis</a>: Programmable institutions and jurisdictional competition</li>
+                            </ul>
+                        </div>
+                    </footer>
+                </div>
+            </article>
+        </main>
+
+        <footer class="site-footer">
+          <div class="container">
+            <div class="footer-inner">
+              <div class="footer-contact">
+                <p class="footer-label">Inquiries</p>
+                <a href="mailto:info@momentum.inc">info@momentum.inc</a>
+                <p class="footer-secondary">Saadiyat Island, Abu Dhabi · Miami, USA · Cape Town, South Africa · Shanghai, China</p>
+              </div>
+              <nav class="footer-nav" aria-label="Footer">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+            <div class="footer-legal">
+              <p>The materials on this website are for illustration and discussion purposes only and do not constitute an offer to sell, or a solicitation of an offer to buy, any securities or interests. Any such offering may be made only to eligible investors via one or more confidential offering documents. Past performance is not indicative of future results. &copy; 2026 Momentum</p>
+            </div>
+          </div>
+        </footer>
+    </div>
+
+    <script src="/site.js" defer></script>
+</body>
+</html>

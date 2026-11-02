@@ -1,0 +1,264 @@
+/* ═══════════════════════════════════════
+   NETWORK ECONOMICS CALCULATOR
+   Interactive corridor compounding tool
+   ═══════════════════════════════════════ */
+
+.ne-calculator {
+    margin: var(--space-10) 0;
+    padding: var(--space-8) 0;
+    border-top: 1px solid var(--ink-hint);
+    border-bottom: 1px solid var(--ink-hint);
+}
+
+.ne-header {
+    margin-bottom: var(--space-6);
+}
+
+.ne-eyebrow {
+    display: block;
+    font-family: var(--font-caption);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: var(--space-1);
+}
+
+.ne-title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--tracking-display);
+    color: var(--ink);
+    margin: 0 0 var(--space-2);
+    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "calt" 1;
+}
+
+.ne-desc {
+    font-family: var(--font-text);
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
+    color: var(--ink-muted);
+    max-width: var(--measure);
+}
+
+/* ── Slider Controls ── */
+
+.ne-controls {
+    margin-bottom: var(--space-6);
+}
+
+.ne-slider-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.ne-slider-label {
+    font-family: var(--font-caption);
+    font-size: var(--text-sm);
+    color: var(--ink-muted);
+    white-space: nowrap;
+    min-width: 12ch;
+}
+
+.ne-slider-wrap {
+    flex: 1;
+    position: relative;
+}
+
+.ne-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    background: var(--ink-hint);
+    outline: none;
+    cursor: pointer;
+}
+
+.ne-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--ink);
+    border: 2px solid var(--paper);
+    cursor: pointer;
+    /* No border-radius — sharp rectangles per design constraints */
+}
+
+.ne-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--ink);
+    border: 2px solid var(--paper);
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.ne-slider:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+}
+
+.ne-slider-marks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-1);
+    padding: 0 2px;
+}
+
+.ne-slider-marks span {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-ghost);
+}
+
+.ne-zone-count {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--ink);
+    min-width: 4ch;
+    text-align: right;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "kern" 1, "lnum" 1, "tnum" 1;
+}
+
+/* ── Metrics Grid ── */
+
+.ne-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--ink-hint);
+    border-bottom: 1px solid var(--ink-hint);
+}
+
+.ne-metric-value {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: var(--leading-tight);
+    margin-bottom: 4px;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "kern" 1, "lnum" 1, "tnum" 1;
+}
+
+.ne-metric-label {
+    font-family: var(--font-caption);
+    font-size: var(--text-xs);
+    color: var(--ink-muted);
+    line-height: 1.35;
+}
+
+/* ── SVG Visual ── */
+
+.ne-visual {
+    margin-bottom: var(--space-6);
+    text-align: center;
+}
+
+.ne-svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+/* ── Reference Table ── */
+
+.ne-table-wrap {
+    margin-bottom: var(--space-3);
+    overflow-x: auto;
+}
+
+.ne-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-text);
+    font-size: var(--text-sm);
+}
+
+.ne-table th {
+    font-family: var(--font-caption);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: left;
+    padding: var(--space-1) var(--space-2);
+    border-bottom: 1px solid var(--ink-hint);
+    font-weight: 400;
+}
+
+.ne-table td {
+    padding: var(--space-1) var(--space-2);
+    border-bottom: 1px solid var(--ink-hint);
+    color: var(--ink);
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "kern" 1, "lnum" 1, "tnum" 1;
+}
+
+.ne-table td:first-child,
+.ne-table th:first-child {
+    padding-left: 0;
+}
+
+.ne-row-active td {
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--paper-dim);
+}
+
+.ne-footnote {
+    font-family: var(--font-caption);
+    font-size: var(--text-xs);
+    color: var(--ink-ghost);
+    line-height: var(--leading-body);
+    max-width: var(--measure);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+    .ne-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ne-slider-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-1);
+    }
+    .ne-zone-count {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .ne-metrics {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .ne-metric-value {
+        font-size: var(--text-lg);
+    }
+
+    .ne-table th,
+    .ne-table td {
+        padding: var(--space-1) var(--space-1);
+        font-size: var(--text-xs);
+    }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+    .ne-svg line,
+    .ne-svg circle {
+        transition: none;
+    }
+}

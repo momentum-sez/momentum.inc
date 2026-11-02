@@ -1,0 +1,374 @@
+/* ═══════════════════════════════════════
+   TERMINAL & CODE
+   Code blocks, deploy terminal,
+   syntax colors, code panel
+   ═══════════════════════════════════════ */
+
+/* --- Code Panel (macOS window chrome) --- */
+.code-panel {
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-terminal);
+    background: var(--terminal-deep);
+    border: 1px solid var(--terminal-border);
+}
+
+.code-panel .section-eyebrow {
+    color: var(--terminal-dim);
+}
+
+.code-panel .section-title {
+    color: var(--terminal-text);
+}
+
+.code-panel .section-subtitle {
+    color: var(--terminal-dim);
+}
+
+.code-block-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    background: var(--terminal-chrome);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.code-block-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.code-block-header .title {
+    margin-left: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--terminal-dim);
+    letter-spacing: 0.03em;
+}
+
+/* In scroll-synced layout: panel fills the sticky container */
+.code-panel-sticky .code-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    /* Sharp corners — no border-radius per designconstraints.md */
+}
+
+/* --- Code Block --- */
+.code-block {
+    background: var(--terminal-deep);
+    padding: var(--space-4) var(--space-3);
+    font-family: var(--font-mono);
+    font-size: clamp(12.5px, 0.76rem + 0.12vw, 14px);
+    line-height: 1.85;
+    color: var(--terminal-text);
+    overflow-x: auto;
+    overflow-y: visible;
+    white-space: pre;
+    word-break: normal;
+    font-variant-ligatures: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    tab-size: 2;
+}
+
+/* In scroll-synced layout: code block fills the scene and scrolls */
+.code-scroll-layout .code-block {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--terminal-scrollbar) transparent;
+}
+
+.code-scroll-layout .code-block::-webkit-scrollbar { width: 6px; }
+.code-scroll-layout .code-block::-webkit-scrollbar-track { background: transparent; }
+.code-scroll-layout .code-block::-webkit-scrollbar-thumb { background: var(--terminal-scrollbar); border-radius: 3px; }
+.code-scroll-layout .code-block::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* Syntax coloring */
+.code-prompt  { color: var(--terminal-accent); }
+.code-comment { color: rgba(122, 118, 114, 0.7); font-style: italic; }
+.code-key     { color: var(--syntax-key); }
+.code-value   { color: var(--terminal-accent); }
+.code-string  { color: var(--syntax-string); }
+.code-success { color: var(--color-live); }
+.code-dim     { color: var(--terminal-dim); }
+.code-tree    { color: rgba(255, 255, 255, 0.15); }
+.code-corridor-cross { color: var(--corridor-cross); }
+.code-corridor-fz    { color: var(--corridor-fz-fz); }
+.code-domain         { color: var(--terminal-accent); }
+
+/* Dark scrollbar for code blocks (horizontal) */
+.code-block::-webkit-scrollbar { height: 6px; }
+.code-block::-webkit-scrollbar-track { background: transparent; }
+.code-block::-webkit-scrollbar-thumb { background: var(--terminal-scrollbar); border-radius: 3px; }
+.code-block::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* --- CLI Output Block --- */
+.code-cli {
+    margin-top: var(--space-6);
+    padding: var(--space-3) var(--space-5);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    font-family: var(--font-mono);
+    font-size: clamp(12.5px, 0.78rem + 0.1vw, 14px);
+    color: rgba(229, 226, 223, 0.8);
+    line-height: 1.7;
+}
+
+.code-cli .code-success {
+    color: var(--color-live);
+}
+
+/* --- Deploy Terminal --- */
+.deploy-terminal {
+    margin-top: var(--space-8);
+    position: relative;
+}
+
+.deploy-terminal-panel {
+    position: relative;
+    overflow: hidden;
+    background: var(--terminal-deep);
+    border: 1px solid var(--terminal-border);
+    box-shadow: var(--shadow-terminal-deep);
+}
+
+.deploy-terminal-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1-5) var(--space-3);
+    background: var(--terminal-deep);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.deploy-terminal-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.deploy-terminal-header .dot:nth-child(1) { background: var(--dot-red); }
+.deploy-terminal-header .dot:nth-child(2) { background: var(--dot-yellow); }
+.deploy-terminal-header .dot:nth-child(3) { background: var(--dot-green); }
+
+.deploy-terminal-header .title {
+    margin-left: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--terminal-dim);
+    letter-spacing: 0.03em;
+}
+
+.deploy-terminal-header .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-live);
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.deploy-terminal-header .status-dot.active {
+    opacity: 1;
+}
+
+.deploy-terminal-body {
+    padding: var(--space-5) var(--space-6);
+    font-family: var(--font-mono);
+    font-size: clamp(12px, 0.75rem + 0.1vw, 13.5px);
+    line-height: 1.85;
+    color: var(--terminal-text);
+    height: 360px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 8%, #000 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 8%, #000 100%);
+    scrollbar-width: thin;
+    scrollbar-color: var(--terminal-scrollbar) transparent;
+}
+
+.deploy-terminal-body::-webkit-scrollbar { width: 4px; }
+.deploy-terminal-body::-webkit-scrollbar-track { background: transparent; }
+.deploy-terminal-body::-webkit-scrollbar-thumb { background: var(--terminal-scrollbar); border-radius: 2px; }
+.deploy-terminal-body::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* Command groups */
+.deploy-cmd-group {
+    margin-bottom: var(--space-3);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.35s var(--ease-out-expo), transform 0.35s var(--ease-out-expo);
+}
+
+.deploy-cmd-group.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.deploy-cmd {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.deploy-cmd .prompt {
+    color: var(--terminal-accent);
+}
+
+.deploy-cmd .cmd-text {
+    color: var(--terminal-text);
+}
+
+.deploy-cmd .cmd-flag {
+    color: var(--terminal-dim);
+}
+
+.deploy-cmd .cmd-arg {
+    color: var(--syntax-string);
+}
+
+/* Output lines */
+.deploy-output {
+    white-space: pre-wrap;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.deploy-output.visible {
+    opacity: 1;
+}
+
+.deploy-output .success {
+    color: var(--color-live);
+}
+
+.deploy-output .info {
+    color: var(--terminal-dim);
+}
+
+.deploy-output .corridor-type {
+    color: var(--corridor-cross);
+    font-size: 0.9em;
+    letter-spacing: 0.02em;
+}
+
+.deploy-output .corridor-type--fz {
+    color: var(--corridor-fz-fz);
+}
+
+.deploy-output .status-active {
+    color: var(--color-live);
+}
+
+.deploy-output .value {
+    color: var(--terminal-accent);
+}
+
+.deploy-output .dim {
+    color: var(--terminal-dim);
+}
+
+.deploy-output .hash {
+    color: rgba(184, 159, 130, 0.5);
+    font-size: 0.9em;
+}
+
+.deploy-output .tree {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+.deploy-output .tree-last {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+/* Block cursor */
+.deploy-cursor {
+    color: var(--terminal-accent);
+    margin-left: 1px;
+}
+
+/* Divider between command groups */
+.deploy-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.04);
+    margin: var(--space-2) 0;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.deploy-divider.visible {
+    opacity: 1;
+}
+
+/* Summary line */
+.deploy-summary {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
+}
+
+.deploy-summary.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.deploy-summary .label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: var(--tracking-caps);
+    text-transform: uppercase;
+    color: var(--terminal-dim);
+    margin-bottom: 4px;
+}
+
+.deploy-summary .value {
+    color: var(--terminal-accent);
+    font-size: clamp(13px, 0.82rem + 0.1vw, 15px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .code-block {
+        font-size: 11.5px;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        overflow-x: hidden;
+    }
+
+    .deploy-terminal-body {
+        padding: var(--space-3) var(--space-4);
+        font-size: 11.5px;
+        height: 280px;
+    }
+
+    .deploy-terminal-panel {
+        /* Sharp corners maintained at all breakpoints */
+    }
+}
+
+@media (max-width: 480px) {
+    .deploy-terminal-body {
+        height: 220px;
+        padding: var(--space-2) var(--space-3);
+        font-size: 11px;
+    }
+
+    .code-block {
+        font-size: 11px;
+        padding: var(--space-3) var(--space-2);
+    }
+}

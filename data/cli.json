@@ -1,0 +1,318 @@
+[
+  {
+    "name": "validate",
+    "description": "Validate modules, profiles, and zones against their schemas."
+  },
+  {
+    "name": "lock",
+    "description": "Generate or verify a deterministic lockfile for a zone configuration."
+  },
+  {
+    "name": "corridor",
+    "description": "Corridor lifecycle management (create, submit, activate, halt, etc.).",
+    "subcommands": [
+      {
+        "name": "create",
+        "description": "Create a new corridor in DRAFT state."
+      },
+      {
+        "name": "submit",
+        "description": "Submit a draft corridor for regulatory approval (DRAFT → PENDING)."
+      },
+      {
+        "name": "activate",
+        "description": "Activate an approved corridor (PENDING → ACTIVE)."
+      },
+      {
+        "name": "halt",
+        "description": "Halt an active corridor by authority order (ACTIVE → HALTED)."
+      },
+      {
+        "name": "suspend",
+        "description": "Temporarily suspend an active corridor (ACTIVE → SUSPENDED)."
+      },
+      {
+        "name": "resume",
+        "description": "Resume a suspended corridor (SUSPENDED → ACTIVE)."
+      },
+      {
+        "name": "status",
+        "description": "Show current corridor state."
+      },
+      {
+        "name": "verify",
+        "description": "commitments by replaying receipts through `ReceiptChain::append`."
+      },
+      {
+        "name": "availability-attest",
+        "description": "Create a signed corridor availability attestation."
+      },
+      {
+        "name": "availability-verify",
+        "description": "Verify a signed corridor availability attestation."
+      },
+      {
+        "name": "regpack-bind",
+        "description": "Bind a regpack digest to a corridor/domain scope."
+      },
+      {
+        "name": "regpack-verify",
+        "description": "Verify all regpack bindings for a corridor against CAS content."
+      },
+      {
+        "name": "state",
+        "description": "Corridor receipt-chain state operations."
+      },
+      {
+        "name": "plan",
+        "description": "considering cost, time, and compliance domains."
+      },
+      {
+        "name": "mesh",
+        "description": "mesh in DOT (Graphviz) or JSON (adjacency) format."
+      }
+    ]
+  },
+  {
+    "name": "artifact",
+    "description": "Content-addressed storage operations (store, resolve, verify).",
+    "subcommands": [
+      {
+        "name": "verify",
+        "description": "Verify transitive artifact dependencies from a CAS root."
+      }
+    ]
+  },
+  {
+    "name": "asset",
+    "description": "Asset lifecycle and state-chain operations.",
+    "subcommands": [
+      {
+        "name": "genesis-init",
+        "description": "Initialize an asset genesis envelope with deterministic genesis root."
+      },
+      {
+        "name": "genesis-hash",
+        "description": "Compute deterministic hash for an asset genesis JSON document."
+      },
+      {
+        "name": "registry-init",
+        "description": "Initialize an asset registry envelope."
+      },
+      {
+        "name": "checkpoint-build",
+        "description": "Build checkpoint summary from an asset state chain file."
+      },
+      {
+        "name": "attestation-init",
+        "description": "Create a base asset attestation envelope."
+      },
+      {
+        "name": "compliance-eval",
+        "description": "Evaluate minimal compliance signal for an asset JSON document."
+      },
+      {
+        "name": "module",
+        "description": "Asset module operations."
+      },
+      {
+        "name": "state",
+        "description": "Asset state-chain operations."
+      },
+      {
+        "name": "anchor-verify",
+        "description": "Verify anchor receipt against a checkpoint digest."
+      }
+    ]
+  },
+  {
+    "name": "law",
+    "description": "Lawpack ingest, attestation, and verification operations.",
+    "subcommands": [
+      {
+        "name": "ingest",
+        "description": "Ingest lawpack payload and persist deterministic artifact."
+      },
+      {
+        "name": "attest-init",
+        "description": "Initialize law attestation envelope."
+      },
+      {
+        "name": "verify-lawpack",
+        "description": "Verify lawpack payload digest and basic shape."
+      },
+      {
+        "name": "verify-attestation",
+        "description": "Verify law attestation envelope."
+      }
+    ]
+  },
+  {
+    "name": "regpack",
+    "description": "Build, store, and verify regulatory packs (regpacks).",
+    "subcommands": [
+      {
+        "name": "build",
+        "description": "Build a content-addressed regpack artifact for a jurisdiction and domain."
+      },
+      {
+        "name": "ingest",
+        "description": "Ingest a regpack artifact JSON file into local regpack CAS directory."
+      },
+      {
+        "name": "fetch-sanctions",
+        "description": "Fetch sanctions entries/snapshot for a jurisdiction."
+      },
+      {
+        "name": "verify",
+        "description": "Verify regpack integrity and required metadata."
+      },
+      {
+        "name": "digest",
+        "description": "Compute and print digest(s) for a regpack artifact."
+      },
+      {
+        "name": "sanctions-check",
+        "description": "Screen a single entity against jurisdiction sanctions entries."
+      },
+      {
+        "name": "sanctions-batch",
+        "description": "Screen a batch of entities against jurisdiction sanctions entries."
+      },
+      {
+        "name": "license-verify",
+        "description": "Verify whether a license type is covered in regpack deadlines/reporting requirements."
+      },
+      {
+        "name": "attest",
+        "description": "Create a VC attestation for a regpack digest."
+      },
+      {
+        "name": "attest-sanctions-freshness",
+        "description": "Create and evaluate sanctions freshness attestation."
+      }
+    ]
+  },
+  {
+    "name": "agent",
+    "description": "Local agent lifecycle and policy checks.",
+    "subcommands": [
+      {
+        "name": "spawn",
+        "description": "Spawn a local agent record."
+      },
+      {
+        "name": "status",
+        "description": "Print status of one local agent."
+      },
+      {
+        "name": "terminate",
+        "description": "Terminate an existing local agent record."
+      },
+      {
+        "name": "policy-check",
+        "description": "Evaluate whether an action is allowed by the stored policy string."
+      }
+    ]
+  },
+  {
+    "name": "arbitration",
+    "description": "Arbitration institutions, disputes, evidence, and ruling workflows.",
+    "subcommands": [
+      {
+        "name": "institution-list",
+        "description": "List the built-in arbitration institution registry."
+      },
+      {
+        "name": "institution-profile",
+        "description": "Show one institution profile by identifier."
+      },
+      {
+        "name": "institution-verify",
+        "description": "Verify institution support for jurisdiction/dispute type constraints."
+      },
+      {
+        "name": "dispute-init",
+        "description": "Initialize a dispute filing envelope."
+      },
+      {
+        "name": "dispute-file",
+        "description": "File a dispute using a dispute-init envelope."
+      },
+      {
+        "name": "evidence-package-init",
+        "description": "Create an evidence package for a dispute."
+      },
+      {
+        "name": "evidence-submit",
+        "description": "Submit an evidence package into local arbitration storage."
+      },
+      {
+        "name": "dispute-respond",
+        "description": "Transition a filed dispute into institution review."
+      },
+      {
+        "name": "ruling-verify",
+        "description": "Verify ruling digest integrity and optional dispute binding."
+      },
+      {
+        "name": "ruling-check-enforceable",
+        "description": "Check whether a dispute ruling is enforceable in a jurisdiction."
+      },
+      {
+        "name": "ruling-enforce",
+        "description": "Transition a decided dispute into enforced state."
+      },
+      {
+        "name": "dispute-settle",
+        "description": "Settle a dispute from pre-decision stages."
+      }
+    ]
+  },
+  {
+    "name": "signing",
+    "description": "Ed25519 key generation, VC signing, and signature verification."
+  },
+  {
+    "name": "zone",
+    "description": "Zone composition and synthetic zone generation.",
+    "subcommands": [
+      {
+        "name": "compose",
+        "description": "Compose a synthetic zone from a composition specification."
+      }
+    ]
+  },
+  {
+    "name": "init",
+    "description": "One-command zone deployment — the \"AWS of Economic Zones\" entry point."
+  },
+  {
+    "name": "deploy",
+    "description": "Deploy infrastructure generation (Docker Compose for N zones).",
+    "subcommands": [
+      {
+        "name": "generate",
+        "description": "Generate a Docker Compose file for N-zone deployment."
+      }
+    ]
+  },
+  {
+    "name": "audit",
+    "description": "inclusion proofs for every receipt.",
+    "subcommands": [
+      {
+        "name": "generate",
+        "description": "Generate an audit proof for a corridor from a receipt chain file."
+      },
+      {
+        "name": "verify",
+        "description": "Verify a previously generated audit proof offline."
+      }
+    ]
+  },
+  {
+    "name": "demo",
+    "description": "receipt chain with MMR, and Ed25519 signing — all offline."
+  }
+]

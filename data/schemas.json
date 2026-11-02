@@ -1,0 +1,6585 @@
+[
+  {
+    "file": "agentic.action-schedule.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/agentic.action-schedule.schema.json",
+    "title": "MEZAgenticScheduledAction",
+    "type": "object",
+    "required": [
+      "action_id",
+      "asset_id",
+      "action_type",
+      "trigger_id",
+      "policy_id",
+      "scheduled_at",
+      "execute_at",
+      "status"
+    ],
+    "properties": [
+      {
+        "name": "action_id",
+        "type": "string",
+        "description": "Unique identifier for this scheduled action"
+      },
+      {
+        "name": "asset_id",
+        "type": "string",
+        "description": "Asset this action applies to"
+      },
+      {
+        "name": "action_type",
+        "type": "string",
+        "description": "Type of action to execute"
+      },
+      {
+        "name": "trigger_id",
+        "type": "string",
+        "description": "Trigger that caused this action"
+      },
+      {
+        "name": "policy_id",
+        "type": "string",
+        "description": "Policy that matched"
+      },
+      {
+        "name": "scheduled_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "When action was scheduled"
+      },
+      {
+        "name": "execute_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "When action should execute"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "description": "Current status of the action",
+        "enum": [
+          "pending",
+          "executing",
+          "completed",
+          "failed",
+          "cancelled",
+          "retry_pending"
+        ]
+      },
+      {
+        "name": "retry_count",
+        "type": "integer",
+        "description": "Number of retry attempts",
+        "minimum": 0
+      },
+      {
+        "name": "max_retries",
+        "type": "integer",
+        "description": "Maximum retry attempts",
+        "minimum": 0
+      },
+      {
+        "name": "error_message",
+        "type": "string",
+        "description": "Error message if failed"
+      },
+      {
+        "name": "completed_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "When action completed"
+      },
+      {
+        "name": "result",
+        "type": "object",
+        "description": "Result data from execution"
+      },
+      {
+        "name": "authorization_status",
+        "type": "string",
+        "description": "Status of authorization if required",
+        "enum": [
+          "not_required",
+          "pending",
+          "approved",
+          "rejected"
+        ]
+      },
+      {
+        "name": "authorizations",
+        "type": "array",
+        "description": "Authorization signatures received"
+      }
+    ]
+  },
+  {
+    "file": "agentic.audit-trail.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/agentic.audit-trail.schema.json",
+    "title": "MEZAgenticAuditTrailEntry",
+    "type": "object",
+    "required": [
+      "entry_id",
+      "entry_type",
+      "timestamp"
+    ],
+    "properties": [
+      {
+        "name": "entry_id",
+        "type": "string",
+        "description": "Unique identifier for this audit entry"
+      },
+      {
+        "name": "entry_type",
+        "type": "string",
+        "description": "Type of audit entry",
+        "enum": [
+          "trigger_received",
+          "policy_evaluated",
+          "action_scheduled",
+          "action_executed",
+          "action_failed",
+          "action_cancelled",
+          "authorization_requested",
+          "authorization_received",
+          "monitor_started",
+          "monitor_stopped",
+          "monitor_error",
+          "policy_registered",
+          "policy_unregistered"
+        ]
+      },
+      {
+        "name": "timestamp",
+        "type": "string",
+        "format": "date-time",
+        "description": "When this entry was recorded"
+      },
+      {
+        "name": "asset_id",
+        "type": "string",
+        "description": "Asset ID if applicable"
+      },
+      {
+        "name": "trigger_data",
+        "type": "object",
+        "description": "Trigger data if entry relates to a trigger"
+      },
+      {
+        "name": "evaluation_result",
+        "type": "object",
+        "description": "Policy evaluation result if applicable"
+      },
+      {
+        "name": "action_data",
+        "type": "object",
+        "description": "Action data if entry relates to an action"
+      },
+      {
+        "name": "monitor_data",
+        "type": "object",
+        "description": "Monitor data if entry relates to a monitor"
+      },
+      {
+        "name": "metadata",
+        "type": "object",
+        "description": "Additional metadata"
+      },
+      {
+        "name": "actor",
+        "type": "string",
+        "description": "DID or identifier of actor causing this entry"
+      },
+      {
+        "name": "correlation_id",
+        "type": "string",
+        "description": "ID linking related audit entries"
+      }
+    ]
+  },
+  {
+    "file": "agentic.environment-monitor.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/agentic.environment-monitor.schema.json",
+    "title": "MEZAgenticEnvironmentMonitor",
+    "type": "object",
+    "required": [
+      "monitor_id",
+      "monitor_type",
+      "mode",
+      "status"
+    ],
+    "properties": [
+      {
+        "name": "monitor_id",
+        "type": "string",
+        "description": "Unique identifier for this monitor instance"
+      },
+      {
+        "name": "monitor_type",
+        "type": "string",
+        "description": "Type of environment being monitored",
+        "enum": [
+          "sanctions_list",
+          "license_status",
+          "corridor_state",
+          "guidance_update",
+          "checkpoint_due",
+          "key_rotation"
+        ]
+      },
+      {
+        "name": "mode",
+        "type": "string",
+        "description": "Operating mode for the monitor",
+        "enum": [
+          "polling",
+          "webhook",
+          "hybrid"
+        ]
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "description": "Current operational status",
+        "enum": [
+          "stopped",
+          "starting",
+          "running",
+          "stopping",
+          "error",
+          "paused"
+        ]
+      },
+      {
+        "name": "poll_interval_seconds",
+        "type": "integer",
+        "description": "Interval between polling attempts in seconds",
+        "minimum": 1
+      },
+      {
+        "name": "enabled",
+        "type": "boolean",
+        "description": "Whether the monitor is enabled"
+      },
+      {
+        "name": "config",
+        "type": "object",
+        "description": "Monitor-type-specific configuration"
+      },
+      {
+        "name": "max_retries",
+        "type": "integer",
+        "description": "Maximum retry attempts on failure",
+        "minimum": 0
+      },
+      {
+        "name": "retry_delay_seconds",
+        "type": "integer",
+        "description": "Delay between retry attempts",
+        "minimum": 1
+      },
+      {
+        "name": "error_threshold",
+        "type": "integer",
+        "description": "Consecutive errors before transitioning to error state",
+        "minimum": 1
+      },
+      {
+        "name": "last_poll_time",
+        "type": "string",
+        "format": "date-time",
+        "description": "Timestamp of last successful poll"
+      },
+      {
+        "name": "consecutive_errors",
+        "type": "integer",
+        "description": "Current count of consecutive errors",
+        "minimum": 0
+      },
+      {
+        "name": "watched_entities",
+        "type": "array",
+        "description": "Entities being watched (for sanctions/license monitors)"
+      },
+      {
+        "name": "tracked_corridors",
+        "type": "array",
+        "description": "Corridor IDs being tracked (for corridor monitor)"
+      }
+    ]
+  },
+  {
+    "file": "agentic.policy-evaluation.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/agentic.policy-evaluation.schema.json",
+    "title": "MEZAgenticPolicyEvaluation",
+    "type": "object",
+    "required": [
+      "policy_id",
+      "trigger_id",
+      "matched",
+      "evaluated_at"
+    ],
+    "properties": [
+      {
+        "name": "evaluation_id",
+        "type": "string",
+        "description": "Unique identifier for this evaluation"
+      },
+      {
+        "name": "policy_id",
+        "type": "string",
+        "description": "ID of the policy evaluated"
+      },
+      {
+        "name": "trigger_id",
+        "type": "string",
+        "description": "ID of the trigger evaluated"
+      },
+      {
+        "name": "matched",
+        "type": "boolean",
+        "description": "Whether the policy condition was satisfied"
+      },
+      {
+        "name": "action",
+        "type": "string",
+        "description": "Action to be taken if matched"
+      },
+      {
+        "name": "authorization_requirement",
+        "type": "string",
+        "description": "Required authorization for action"
+      },
+      {
+        "name": "condition_details",
+        "type": "object",
+        "description": "Details of condition evaluation"
+      },
+      {
+        "name": "evaluated_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "When evaluation occurred"
+      },
+      {
+        "name": "evaluation_duration_ms",
+        "type": "number",
+        "description": "Evaluation duration in milliseconds"
+      },
+      {
+        "name": "determinism_hash",
+        "type": "string",
+        "description": "Hash of inputs for determinism verification per Theorem 17.1"
+      }
+    ]
+  },
+  {
+    "file": "agentic.policy.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/agentic.policy.schema.json",
+    "title": "MEZAgenticPolicy",
+    "type": "object",
+    "required": [
+      "policy_id",
+      "trigger_type",
+      "action"
+    ],
+    "properties": [
+      {
+        "name": "policy_id",
+        "type": "string",
+        "description": "Unique identifier for this policy"
+      },
+      {
+        "name": "trigger_type",
+        "type": "string",
+        "description": "Trigger type this policy responds to"
+      },
+      {
+        "name": "condition",
+        "type": "object",
+        "description": "Condition predicate that must be satisfied"
+      },
+      {
+        "name": "action",
+        "type": "string",
+        "description": "Action to take when policy matches",
+        "enum": [
+          "halt",
+          "resume",
+          "update_manifest",
+          "transfer",
+          "arbitration_enforce",
+          "governance_vote",
+          "issue",
+          "retire"
+        ]
+      },
+      {
+        "name": "authorization_requirement",
+        "type": "string",
+        "description": "Required authorization level for action execution",
+        "enum": [
+          "automatic",
+          "quorum",
+          "unanimous",
+          "governance"
+        ]
+      },
+      {
+        "name": "enabled",
+        "type": "boolean",
+        "description": "Whether this policy is active"
+      },
+      {
+        "name": "priority",
+        "type": "integer",
+        "description": "Policy priority for ordering (higher = earlier evaluation)"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "Human-readable description of policy purpose"
+      },
+      {
+        "name": "created_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "updated_at",
+        "type": "string",
+        "format": "date-time"
+      }
+    ]
+  },
+  {
+    "file": "agentic.trigger.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/agentic.trigger.schema.json",
+    "title": "MEZAgenticTrigger",
+    "type": "object",
+    "required": [
+      "trigger_type",
+      "data",
+      "timestamp"
+    ],
+    "properties": [
+      {
+        "name": "trigger_id",
+        "type": "string",
+        "description": "Unique identifier for this trigger event"
+      },
+      {
+        "name": "trigger_type",
+        "type": "string",
+        "description": "Type of trigger event per Definition 17.1",
+        "enum": [
+          "sanctions_list_update",
+          "license_status_change",
+          "guidance_update",
+          "compliance_deadline",
+          "dispute_filed",
+          "ruling_received",
+          "appeal_period_expired",
+          "enforcement_due",
+          "corridor_state_change",
+          "settlement_anchor_available",
+          "watcher_quorum_reached",
+          "checkpoint_due",
+          "key_rotation_due",
+          "governance_vote_resolved",
+          "tax_year_end",
+          "withholding_due"
+        ]
+      },
+      {
+        "name": "data",
+        "type": "object",
+        "description": "Trigger-specific payload data"
+      },
+      {
+        "name": "timestamp",
+        "type": "string",
+        "format": "date-time",
+        "description": "When the trigger was emitted"
+      },
+      {
+        "name": "source_monitor_id",
+        "type": "string",
+        "description": "ID of the monitor that emitted this trigger"
+      },
+      {
+        "name": "impact_level",
+        "type": "string",
+        "description": "Assessed impact level of this trigger",
+        "enum": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "critical"
+        ]
+      },
+      {
+        "name": "affected_assets",
+        "type": "array",
+        "description": "Asset IDs affected by this trigger"
+      }
+    ]
+  },
+  {
+    "file": "arbitration.claim.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/arbitration.claim.schema.json",
+    "title": "MEZ Arbitration Claim",
+    "type": "object",
+    "required": [
+      "claim_id",
+      "claim_type",
+      "description"
+    ],
+    "properties": [
+      {
+        "name": "claim_id",
+        "type": "string",
+        "description": "Unique identifier for this claim within the dispute."
+      },
+      {
+        "name": "claim_type",
+        "type": "string",
+        "description": "Category of the claim.",
+        "enum": [
+          "breach_of_contract",
+          "non_conforming_goods",
+          "payment_default",
+          "delivery_failure",
+          "quality_defect",
+          "documentation_deficiency",
+          "misrepresentation",
+          "force_majeure_dispute",
+          "intellectual_property",
+          "warranty_breach",
+          "other"
+        ]
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "Detailed description of the claim."
+      },
+      {
+        "name": "amount",
+        "type": "object",
+        "description": "Amount claimed."
+      },
+      {
+        "name": "legal_basis",
+        "type": "object"
+      },
+      {
+        "name": "supporting_receipts",
+        "type": "array",
+        "description": "Corridor receipts supporting this claim."
+      },
+      {
+        "name": "supporting_evidence",
+        "type": "array",
+        "description": "Evidence artifacts supporting this claim."
+      }
+    ]
+  },
+  {
+    "file": "arbitration.dispute-request.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/arbitration.dispute-request.schema.json",
+    "title": "MEZ Arbitration Dispute Request",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "dispute_id",
+      "institution_id",
+      "corridor_id",
+      "claimant",
+      "respondent",
+      "claims",
+      "created_at"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZDisputeRequest"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "dispute_id",
+        "type": "string",
+        "pattern": "^dispute:[a-f0-9-]+$",
+        "description": "Unique dispute identifier"
+      },
+      {
+        "name": "institution_id",
+        "type": "string",
+        "description": "Arbitration institution to handle the dispute"
+      },
+      {
+        "name": "corridor_id",
+        "type": "string",
+        "description": "The corridor from which the dispute arose"
+      },
+      {
+        "name": "arbitration_corridor_id",
+        "type": "string",
+        "description": "The arbitration corridor handling this dispute (if different from trade corridor)"
+      },
+      {
+        "name": "claimant",
+        "type": ""
+      },
+      {
+        "name": "respondent",
+        "type": ""
+      },
+      {
+        "name": "dispute_type",
+        "type": "string",
+        "enum": [
+          "breach_of_contract",
+          "non_conforming_goods",
+          "payment_default",
+          "delivery_failure",
+          "warranty_claim",
+          "documentation_dispute"
+        ]
+      },
+      {
+        "name": "claims",
+        "type": "array"
+      },
+      {
+        "name": "relief_sought",
+        "type": "object"
+      },
+      {
+        "name": "evidence_bundle_ref",
+        "type": "",
+        "description": "Reference to the evidence bundle (witness bundle)"
+      },
+      {
+        "name": "corridor_receipts_refs",
+        "type": "array",
+        "description": "References to corridor receipts relevant to the dispute"
+      },
+      {
+        "name": "governing_law",
+        "type": "string",
+        "description": "Governing law for the dispute (jurisdiction_id)"
+      },
+      {
+        "name": "seat_of_arbitration",
+        "type": "string",
+        "description": "Seat/place of arbitration"
+      },
+      {
+        "name": "language",
+        "type": "string",
+        "description": "Language of arbitration proceedings"
+      },
+      {
+        "name": "procedural_preferences",
+        "type": "object"
+      },
+      {
+        "name": "escrow",
+        "type": "object",
+        "description": "Escrow details for filing fee"
+      },
+      {
+        "name": "created_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "submitted_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "Claimant's signature on the dispute request"
+      }
+    ]
+  },
+  {
+    "file": "arbitration.enforcement-receipt.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/arbitration.enforcement-receipt.schema.json",
+    "title": "MEZ Arbitration Enforcement Receipt",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "enforcement_id",
+      "ruling_id",
+      "corridor_id",
+      "orders_enforced",
+      "enforcement_method",
+      "success"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZEnforcementReceipt"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "enforcement_id",
+        "type": "string",
+        "description": "Unique identifier for this enforcement action."
+      },
+      {
+        "name": "ruling_id",
+        "type": "string",
+        "description": "ID of the ruling being enforced."
+      },
+      {
+        "name": "corridor_id",
+        "type": "string",
+        "description": "Corridor in which enforcement occurred."
+      },
+      {
+        "name": "orders_enforced",
+        "type": "array",
+        "description": "Order IDs that were enforced."
+      },
+      {
+        "name": "enforcement_method",
+        "type": "string",
+        "description": "Method used for enforcement.",
+        "enum": [
+          "smart_asset",
+          "escrow_release",
+          "manual",
+          "court"
+        ]
+      },
+      {
+        "name": "enforcement_timestamp",
+        "type": "string",
+        "format": "date-time",
+        "description": "When enforcement occurred."
+      },
+      {
+        "name": "success",
+        "type": "boolean",
+        "description": "Whether enforcement was successful."
+      },
+      {
+        "name": "smart_asset_transitions",
+        "type": "array",
+        "description": "Smart asset transitions executed."
+      },
+      {
+        "name": "escrow_releases",
+        "type": "array",
+        "description": "Escrow releases executed."
+      },
+      {
+        "name": "failure_reason",
+        "type": "string",
+        "description": "Reason for enforcement failure, if applicable."
+      },
+      {
+        "name": "anchored_in_receipt",
+        "type": "string",
+        "description": "Digest of corridor receipt anchoring this enforcement."
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "Optional DataIntegrityProof."
+      }
+    ]
+  },
+  {
+    "file": "arbitration.escrow.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/arbitration.escrow.schema.json",
+    "title": "ArbitrationEscrow",
+    "type": "object",
+    "required": [
+      "escrow_id",
+      "dispute_id",
+      "escrow_type",
+      "amount",
+      "status"
+    ],
+    "properties": [
+      {
+        "name": "escrow_id",
+        "type": "string",
+        "pattern": "^escrow:[a-f0-9-]+$",
+        "description": "Unique identifier for this escrow"
+      },
+      {
+        "name": "dispute_id",
+        "type": "string",
+        "pattern": "^disp-[0-9]{4}-[0-9]+$",
+        "description": "Associated dispute identifier"
+      },
+      {
+        "name": "escrow_type",
+        "type": "string",
+        "description": "Purpose of the escrow",
+        "enum": [
+          "filing_fee",
+          "security_deposit",
+          "award_escrow",
+          "appeal_bond"
+        ]
+      },
+      {
+        "name": "amount",
+        "type": "object"
+      },
+      {
+        "name": "depositor",
+        "type": "string",
+        "pattern": "^did:",
+        "description": "DID of the party who deposited funds"
+      },
+      {
+        "name": "beneficiary",
+        "type": "string",
+        "pattern": "^did:",
+        "description": "DID of the designated beneficiary"
+      },
+      {
+        "name": "custody_address",
+        "type": "string",
+        "description": "Custody address for the escrowed funds"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "description": "Current status of the escrow",
+        "enum": [
+          "pending",
+          "funded",
+          "partially_released",
+          "fully_released",
+          "forfeited"
+        ]
+      },
+      {
+        "name": "release_conditions",
+        "type": "array",
+        "description": "Conditions under which escrow may be released"
+      },
+      {
+        "name": "transactions",
+        "type": "array",
+        "description": "History of escrow transactions"
+      },
+      {
+        "name": "created_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "updated_at",
+        "type": "string",
+        "format": "date-time"
+      }
+    ]
+  },
+  {
+    "file": "arbitration.evidence-package.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/arbitration.evidence-package.schema.json",
+    "title": "ArbitrationEvidencePackage",
+    "type": "object",
+    "required": [
+      "evidence_package_id",
+      "dispute_id",
+      "submitting_party",
+      "submission_timestamp",
+      "evidence_items",
+      "witness_bundle_ref"
+    ],
+    "properties": [
+      {
+        "name": "evidence_package_id",
+        "type": "string",
+        "pattern": "^evidence-pkg:[a-f0-9-]+$",
+        "description": "Unique identifier for this evidence package"
+      },
+      {
+        "name": "dispute_id",
+        "type": "string",
+        "pattern": "^disp-[0-9]{4}-[0-9]+$",
+        "description": "Reference to the dispute this evidence relates to"
+      },
+      {
+        "name": "submitting_party",
+        "type": "string",
+        "pattern": "^did:",
+        "description": "DID of the party submitting this evidence"
+      },
+      {
+        "name": "submission_timestamp",
+        "type": "string",
+        "format": "date-time",
+        "description": "When this evidence package was submitted"
+      },
+      {
+        "name": "evidence_items",
+        "type": "array",
+        "description": "Individual evidence items in this package"
+      },
+      {
+        "name": "witness_bundle_ref",
+        "type": "",
+        "description": "Complete witness bundle containing all artifacts"
+      },
+      {
+        "name": "submission_signature",
+        "type": "object",
+        "description": "Cryptographic signature from submitting party"
+      }
+    ]
+  },
+  {
+    "file": "arbitration.institution.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/arbitration.institution.schema.json",
+    "title": "MEZ Arbitration Institution",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "institution_id",
+      "name",
+      "jurisdiction_id"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZArbitrationInstitution"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "institution_id",
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "description": "Unique institution identifier (e.g., 'difc-lcia', 'siac', 'icc')"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "Full legal name of the institution"
+      },
+      {
+        "name": "jurisdiction_id",
+        "type": "string",
+        "description": "Primary jurisdiction (e.g., 'uae-difc', 'sg', 'fr-paris')"
+      },
+      {
+        "name": "rules_url",
+        "type": "string",
+        "format": "uri",
+        "description": "URL to the institution's arbitration rules"
+      },
+      {
+        "name": "rules_version",
+        "type": "string",
+        "description": "Version of rules currently in force"
+      },
+      {
+        "name": "api_base_url",
+        "type": "string",
+        "format": "uri",
+        "description": "Base URL for institution's API (if available)"
+      },
+      {
+        "name": "api_capabilities",
+        "type": "object"
+      },
+      {
+        "name": "supported_dispute_types",
+        "type": "array"
+      },
+      {
+        "name": "procedural_options",
+        "type": "object"
+      },
+      {
+        "name": "fee_schedule",
+        "type": "object"
+      },
+      {
+        "name": "enforcement_jurisdictions",
+        "type": "array",
+        "description": "Jurisdictions where awards are enforceable (e.g., via New York Convention)"
+      },
+      {
+        "name": "contact",
+        "type": "object"
+      },
+      {
+        "name": "did",
+        "type": "string",
+        "pattern": "^did:",
+        "description": "DID for the institution (for VC verification)"
+      }
+    ]
+  },
+  {
+    "file": "arbitration.order.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/arbitration.order.schema.json",
+    "title": "MEZ Arbitration Order",
+    "type": "object",
+    "required": [
+      "order_id",
+      "order_type",
+      "party_id"
+    ],
+    "properties": [
+      {
+        "name": "order_id",
+        "type": "string",
+        "description": "Unique identifier for this order."
+      },
+      {
+        "name": "order_type",
+        "type": "string",
+        "description": "Type of order.",
+        "enum": [
+          "monetary_damages",
+          "specific_performance",
+          "declaratory_relief",
+          "injunctive_relief",
+          "costs",
+          "interest",
+          "escrow_release",
+          "asset_transfer",
+          "contract_termination"
+        ]
+      },
+      {
+        "name": "party_id",
+        "type": "string",
+        "description": "DID of the party subject to this order."
+      },
+      {
+        "name": "amount",
+        "type": "object",
+        "description": "Monetary amount for damages/costs orders."
+      },
+      {
+        "name": "due_date",
+        "type": "string",
+        "format": "date",
+        "description": "Date by which the order must be complied with."
+      },
+      {
+        "name": "interest",
+        "type": "object",
+        "description": "Interest calculation for monetary awards."
+      },
+      {
+        "name": "enforcement",
+        "type": "object",
+        "description": "Enforcement mechanism for this order."
+      },
+      {
+        "name": "conditions",
+        "type": "array",
+        "description": "Conditions for order execution."
+      }
+    ]
+  },
+  {
+    "file": "arbitration.settlement.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/arbitration.settlement.schema.json",
+    "title": "ArbitrationSettlement",
+    "type": "object",
+    "required": [
+      "settlement_id",
+      "dispute_id",
+      "parties",
+      "terms",
+      "effective_date"
+    ],
+    "properties": [
+      {
+        "name": "settlement_id",
+        "type": "string",
+        "pattern": "^settlement:[a-f0-9-]+$",
+        "description": "Unique identifier for this settlement"
+      },
+      {
+        "name": "dispute_id",
+        "type": "string",
+        "pattern": "^disp-[0-9]{4}-[0-9]+$",
+        "description": "Reference to the dispute being settled"
+      },
+      {
+        "name": "parties",
+        "type": "array",
+        "description": "All parties to the settlement"
+      },
+      {
+        "name": "terms",
+        "type": "",
+        "description": "Terms of the settlement agreement"
+      },
+      {
+        "name": "effective_date",
+        "type": "string",
+        "format": "date-time",
+        "description": "When the settlement becomes effective"
+      },
+      {
+        "name": "execution_deadline",
+        "type": "string",
+        "format": "date-time",
+        "description": "Deadline for executing settlement terms"
+      },
+      {
+        "name": "institution_acknowledgment",
+        "type": "object",
+        "description": "Acknowledgment from arbitration institution"
+      },
+      {
+        "name": "smart_asset_transitions",
+        "type": "array",
+        "description": "Smart Asset transition receipts executing settlement"
+      },
+      {
+        "name": "confidentiality_level",
+        "type": "string",
+        "enum": [
+          "public",
+          "parties_only",
+          "redacted_public"
+        ]
+      }
+    ]
+  },
+  {
+    "file": "artifact-ref.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/artifact-ref.schema.json",
+    "title": "MEZ ArtifactRef",
+    "type": "object",
+    "required": [
+      "artifact_type",
+      "digest_sha256"
+    ],
+    "properties": [
+      {
+        "name": "artifact_type",
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{0,63}$",
+        "description": "Artifact category/type used for resolution (e.g., lawpack, ruleset, schema, vc, checkpoint, proof-key, circuit, blob)."
+      },
+      {
+        "name": "digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "SHA-256 digest (hex) of the canonical artifact content. Resolves via dist/artifacts/<artifact_type>/<digest>.*."
+      },
+      {
+        "name": "uri",
+        "type": "string",
+        "description": "Optional location hint (non-normative). May be a repo-relative path, URL, IPFS URI, etc."
+      },
+      {
+        "name": "media_type",
+        "type": "string",
+        "description": "Optional media type hint (non-normative)."
+      },
+      {
+        "name": "byte_length",
+        "type": "integer",
+        "description": "Optional byte size hint (non-normative).",
+        "minimum": 0
+      },
+      {
+        "name": "display_name",
+        "type": "string",
+        "description": "Optional human-readable label or filename (non-normative)."
+      },
+      {
+        "name": "notes",
+        "type": "string",
+        "description": "Optional freeform notes (non-normative)."
+      }
+    ]
+  },
+  {
+    "file": "artifact.graph-verify-report.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/artifact.graph-verify-report.schema.json",
+    "title": "MEZ Artifact Graph Verify Report",
+    "type": "object",
+    "required": [
+      "type",
+      "generated_at",
+      "root",
+      "options",
+      "stats",
+      "nodes",
+      "missing",
+      "digest_mismatches",
+      "errors"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZArtifactGraphVerifyReport"
+      },
+      {
+        "name": "generated_at",
+        "type": "string"
+      },
+      {
+        "name": "root",
+        "type": "object"
+      },
+      {
+        "name": "options",
+        "type": "object"
+      },
+      {
+        "name": "stats",
+        "type": "object"
+      },
+      {
+        "name": "nodes",
+        "type": "array"
+      },
+      {
+        "name": "missing",
+        "type": "array"
+      },
+      {
+        "name": "digest_mismatches",
+        "type": "array"
+      },
+      {
+        "name": "edges",
+        "type": "array"
+      },
+      {
+        "name": "bundle",
+        "type": "object"
+      },
+      {
+        "name": "input_bundle",
+        "type": "object"
+      },
+      {
+        "name": "errors",
+        "type": "array"
+      }
+    ]
+  },
+  {
+    "file": "attestation.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/attestation.schema.json",
+    "title": "MEZ Attestation (generic envelope)",
+    "type": "object",
+    "required": [
+      "attestation_type",
+      "issuer",
+      "subject",
+      "issued_at",
+      "claims",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "attestation_type",
+        "type": "string"
+      },
+      {
+        "name": "issuer",
+        "type": "string"
+      },
+      {
+        "name": "subject",
+        "type": "string"
+      },
+      {
+        "name": "issued_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expires_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "claims",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "circuit.pi-ruling.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/circuit.pi-ruling.schema.json",
+    "title": "πruling Circuit Specification",
+    "type": "object",
+    "properties": [
+      {
+        "name": "circuit_id",
+        "type": "pi_ruling_v1",
+        "description": "Circuit identifier"
+      },
+      {
+        "name": "version",
+        "type": "1.0.0"
+      },
+      {
+        "name": "constraint_count",
+        "type": 35000,
+        "description": "Approximate R1CS constraint count"
+      },
+      {
+        "name": "public_inputs",
+        "type": "object",
+        "description": "Public inputs to the circuit"
+      },
+      {
+        "name": "private_inputs",
+        "type": "object",
+        "description": "Private (witness) inputs to the circuit"
+      },
+      {
+        "name": "constraints",
+        "type": "array",
+        "description": "Constraint specifications"
+      },
+      {
+        "name": "performance",
+        "type": "object",
+        "description": "Expected performance characteristics"
+      },
+      {
+        "name": "security_level",
+        "type": 128,
+        "description": "Security level in bits"
+      }
+    ]
+  },
+  {
+    "file": "corridor.agreement.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.agreement.schema.json",
+    "title": "MEZ Corridor Agreement",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "corridor_id",
+      "corridor_name",
+      "corridor_type",
+      "created_at",
+      "parties"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorAgreement"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "corridor_id",
+        "type": "string",
+        "description": "Globally unique corridor identifier."
+      },
+      {
+        "name": "corridor_name",
+        "type": "string",
+        "description": "Human-readable corridor name."
+      },
+      {
+        "name": "corridor_type",
+        "type": "string",
+        "description": "Primary corridor type classification.",
+        "enum": [
+          "obligation",
+          "settlement",
+          "arbitration",
+          "capital",
+          "trade",
+          "mixed"
+        ]
+      },
+      {
+        "name": "created_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "RFC3339 timestamp when the agreement was created."
+      },
+      {
+        "name": "expires_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "Optional expiry timestamp for time-bounded agreements."
+      },
+      {
+        "name": "parties",
+        "type": "array",
+        "description": "Parties to the corridor agreement."
+      },
+      {
+        "name": "governance",
+        "type": "",
+        "description": "Governance parameters for the corridor."
+      },
+      {
+        "name": "settlement_corridors",
+        "type": "array",
+        "description": "List of settlement corridor IDs available for this agreement."
+      },
+      {
+        "name": "lawpack_requirements",
+        "type": "array",
+        "description": "Lawpack compliance requirements for corridor operations."
+      },
+      {
+        "name": "trust_anchors",
+        "type": "array",
+        "description": "Trust anchors authorized for this corridor."
+      },
+      {
+        "name": "evidence",
+        "type": "array",
+        "description": "Optional evidence attachments (signatures, attestations)."
+      },
+      {
+        "name": "meta",
+        "type": "object",
+        "description": "Optional freeform metadata."
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "Optional DataIntegrityProof for the agreement."
+      }
+    ]
+  },
+  {
+    "file": "corridor.anchor.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.anchor.schema.json",
+    "title": "MEZCorridorAnchor",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "anchored_at",
+      "head_commitment_digest_sha256",
+      "chain"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorAnchor"
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "anchored_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "head_commitment_digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "checkpoint_ref",
+        "type": ""
+      },
+      {
+        "name": "chain",
+        "type": "object"
+      },
+      {
+        "name": "evidence",
+        "type": "array"
+      }
+    ]
+  },
+  {
+    "file": "corridor.checkpoint.attachment.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.checkpoint.attachment.schema.json",
+    "title": "MEZ Corridor Checkpoint Attachment",
+    "type": ""
+  },
+  {
+    "file": "corridor.checkpoint.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.checkpoint.schema.json",
+    "title": "MEZ Corridor State Checkpoint",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "timestamp",
+      "genesis_root",
+      "final_state_root",
+      "receipt_count",
+      "lawpack_digest_set",
+      "ruleset_digest_set",
+      "mmr",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorStateCheckpoint",
+        "description": "Checkpoint kind identifier. A checkpoint commits to the state channel head AND an inclusion-proof-friendly receipt accumulator."
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "timestamp",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "genesis_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "final_state_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "The last receipt next_root (i.e., the current corridor_state_root)."
+      },
+      {
+        "name": "receipt_count",
+        "type": "integer",
+        "minimum": 1
+      },
+      {
+        "name": "lawpack_digest_set",
+        "type": "array",
+        "description": "Sorted set of lawpack digests governing this checkpoint window."
+      },
+      {
+        "name": "ruleset_digest_set",
+        "type": "array",
+        "description": "Sorted set of ruleset digests governing this checkpoint window."
+      },
+      {
+        "name": "mmr",
+        "type": "object"
+      },
+      {
+        "name": "anchor",
+        "type": "object",
+        "description": "Optional anchoring metadata for external chain commitments."
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "One or more cryptographic proofs over the checkpoint payload (excluding the proof field)."
+      }
+    ]
+  },
+  {
+    "file": "corridor.finality-status.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.finality-status.schema.json",
+    "title": "MEZ Corridor Finality Status",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "as_of",
+      "finality_level",
+      "receipt_count",
+      "final_state_root",
+      "head_commitment_digest_sha256"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorFinalityStatus"
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "as_of",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "receipt_count",
+        "type": "integer",
+        "minimum": 0
+      },
+      {
+        "name": "final_state_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "mmr_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "head_commitment_digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "finality_level",
+        "type": ""
+      },
+      {
+        "name": "evidence",
+        "type": "object"
+      },
+      {
+        "name": "warnings",
+        "type": "array"
+      },
+      {
+        "name": "meta",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "corridor.fork-inspect-report.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.fork-inspect-report.schema.json",
+    "title": "MEZ Corridor Fork Inspect Report",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "genesis_root",
+      "receipts",
+      "forks"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorForkInspectReport"
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "genesis_root",
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      {
+        "name": "from_checkpoint",
+        "type": [
+          "object",
+          "null"
+        ]
+      },
+      {
+        "name": "receipts",
+        "type": "object"
+      },
+      {
+        "name": "forks",
+        "type": "object"
+      },
+      {
+        "name": "canonical_head",
+        "type": [
+          "object",
+          "null"
+        ]
+      },
+      {
+        "name": "recommendations",
+        "type": "array"
+      },
+      {
+        "name": "warnings",
+        "type": "array"
+      },
+      {
+        "name": "errors",
+        "type": "array"
+      }
+    ]
+  },
+  {
+    "file": "corridor.fork-resolution.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.fork-resolution.schema.json",
+    "title": "MEZ Corridor Fork Resolution",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "sequence",
+      "prev_root",
+      "chosen_next_root",
+      "resolved_at"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorForkResolution"
+      },
+      {
+        "name": "resolution_id",
+        "type": "string"
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "resolved_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "sequence",
+        "type": "integer",
+        "minimum": 0
+      },
+      {
+        "name": "prev_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "chosen_next_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "candidates",
+        "type": "array"
+      },
+      {
+        "name": "authority_registry_ref",
+        "type": ""
+      },
+      {
+        "name": "policy_ref",
+        "type": ""
+      },
+      {
+        "name": "reason",
+        "type": "string"
+      },
+      {
+        "name": "meta",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "corridor.inclusion-proof.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.inclusion-proof.schema.json",
+    "title": "MEZ Corridor Receipt Inclusion Proof",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "mmr",
+      "leaf_index",
+      "receipt_next_root",
+      "leaf_hash",
+      "peak_index",
+      "peak_height",
+      "path",
+      "peaks"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorReceiptInclusionProof",
+        "description": "Proof that a specific receipt digest (next_root) is included in an MMR accumulator committed by a checkpoint."
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "mmr",
+        "type": "object"
+      },
+      {
+        "name": "leaf_index",
+        "type": "integer",
+        "minimum": 0
+      },
+      {
+        "name": "receipt_next_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "leaf_hash",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "peak_index",
+        "type": "integer",
+        "minimum": 0
+      },
+      {
+        "name": "peak_height",
+        "type": "integer",
+        "minimum": 0
+      },
+      {
+        "name": "path",
+        "type": "array"
+      },
+      {
+        "name": "peaks",
+        "type": "array"
+      },
+      {
+        "name": "computed_peak_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "generated_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "checkpoint_digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "checkpoint_ref",
+        "type": "",
+        "description": "Optional typed ArtifactRef to the signed checkpoint payload (excluding proof). When present, artifact_type MUST be \"checkpoint\"."
+      }
+    ]
+  },
+  {
+    "file": "corridor.lifecycle.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.lifecycle.schema.json",
+    "title": "MEZ Corridor Lifecycle",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "state",
+      "since"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorLifecycle"
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "name": "since",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "state_machine_ref",
+        "type": ""
+      },
+      {
+        "name": "history",
+        "type": "array"
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      },
+      {
+        "name": "meta",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "corridor.receipt-proposal.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.receipt-proposal.schema.json",
+    "title": "MEZ Corridor Receipt Proposal",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "sequence",
+      "timestamp",
+      "prev_root",
+      "lawpack_digest_set",
+      "ruleset_digest_set",
+      "transition",
+      "computed_next_root"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorReceiptProposal"
+      },
+      {
+        "name": "proposal_id",
+        "type": "string"
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "proposed_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "proposed_by",
+        "type": "string",
+        "description": "DID or identifier of the proposal author."
+      },
+      {
+        "name": "sequence",
+        "type": "integer",
+        "minimum": 0
+      },
+      {
+        "name": "timestamp",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "prev_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "computed_next_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "The next_root that would result if this proposal were materialized into an MEZCorridorStateReceipt (excluding proof)."
+      },
+      {
+        "name": "transition_type_registry_digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "lawpack_digest_set",
+        "type": "array"
+      },
+      {
+        "name": "ruleset_digest_set",
+        "type": "array"
+      },
+      {
+        "name": "transition",
+        "type": ""
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      },
+      {
+        "name": "meta",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "corridor.receipt.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.receipt.schema.json",
+    "title": "MEZ Corridor State Receipt",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "sequence",
+      "timestamp",
+      "prev_root",
+      "next_root",
+      "lawpack_digest_set",
+      "ruleset_digest_set",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorStateReceipt",
+        "description": "Receipt kind identifier."
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "sequence",
+        "type": "integer",
+        "description": "Monotonic sequence number within a corridor state channel.",
+        "minimum": 0
+      },
+      {
+        "name": "timestamp",
+        "type": "string",
+        "format": "date-time",
+        "description": "RFC3339 timestamp (UTC recommended)."
+      },
+      {
+        "name": "prev_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "State root before this transition. For the first receipt this SHOULD equal the corridor genesis_root."
+      },
+      {
+        "name": "next_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "State root after this transition. MUST equal SHA256(JCS(receipt_without_proof_and_next_root))."
+      },
+      {
+        "name": "lawpack_digest_set",
+        "type": "array",
+        "description": "Sorted set of lawpack digests (sha256) governing this corridor operation snapshot."
+      },
+      {
+        "name": "ruleset_digest_set",
+        "type": "array",
+        "description": "Sorted set of ruleset digests (sha256) governing this corridor transition."
+      },
+      {
+        "name": "transition_type_registry_digest_sha256",
+        "type": "",
+        "description": "Optional digest commitment to a Transition Type Registry snapshot (snapshot_digest_sha256 from transition-types.lock.json). When present, receipts MAY omit per-transition schema/ruleset/circuit digests and rely on the registry mapping for semantics. Legacy form is a raw sha256 digest; preferred form is an ArtifactRef with artifact_type='transition-types'."
+      },
+      {
+        "name": "transition",
+        "type": ""
+      },
+      {
+        "name": "zk",
+        "type": "object",
+        "description": "Optional ZK proof scaffold. Proof verification is corridor-specific; receipts commit to proof and verifier digests."
+      },
+      {
+        "name": "anchor",
+        "type": "object",
+        "description": "Optional anchoring metadata for external chain commitments."
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "One or more cryptographic proofs over the receipt payload (excluding the proof field)."
+      }
+    ]
+  },
+  {
+    "file": "corridor.routing.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.routing.schema.json",
+    "title": "MEZ Corridor Route",
+    "type": "object",
+    "required": [
+      "type",
+      "route_id",
+      "from",
+      "to",
+      "hops",
+      "computed_at"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorRoute"
+      },
+      {
+        "name": "route_id",
+        "type": "string"
+      },
+      {
+        "name": "from",
+        "type": "string"
+      },
+      {
+        "name": "to",
+        "type": "string"
+      },
+      {
+        "name": "computed_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "constraints",
+        "type": "object"
+      },
+      {
+        "name": "hops",
+        "type": "array"
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      },
+      {
+        "name": "meta",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "corridor.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.schema.json",
+    "title": "MEZ Corridor Manifest",
+    "type": "object",
+    "required": [
+      "corridor_id",
+      "settlement",
+      "recognition",
+      "attestations",
+      "definition_vc_path"
+    ],
+    "properties": [
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "participants",
+        "type": "array"
+      },
+      {
+        "name": "settlement",
+        "type": "object"
+      },
+      {
+        "name": "recognition",
+        "type": "object"
+      },
+      {
+        "name": "attestations",
+        "type": "object"
+      },
+      {
+        "name": "dispute_resolution",
+        "type": "object"
+      },
+      {
+        "name": "trust_anchors_path",
+        "type": "string"
+      },
+      {
+        "name": "key_rotation_path",
+        "type": "string"
+      },
+      {
+        "name": "authority_registry_vc_path",
+        "type": "",
+        "description": "Optional path(s) to signed Authority Registry VC(s). When present, verifiers may require trust anchors and VC signers to be authorized via this out-of-band registry chain (treaty → national → zone)."
+      },
+      {
+        "name": "definition_vc_path",
+        "type": "string",
+        "description": "Path to a signed Corridor Definition VC binding corridor.yaml + security artifacts (hashes) to this corridor_id."
+      },
+      {
+        "name": "agreement_vc_path",
+        "type": "",
+        "description": "Optional path(s) to signed Corridor Agreement VC(s) for participant-specific instantiation."
+      },
+      {
+        "name": "state_channel",
+        "type": "object",
+        "description": "Optional corridor state channel configuration (verifiable receipts, optional ZK proofs, optional anchoring)."
+      },
+      {
+        "name": "verification_ruleset",
+        "type": "string",
+        "description": "Ruleset identifier for corridor verification."
+      }
+    ]
+  },
+  {
+    "file": "corridor.settlement-anchor.attachment.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.settlement-anchor.attachment.schema.json",
+    "title": "MEZ Settlement Anchor Attachment",
+    "type": ""
+  },
+  {
+    "file": "corridor.settlement-anchor.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.settlement-anchor.schema.json",
+    "title": "MEZ Cross-Corridor Settlement Anchor",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "created_at",
+      "obligation",
+      "settlement"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCrossCorridorSettlementAnchor"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "created_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "RFC3339 timestamp"
+      },
+      {
+        "name": "settlement_id",
+        "type": "string",
+        "description": "Optional operator correlation id (urn:uuid:..., urn:mez:settlement:..., etc.)."
+      },
+      {
+        "name": "relationship",
+        "type": "string",
+        "description": "Optional relationship label (e.g., settles, nets, cancels, escrow-releases)."
+      },
+      {
+        "name": "obligation",
+        "type": "object"
+      },
+      {
+        "name": "settlement",
+        "type": "object"
+      },
+      {
+        "name": "proof_bindings",
+        "type": "array",
+        "description": "Optional list of portable proof-binding artifacts that cryptographically bind external proofs to the corridor commitments in this anchor."
+      },
+      {
+        "name": "proofs",
+        "type": "array",
+        "description": "Optional raw proof artifact refs (blobs, VCs, PDFs, etc.) for convenience. Prefer proof_bindings when possible."
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      },
+      {
+        "name": "meta",
+        "type": "object",
+        "description": "Optional freeform metadata."
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "Optional DataIntegrityProof (JCS + Ed25519) for the anchor object."
+      }
+    ]
+  },
+  {
+    "file": "corridor.settlement-plan.attachment.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.settlement-plan.attachment.schema.json",
+    "title": "MEZ Settlement Plan attachment",
+    "type": "object"
+  },
+  {
+    "file": "corridor.settlement-plan.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.settlement-plan.schema.json",
+    "title": "MEZ Multi-Corridor Settlement Plan",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "plan_id",
+      "created_at",
+      "obligations",
+      "netting",
+      "settlement_legs"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorSettlementPlan"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "plan_id",
+        "type": "string",
+        "description": "A globally unique plan identifier (recommended: urn:uuid:...)."
+      },
+      {
+        "name": "issuer",
+        "type": "string",
+        "description": "The issuer DID (or issuer identifier) for this settlement plan."
+      },
+      {
+        "name": "created_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expires_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "Optional expiry timestamp for time-bounded plans."
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "name": "netting_method",
+        "type": "string",
+        "description": "Human-readable algorithm identifier (e.g., single-currency-greedy)."
+      },
+      {
+        "name": "inputs",
+        "type": "array",
+        "description": "Anchors the plan to one or more corridor checkpoint heads (obligation corridors and/or settlement corridors)."
+      },
+      {
+        "name": "settlement_corridors",
+        "type": "array",
+        "description": "Candidate settlement corridors (rails) considered when computing settlement legs. Used for auditability and reproducibility."
+      },
+      {
+        "name": "constraints",
+        "type": "object",
+        "description": "Optional constraint set applied by the netting/leg construction algorithm (blocked pairs, corridor allow/deny lists, corridor caps, etc.)."
+      },
+      {
+        "name": "obligations",
+        "type": "array"
+      },
+      {
+        "name": "netting",
+        "type": "array",
+        "description": "Computed net positions by party and currency. Negative values indicate a net payer (debtor)."
+      },
+      {
+        "name": "settlement_legs",
+        "type": "array",
+        "description": "The concrete settlement actions required to satisfy the netted obligations."
+      },
+      {
+        "name": "executed_settlement_anchors",
+        "type": "array",
+        "description": "Optional: cross-corridor settlement anchors proving execution."
+      },
+      {
+        "name": "evidence",
+        "type": "array",
+        "description": "Optional evidence artifacts (e.g., computation transcript, regulatory approvals, bank advice messages)."
+      },
+      {
+        "name": "meta",
+        "type": ""
+      },
+      {
+        "name": "proof",
+        "type": "array",
+        "description": "Optional multi-signature / multiparty authorization over the plan. Digest semantics exclude proof."
+      }
+    ]
+  },
+  {
+    "file": "corridor.state-machine.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/corridor.state-machine.schema.json",
+    "title": "MEZ Corridor Lifecycle State Machine",
+    "type": "object",
+    "required": [
+      "type",
+      "states",
+      "initial_state",
+      "allowed_transitions"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZCorridorStateMachine"
+      },
+      {
+        "name": "version",
+        "type": "string"
+      },
+      {
+        "name": "states",
+        "type": "array"
+      },
+      {
+        "name": "initial_state",
+        "type": "string"
+      },
+      {
+        "name": "terminal_states",
+        "type": "array"
+      },
+      {
+        "name": "allowed_transitions",
+        "type": "array"
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      },
+      {
+        "name": "meta",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "finality-level.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/finality-level.schema.json",
+    "title": "MEZ Finality Level",
+    "type": "string"
+  },
+  {
+    "file": "key-rotation.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/key-rotation.schema.json",
+    "title": "Key rotation policy",
+    "type": "object",
+    "required": [
+      "version",
+      "policy"
+    ],
+    "properties": [
+      {
+        "name": "version",
+        "type": "integer"
+      },
+      {
+        "name": "policy",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "lawpack.lock.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/lawpack.lock.schema.json",
+    "title": "MEZ Lawpack Lock Entry (lawpack.lock.json)",
+    "type": "object",
+    "required": [
+      "lawpack_digest_sha256",
+      "jurisdiction_id",
+      "domain",
+      "as_of_date",
+      "artifact_path",
+      "components"
+    ],
+    "properties": [
+      {
+        "name": "lawpack_digest_sha256",
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      {
+        "name": "generated_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "jurisdiction_id",
+        "type": "string"
+      },
+      {
+        "name": "domain",
+        "type": "string"
+      },
+      {
+        "name": "as_of_date",
+        "type": "string",
+        "format": "date"
+      },
+      {
+        "name": "artifact_path",
+        "type": "string",
+        "description": "Relative path (repo-root) to the emitted lawpack zip."
+      },
+      {
+        "name": "artifact_sha256",
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      {
+        "name": "components",
+        "type": "object"
+      },
+      {
+        "name": "provenance",
+        "type": "object",
+        "description": "Optional provenance, fetch logs, licenses, etc."
+      },
+      {
+        "name": "lawpack_ref",
+        "type": "",
+        "description": "Optional typed ArtifactRef to the lawpack artifact (lawpack.zip). When present, artifact_type MUST be \"lawpack\"."
+      }
+    ]
+  },
+  {
+    "file": "lawpack.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/lawpack.schema.json",
+    "title": "MEZ Lawpack Metadata (lawpack.yaml)",
+    "type": "object",
+    "required": [
+      "lawpack_format_version",
+      "jurisdiction_id",
+      "domain",
+      "as_of_date",
+      "sources",
+      "license",
+      "normalization"
+    ],
+    "properties": [
+      {
+        "name": "lawpack_format_version",
+        "type": "string",
+        "description": "Lawpack artifact format version.",
+        "enum": [
+          "1"
+        ]
+      },
+      {
+        "name": "jurisdiction_id",
+        "type": "string",
+        "description": "Registry identifier for the jurisdiction."
+      },
+      {
+        "name": "domain",
+        "type": "string",
+        "description": "Domain of law (e.g., civil, financial)."
+      },
+      {
+        "name": "as_of_date",
+        "type": "string",
+        "format": "date",
+        "description": "Snapshot date for the corpus."
+      },
+      {
+        "name": "sources",
+        "type": "array",
+        "description": "Input sources used to assemble the corpus (URLs, gazette references, PDFs, etc.)."
+      },
+      {
+        "name": "license",
+        "type": "string",
+        "description": "SPDX identifier (or NOASSERTION)."
+      },
+      {
+        "name": "normalization",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "licensepack.license.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/licensepack.license.schema.json",
+    "title": "Licensepack License Record",
+    "type": "object",
+    "required": [
+      "license_id",
+      "license_type_id",
+      "status",
+      "issued_date",
+      "holder_id",
+      "holder_legal_name",
+      "regulator_id"
+    ],
+    "properties": [
+      {
+        "name": "license_id",
+        "type": "string",
+        "pattern": "^lic:[a-z0-9-]+:[a-zA-Z0-9-]+$",
+        "description": "Unique license identifier (lic:regulator:number)"
+      },
+      {
+        "name": "license_type_id",
+        "type": "string",
+        "description": "License type identifier"
+      },
+      {
+        "name": "license_number",
+        "type": "string",
+        "description": "Human-readable license number"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "description": "Current license status",
+        "enum": [
+          "active",
+          "suspended",
+          "revoked",
+          "expired",
+          "pending",
+          "surrendered"
+        ]
+      },
+      {
+        "name": "status_effective_date",
+        "type": "string",
+        "format": "date",
+        "description": "Date current status took effect"
+      },
+      {
+        "name": "status_reason",
+        "type": "string",
+        "description": "Reason for current status (if not active)"
+      },
+      {
+        "name": "issued_date",
+        "type": "string",
+        "format": "date",
+        "description": "Date license was issued"
+      },
+      {
+        "name": "effective_date",
+        "type": "string",
+        "format": "date",
+        "description": "Date license became effective"
+      },
+      {
+        "name": "expiry_date",
+        "type": "string",
+        "format": "date",
+        "description": "License expiration date"
+      },
+      {
+        "name": "holder_id",
+        "type": "string",
+        "description": "Unique holder identifier"
+      },
+      {
+        "name": "holder_legal_name",
+        "type": "string",
+        "description": "Legal name of license holder"
+      },
+      {
+        "name": "holder_registration_number",
+        "type": "string",
+        "description": "Corporate registration number"
+      },
+      {
+        "name": "holder_did",
+        "type": "string",
+        "pattern": "^did:",
+        "description": "Holder's decentralized identifier"
+      },
+      {
+        "name": "regulator_id",
+        "type": "string",
+        "description": "Issuing regulator identifier"
+      },
+      {
+        "name": "issuing_authority",
+        "type": "string",
+        "description": "Full name of issuing authority"
+      },
+      {
+        "name": "permitted_activities",
+        "type": "array",
+        "description": "Activities permitted under this license"
+      },
+      {
+        "name": "asset_classes_authorized",
+        "type": "array",
+        "description": "Asset classes authorized to handle"
+      },
+      {
+        "name": "client_types_permitted",
+        "type": "array",
+        "description": "Client types permitted to serve"
+      },
+      {
+        "name": "geographic_scope",
+        "type": "array",
+        "description": "Jurisdictions where license is valid"
+      },
+      {
+        "name": "prudential_category",
+        "type": "string",
+        "description": "Prudential/regulatory category"
+      },
+      {
+        "name": "capital_requirement",
+        "type": "object",
+        "description": "Capital requirements"
+      },
+      {
+        "name": "conditions_ref",
+        "type": "string",
+        "description": "Path to conditions.json"
+      },
+      {
+        "name": "permissions_ref",
+        "type": "string",
+        "description": "Path to permissions.json"
+      },
+      {
+        "name": "restrictions_ref",
+        "type": "string",
+        "description": "Path to restrictions.json"
+      },
+      {
+        "name": "audit_trail_ref",
+        "type": "string",
+        "description": "Path to audit-trail.json"
+      },
+      {
+        "name": "verification",
+        "type": "object",
+        "description": "Verification credentials"
+      }
+    ]
+  },
+  {
+    "file": "licensepack.lock.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/licensepack.lock.schema.json",
+    "title": "Licensepack Lock File",
+    "type": "object",
+    "required": [
+      "lock_version",
+      "generated_at",
+      "generator",
+      "generator_version",
+      "licensepack",
+      "artifact"
+    ],
+    "properties": [
+      {
+        "name": "lock_version",
+        "type": "string",
+        "description": "Lock file format version"
+      },
+      {
+        "name": "generated_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "Lock file generation timestamp"
+      },
+      {
+        "name": "generator",
+        "type": "string",
+        "description": "Tool that generated the lock file"
+      },
+      {
+        "name": "generator_version",
+        "type": "string",
+        "description": "Generator tool version"
+      },
+      {
+        "name": "licensepack",
+        "type": "object",
+        "description": "Licensepack metadata"
+      },
+      {
+        "name": "artifact",
+        "type": "object",
+        "description": "Artifact reference"
+      },
+      {
+        "name": "component_digests",
+        "type": "object",
+        "description": "Per-component digests"
+      },
+      {
+        "name": "provenance",
+        "type": "object",
+        "description": "Data provenance"
+      },
+      {
+        "name": "verification",
+        "type": "object",
+        "description": "Verification status"
+      }
+    ]
+  },
+  {
+    "file": "licensepack.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/licensepack.schema.json",
+    "title": "MEZ Licensepack",
+    "type": "object",
+    "required": [
+      "licensepack_format_version",
+      "licensepack_id",
+      "jurisdiction_id",
+      "domain",
+      "as_of_date",
+      "snapshot_timestamp",
+      "sources",
+      "regulator",
+      "includes",
+      "license",
+      "normalization"
+    ],
+    "properties": [
+      {
+        "name": "licensepack_format_version",
+        "type": "string",
+        "description": "Licensepack format version"
+      },
+      {
+        "name": "licensepack_id",
+        "type": "string",
+        "pattern": "^licensepack:[a-z0-9-]+:[a-z0-9-]+:[0-9T:.Z-]+$",
+        "description": "Unique licensepack identifier (licensepack:jurisdiction:domain:timestamp)"
+      },
+      {
+        "name": "jurisdiction_id",
+        "type": "string",
+        "pattern": "^[a-z]{2}(-[a-z0-9-]+)*$",
+        "description": "Jurisdiction identifier (e.g., ae-dubai-difc)"
+      },
+      {
+        "name": "domain",
+        "type": "string",
+        "description": "License domain",
+        "enum": [
+          "financial",
+          "corporate",
+          "professional",
+          "trade",
+          "insurance",
+          "mixed"
+        ]
+      },
+      {
+        "name": "as_of_date",
+        "type": "string",
+        "format": "date",
+        "description": "Snapshot date (YYYY-MM-DD)"
+      },
+      {
+        "name": "snapshot_timestamp",
+        "type": "string",
+        "format": "date-time",
+        "description": "Exact snapshot timestamp (ISO 8601)"
+      },
+      {
+        "name": "snapshot_type",
+        "type": "string",
+        "description": "Snapshot frequency type",
+        "enum": [
+          "hourly",
+          "daily",
+          "weekly",
+          "on_demand"
+        ]
+      },
+      {
+        "name": "sources",
+        "type": "array",
+        "description": "Data sources for this licensepack"
+      },
+      {
+        "name": "regulator",
+        "type": "",
+        "description": "Regulatory authority that issues these licenses"
+      },
+      {
+        "name": "includes",
+        "type": "object",
+        "description": "Content summary"
+      },
+      {
+        "name": "license",
+        "type": "string",
+        "description": "SPDX license identifier for the data"
+      },
+      {
+        "name": "normalization",
+        "type": "object",
+        "description": "Normalization metadata"
+      },
+      {
+        "name": "previous_licensepack_digest",
+        "type": "string",
+        "pattern": "^(sha256:)?[a-f0-9]{64}$",
+        "description": "SHA256 digest of previous licensepack for delta computation"
+      },
+      {
+        "name": "delta",
+        "type": "object",
+        "description": "Changes from previous licensepack"
+      }
+    ]
+  },
+  {
+    "file": "module.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/module.schema.json",
+    "title": "MEZ Module Manifest",
+    "type": "object",
+    "required": [
+      "module_id",
+      "version",
+      "kind",
+      "description"
+    ],
+    "properties": [
+      {
+        "name": "module_id",
+        "type": "string",
+        "pattern": "^[a-z0-9_.-]+$",
+        "description": "Globally unique identifier (recommended: reverse-DNS style, dot-separated)."
+      },
+      {
+        "name": "version",
+        "type": "string",
+        "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-[0-9A-Za-z.-]+)?$",
+        "description": "Semantic version MAJOR.MINOR.PATCH (optionally with pre-release)."
+      },
+      {
+        "name": "kind",
+        "type": "string",
+        "enum": [
+          "legal",
+          "regulatory",
+          "licensing",
+          "financial",
+          "financial-infrastructure",
+          "corridor",
+          "operational",
+          "operational-infrastructure",
+          "governance",
+          "data",
+          "api",
+          "arbitration",
+          "capital-markets",
+          "corporate",
+          "identity",
+          "tax",
+          "tax-infrastructure",
+          "trade",
+          "protocol"
+        ]
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "Human-readable module name."
+      },
+      {
+        "name": "spec_version",
+        "type": "string",
+        "description": "Specification version this module conforms to."
+      },
+      {
+        "name": "license",
+        "type": "string",
+        "description": "SPDX license identifier."
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "name": "variants",
+        "type": "array"
+      },
+      {
+        "name": "depends_on",
+        "type": "array",
+        "description": "Explicit dependency declarations. Prefer pinned versions in profiles; modules may declare constraints."
+      },
+      {
+        "name": "provides",
+        "type": "array"
+      },
+      {
+        "name": "parameters",
+        "type": "object",
+        "description": "Typed configuration parameters with defaults and constraints."
+      }
+    ]
+  },
+  {
+    "file": "node.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/node.schema.json",
+    "title": "MEZ Node Descriptor (node.yaml)",
+    "type": "object",
+    "required": [
+      "node_id",
+      "zone_id",
+      "endpoints"
+    ],
+    "properties": [
+      {
+        "name": "node_id",
+        "type": "string",
+        "description": "Node identity (DID recommended)."
+      },
+      {
+        "name": "zone_id",
+        "type": "string",
+        "description": "Zone the node operates for."
+      },
+      {
+        "name": "operator",
+        "type": "object",
+        "description": "Optional operator metadata."
+      },
+      {
+        "name": "endpoints",
+        "type": "object",
+        "description": "Discovery endpoints for the node."
+      },
+      {
+        "name": "capabilities",
+        "type": "object",
+        "description": "Declared node capabilities (ZK, transport, security, etc.)."
+      },
+      {
+        "name": "attestations",
+        "type": "array",
+        "description": "Optional references to signed node capability attestations (VCs)."
+      }
+    ]
+  },
+  {
+    "file": "phoenix.anchor.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/phoenix.anchor.schema.json",
+    "title": "PHOENIX Settlement Anchor",
+    "type": "object"
+  },
+  {
+    "file": "phoenix.compliance-tensor.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/phoenix.compliance-tensor.schema.json",
+    "title": "PHOENIX Compliance Tensor",
+    "type": "object",
+    "required": [
+      "cells",
+      "commitment"
+    ],
+    "properties": [
+      {
+        "name": "cells",
+        "type": "object",
+        "description": "Sparse tensor cells keyed by coordinate string"
+      },
+      {
+        "name": "time_quantum_period",
+        "type": "integer",
+        "description": "Period for time quantization in seconds",
+        "minimum": 1
+      },
+      {
+        "name": "commitment",
+        "type": ""
+      }
+    ]
+  },
+  {
+    "file": "phoenix.migration-saga.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/phoenix.migration-saga.schema.json",
+    "title": "PHOENIX Migration Saga",
+    "type": "object",
+    "required": [
+      "migration_id",
+      "state",
+      "request"
+    ],
+    "properties": [
+      {
+        "name": "migration_id",
+        "type": "string",
+        "pattern": "^mig-[0-9]{14}-[a-f0-9]{16}$",
+        "description": "Unique migration identifier"
+      },
+      {
+        "name": "state",
+        "type": ""
+      },
+      {
+        "name": "state_entered_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "is_complete",
+        "type": "boolean"
+      },
+      {
+        "name": "is_successful",
+        "type": "boolean"
+      },
+      {
+        "name": "is_timed_out",
+        "type": "boolean"
+      },
+      {
+        "name": "request",
+        "type": ""
+      },
+      {
+        "name": "evidence",
+        "type": ""
+      },
+      {
+        "name": "compensations",
+        "type": "array"
+      }
+    ]
+  },
+  {
+    "file": "policy-to-code.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/policy-to-code.schema.json",
+    "title": "MEZ Policy-to-Code Mapping",
+    "type": "array"
+  },
+  {
+    "file": "profile.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/profile.schema.json",
+    "title": "MEZ Profile Manifest",
+    "type": "object",
+    "required": [
+      "profile_id",
+      "stack_spec_version",
+      "modules"
+    ],
+    "properties": [
+      {
+        "name": "profile_id",
+        "type": "string"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "modules",
+        "type": "array"
+      },
+      {
+        "name": "corridors",
+        "type": "array"
+      }
+    ]
+  },
+  {
+    "file": "proof-binding.attachment.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/proof-binding.attachment.schema.json",
+    "title": "MEZ Proof Binding Attachment",
+    "type": ""
+  },
+  {
+    "file": "proof-binding.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/proof-binding.schema.json",
+    "title": "MEZ Proof Binding",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "issued_at",
+      "purpose",
+      "proof_ref",
+      "commitments"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZProofBinding"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "issued_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "RFC3339 timestamp"
+      },
+      {
+        "name": "issuer",
+        "type": "string",
+        "description": "Optional DID or identifier of the party binding the proof."
+      },
+      {
+        "name": "purpose",
+        "type": "string",
+        "description": "Short binding purpose string (e.g., settlement.confirmation.v1, netting.proof.v1)."
+      },
+      {
+        "name": "proof_ref",
+        "type": ""
+      },
+      {
+        "name": "commitments",
+        "type": "array"
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      },
+      {
+        "name": "meta",
+        "type": "object",
+        "description": "Optional freeform metadata."
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "Optional DataIntegrityProof (JCS + Ed25519) for the binding object."
+      }
+    ]
+  },
+  {
+    "file": "regpack.compliance-deadline.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/regpack.compliance-deadline.schema.json",
+    "title": "MEZ Compliance Deadline",
+    "type": "object",
+    "required": [
+      "deadline_id",
+      "deadline_type",
+      "due_date"
+    ],
+    "properties": [
+      {
+        "name": "deadline_id",
+        "type": "string",
+        "description": "Unique identifier for this deadline."
+      },
+      {
+        "name": "deadline_type",
+        "type": "string",
+        "description": "Type of deadline.",
+        "enum": [
+          "regulatory_report",
+          "financial_statement",
+          "audit_report",
+          "license_renewal",
+          "capital_return",
+          "aml_report",
+          "examination",
+          "fee_payment",
+          "other"
+        ]
+      },
+      {
+        "name": "report_type_id",
+        "type": "string",
+        "description": "Reference to reporting requirement, if applicable."
+      },
+      {
+        "name": "regulator_id",
+        "type": "string",
+        "description": "Regulator requiring this compliance."
+      },
+      {
+        "name": "period_end",
+        "type": "string",
+        "format": "date",
+        "description": "End of the reporting period."
+      },
+      {
+        "name": "due_date",
+        "type": "string",
+        "format": "date",
+        "description": "Date by which compliance must be achieved."
+      },
+      {
+        "name": "applicable_to",
+        "type": "array",
+        "description": "License types this deadline applies to."
+      },
+      {
+        "name": "late_penalty",
+        "type": "object"
+      },
+      {
+        "name": "submission",
+        "type": "object"
+      },
+      {
+        "name": "reminder_days",
+        "type": "array",
+        "description": "Days before due date to send reminders."
+      }
+    ]
+  },
+  {
+    "file": "regpack.license-type.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/regpack.license-type.schema.json",
+    "title": "MEZ License Type",
+    "type": "object",
+    "required": [
+      "license_type_id",
+      "name",
+      "regulator_id"
+    ],
+    "properties": [
+      {
+        "name": "license_type_id",
+        "type": "string",
+        "description": "Unique identifier for this license type."
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "Name of the license type."
+      },
+      {
+        "name": "regulator_id",
+        "type": "string",
+        "description": "Regulator that issues this license."
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "description": "Description of activities permitted."
+      },
+      {
+        "name": "requirements",
+        "type": "object"
+      },
+      {
+        "name": "application",
+        "type": "object"
+      },
+      {
+        "name": "ongoing_obligations",
+        "type": "object"
+      },
+      {
+        "name": "validity_period_years",
+        "type": "integer",
+        "description": "License validity in years."
+      },
+      {
+        "name": "renewal_lead_time_days",
+        "type": "integer",
+        "description": "Days before expiry to begin renewal."
+      }
+    ]
+  },
+  {
+    "file": "regpack.metadata.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/regpack.metadata.schema.json",
+    "title": "MEZ RegPack Metadata",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "regpack_version",
+      "regpack_id",
+      "jurisdiction_id",
+      "domain",
+      "as_of_date",
+      "snapshot_type"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZRegPackMetadata"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "regpack_version",
+        "type": "string",
+        "pattern": "^[0-9]+\\.[0-9]+$",
+        "description": "RegPack schema version (e.g., '1.0')"
+      },
+      {
+        "name": "regpack_id",
+        "type": "string",
+        "pattern": "^regpack:[a-z0-9-]+:[a-z0-9-]+:[a-z0-9-]+$",
+        "description": "Unique regpack identifier (e.g., 'regpack:uae-adgm:financial:2026q1')"
+      },
+      {
+        "name": "jurisdiction_id",
+        "type": "string",
+        "description": "Jurisdiction identifier (e.g., 'uae-adgm', 'kaz-aifc')"
+      },
+      {
+        "name": "domain",
+        "type": "string",
+        "description": "Regulatory domain covered by this regpack",
+        "enum": [
+          "financial",
+          "civil",
+          "criminal",
+          "tax",
+          "trade",
+          "customs",
+          "immigration",
+          "labor",
+          "environmental",
+          "data_protection"
+        ]
+      },
+      {
+        "name": "as_of_date",
+        "type": "string",
+        "format": "date",
+        "description": "The effective date of this regulatory snapshot (YYYY-MM-DD)"
+      },
+      {
+        "name": "snapshot_type",
+        "type": "string",
+        "description": "Frequency of regpack updates",
+        "enum": [
+          "daily",
+          "weekly",
+          "monthly",
+          "quarterly",
+          "annual",
+          "ad_hoc"
+        ]
+      },
+      {
+        "name": "sources",
+        "type": "array",
+        "description": "Data sources used to compile this regpack"
+      },
+      {
+        "name": "includes",
+        "type": "object",
+        "description": "Summary of what this regpack includes"
+      },
+      {
+        "name": "previous_regpack_digest",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "SHA256 digest of the previous regpack for delta computation"
+      },
+      {
+        "name": "digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "Canonical digest of this regpack"
+      },
+      {
+        "name": "created_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expires_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "Optional expiry timestamp after which regpack should be refreshed"
+      }
+    ]
+  },
+  {
+    "file": "regpack.regulator-profile.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/regpack.regulator-profile.schema.json",
+    "title": "MEZ Regulator Profile",
+    "type": "object",
+    "required": [
+      "regulator_id",
+      "name",
+      "jurisdiction_id"
+    ],
+    "properties": [
+      {
+        "name": "regulator_id",
+        "type": "string",
+        "description": "Unique identifier for this regulator."
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "description": "Full name of the regulator."
+      },
+      {
+        "name": "jurisdiction_id",
+        "type": "string",
+        "description": "Jurisdiction this regulator operates in."
+      },
+      {
+        "name": "parent_authority",
+        "type": "string",
+        "description": "Parent regulatory authority, if any."
+      },
+      {
+        "name": "asset_classes",
+        "type": "array",
+        "description": "Asset classes regulated."
+      },
+      {
+        "name": "activities",
+        "type": "array",
+        "description": "Financial activities regulated."
+      },
+      {
+        "name": "entity_types",
+        "type": "array",
+        "description": "Entity types subject to regulation."
+      },
+      {
+        "name": "contact",
+        "type": "object"
+      },
+      {
+        "name": "api_capabilities",
+        "type": "object"
+      },
+      {
+        "name": "timezone",
+        "type": "string",
+        "description": "Timezone for deadline calculations."
+      },
+      {
+        "name": "business_days",
+        "type": "array",
+        "description": "Business days in this jurisdiction."
+      }
+    ]
+  },
+  {
+    "file": "regpack.sanctions-entry.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/regpack.sanctions-entry.schema.json",
+    "title": "MEZ Sanctions Entry",
+    "type": "object",
+    "required": [
+      "entry_id",
+      "entry_type",
+      "source_lists"
+    ],
+    "properties": [
+      {
+        "name": "entry_id",
+        "type": "string",
+        "description": "Unique identifier for this sanctions entry"
+      },
+      {
+        "name": "entry_type",
+        "type": "string",
+        "description": "Type of sanctioned party",
+        "enum": [
+          "individual",
+          "entity",
+          "vessel",
+          "aircraft"
+        ]
+      },
+      {
+        "name": "source_lists",
+        "type": "array",
+        "description": "Source lists containing this entry"
+      },
+      {
+        "name": "primary_name",
+        "type": "string",
+        "description": "Primary name of the sanctioned party"
+      },
+      {
+        "name": "aliases",
+        "type": "array"
+      },
+      {
+        "name": "identifiers",
+        "type": "array"
+      },
+      {
+        "name": "addresses",
+        "type": "array"
+      },
+      {
+        "name": "nationalities",
+        "type": "array"
+      },
+      {
+        "name": "date_of_birth",
+        "type": "string",
+        "format": "date"
+      },
+      {
+        "name": "place_of_birth",
+        "type": "string"
+      },
+      {
+        "name": "programs",
+        "type": "array",
+        "description": "Sanctions programs (e.g., 'SDGT', 'IRAN', 'DPRK')"
+      },
+      {
+        "name": "listing_date",
+        "type": "string",
+        "format": "date"
+      },
+      {
+        "name": "remarks",
+        "type": "string"
+      },
+      {
+        "name": "vessel_details",
+        "type": "object",
+        "description": "Additional details for vessel entries"
+      },
+      {
+        "name": "aircraft_details",
+        "type": "object",
+        "description": "Additional details for aircraft entries"
+      }
+    ]
+  },
+  {
+    "file": "regpack.sanctions-snapshot.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/regpack.sanctions-snapshot.schema.json",
+    "title": "MEZ RegPack Sanctions Snapshot",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "snapshot_id",
+      "snapshot_timestamp",
+      "sources"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZSanctionsSnapshot"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "snapshot_id",
+        "type": "string",
+        "pattern": "^sanctions-[0-9]{4}-[0-9]{2}-[0-9]{2}(-.+)?$",
+        "description": "Unique snapshot identifier (e.g., 'sanctions-2026-01-15')"
+      },
+      {
+        "name": "snapshot_timestamp",
+        "type": "string",
+        "format": "date-time",
+        "description": "RFC3339 timestamp when this snapshot was created"
+      },
+      {
+        "name": "sources",
+        "type": "object"
+      },
+      {
+        "name": "consolidated",
+        "type": "object",
+        "description": "Aggregate counts from consolidated list"
+      },
+      {
+        "name": "delta_from_previous",
+        "type": "object",
+        "description": "Changes since the previous snapshot"
+      },
+      {
+        "name": "digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    ]
+  },
+  {
+    "file": "regpack.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/regpack.schema.json",
+    "title": "MEZ Regulatory Pack (RegPack)",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "regpack_id",
+      "regpack_version",
+      "jurisdiction_id",
+      "domain",
+      "as_of_date",
+      "snapshot_type"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZRegPack"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "regpack_id",
+        "type": "string",
+        "pattern": "^regpack:[a-z0-9-]+$",
+        "description": "Globally unique regpack identifier."
+      },
+      {
+        "name": "regpack_version",
+        "type": "string",
+        "description": "Semantic version of regpack schema."
+      },
+      {
+        "name": "jurisdiction_id",
+        "type": "string",
+        "description": "Jurisdiction this regpack covers."
+      },
+      {
+        "name": "domain",
+        "type": "string",
+        "description": "Regulatory domain.",
+        "enum": [
+          "financial",
+          "customs",
+          "sanctions",
+          "tax",
+          "trade",
+          "licensing",
+          "mixed"
+        ]
+      },
+      {
+        "name": "as_of_date",
+        "type": "string",
+        "format": "date",
+        "description": "Date this regpack snapshot represents."
+      },
+      {
+        "name": "snapshot_type",
+        "type": "string",
+        "description": "Refresh frequency for this regpack type.",
+        "enum": [
+          "daily",
+          "weekly",
+          "monthly",
+          "quarterly",
+          "annual",
+          "on_demand"
+        ]
+      },
+      {
+        "name": "sources",
+        "type": "array",
+        "description": "Data sources used to compile this regpack."
+      },
+      {
+        "name": "regulators",
+        "type": "array",
+        "description": "Regulators covered by this regpack."
+      },
+      {
+        "name": "sanctions_snapshot",
+        "type": "",
+        "description": "Consolidated sanctions lists snapshot."
+      },
+      {
+        "name": "license_registry",
+        "type": "",
+        "description": "License types and requirements."
+      },
+      {
+        "name": "compliance_calendar",
+        "type": "",
+        "description": "Reporting deadlines and examination schedules."
+      },
+      {
+        "name": "previous_regpack_digest",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "SHA256 digest of previous regpack for delta computation."
+      },
+      {
+        "name": "delta",
+        "type": "",
+        "description": "Changes from previous regpack."
+      },
+      {
+        "name": "meta",
+        "type": "object",
+        "description": "Optional freeform metadata."
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "Optional DataIntegrityProof."
+      }
+    ]
+  },
+  {
+    "file": "rule-eval-evidence.attachment.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/rule-eval-evidence.attachment.schema.json",
+    "title": "Rule Evaluation Evidence Attachment",
+    "type": "object",
+    "required": [
+      "artifact_type",
+      "digest_sha256"
+    ],
+    "properties": [
+      {
+        "name": "artifact_type",
+        "type": "rule-eval-evidence"
+      },
+      {
+        "name": "digest_sha256",
+        "type": "string"
+      },
+      {
+        "name": "harbor_id",
+        "type": "string"
+      },
+      {
+        "name": "result",
+        "type": "string",
+        "enum": [
+          "pass",
+          "fail",
+          "unknown"
+        ]
+      },
+      {
+        "name": "meta",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "rule-eval-evidence.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/rule-eval-evidence.schema.json",
+    "title": "MEZ Rule Evaluation Evidence",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "evaluated_at",
+      "harbor_id",
+      "transition_kind",
+      "result"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZRuleEvaluationEvidence"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "evaluated_at",
+        "type": "string",
+        "description": "RFC3339 timestamp"
+      },
+      {
+        "name": "harbor_id",
+        "type": "string"
+      },
+      {
+        "name": "jurisdiction_id",
+        "type": "string"
+      },
+      {
+        "name": "transition_kind",
+        "type": "string"
+      },
+      {
+        "name": "payload_sha256",
+        "type": "string",
+        "description": "sha256 digest of the transition payload (committed or computed)"
+      },
+      {
+        "name": "schema_digest_sha256",
+        "type": "string"
+      },
+      {
+        "name": "ruleset_digest_sha256",
+        "type": "string"
+      },
+      {
+        "name": "zk_circuit_digest_sha256",
+        "type": "string"
+      },
+      {
+        "name": "result",
+        "type": "string",
+        "enum": [
+          "pass",
+          "fail",
+          "unknown"
+        ]
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      },
+      {
+        "name": "violations",
+        "type": "",
+        "description": "Optional, schema-free violation/evidence payload (array/object)."
+      },
+      {
+        "name": "attachments",
+        "type": "array"
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "Optional DataIntegrityProof (JCS + Ed25519) for the evidence object."
+      }
+    ]
+  },
+  {
+    "file": "smart-asset.attestation.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/smart-asset.attestation.schema.json",
+    "title": "SmartAssetAttestation",
+    "type": "object",
+    "required": [
+      "type",
+      "asset_id",
+      "issued_at",
+      "issuer",
+      "kind"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "SmartAssetAttestation"
+      },
+      {
+        "name": "asset_id",
+        "type": "string"
+      },
+      {
+        "name": "issued_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "issuer",
+        "type": "string",
+        "description": "DID of the attestor (custodian, regulator, auditor, oracle, etc.)"
+      },
+      {
+        "name": "kind",
+        "type": "string",
+        "description": "Semantic type of attestation (e.g., custody.handover.v1, kyc.passed.v1)"
+      },
+      {
+        "name": "claims",
+        "type": "object",
+        "description": "Structured claims; semantics determined by kind and/or schema digest commitments"
+      },
+      {
+        "name": "claims_digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "Optional commit-only mode: digest of canonicalized claims"
+      },
+      {
+        "name": "attachments",
+        "type": "array"
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "smart-asset.checkpoint.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/smart-asset.checkpoint.schema.json",
+    "title": "SmartAssetCheckpoint",
+    "type": "object",
+    "required": [
+      "type",
+      "asset_id",
+      "as_of",
+      "state_root_sha256"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "SmartAssetCheckpoint"
+      },
+      {
+        "name": "asset_id",
+        "type": "string"
+      },
+      {
+        "name": "as_of",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "state_root_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "parents",
+        "type": "array"
+      },
+      {
+        "name": "attachments",
+        "type": "array"
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "smart-asset.fork-resolution.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/smart-asset.fork-resolution.schema.json",
+    "title": "MEZ Smart Asset Fork Resolution",
+    "type": "object",
+    "required": [
+      "type",
+      "asset_id",
+      "purpose",
+      "sequence",
+      "prev_root",
+      "chosen_next_root",
+      "resolved_at"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZSmartAssetForkResolution"
+      },
+      {
+        "name": "resolution_id",
+        "type": "string"
+      },
+      {
+        "name": "asset_id",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "purpose",
+        "type": "string"
+      },
+      {
+        "name": "resolved_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "sequence",
+        "type": "integer",
+        "minimum": 0
+      },
+      {
+        "name": "prev_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "chosen_next_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "candidates",
+        "type": "array"
+      },
+      {
+        "name": "authority_registry_ref",
+        "type": ""
+      },
+      {
+        "name": "policy_ref",
+        "type": ""
+      },
+      {
+        "name": "reason",
+        "type": "string"
+      },
+      {
+        "name": "meta",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "smart-asset.genesis.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/smart-asset.genesis.schema.json",
+    "title": "Smart Asset Genesis Document",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "created_at",
+      "asset_name",
+      "asset_class"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "SmartAssetGenesis"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string",
+        "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+        "description": "Stack specification version used to interpret this document."
+      },
+      {
+        "name": "asset_id",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "Optional explicit asset id (informational). If present, SHOULD equal sha256(JCS(genesis-without-asset_id))."
+      },
+      {
+        "name": "created_at",
+        "type": "string",
+        "format": "date-time",
+        "description": "Creation time of the genesis document."
+      },
+      {
+        "name": "asset_name",
+        "type": "string"
+      },
+      {
+        "name": "asset_class",
+        "type": "string",
+        "description": "Semantic category: e.g., legal_entity, security, property, building, ip, account, credential."
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "name": "creator",
+        "type": "string",
+        "description": "DID (or other identifier) of the creator / asset authority."
+      },
+      {
+        "name": "home_harbor_id",
+        "type": "string",
+        "description": "Optional preferred home harbor / jurisdiction id (zone id)."
+      },
+      {
+        "name": "initial_metadata",
+        "type": "object",
+        "description": "Optional initial metadata (non-normative)."
+      },
+      {
+        "name": "extensions",
+        "type": "object",
+        "description": "Extension point for domain-specific fields while keeping the canonical top-level strict."
+      }
+    ]
+  },
+  {
+    "file": "smart-asset.inclusion-proof.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/smart-asset.inclusion-proof.schema.json",
+    "title": "Smart Asset Receipt Inclusion Proof",
+    "type": "object",
+    "required": [
+      "type",
+      "asset_id",
+      "mmr",
+      "leaf_index",
+      "receipt_next_root",
+      "leaf_hash",
+      "peak_index",
+      "peak_height",
+      "path",
+      "peaks"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "SmartAssetReceiptInclusionProof"
+      },
+      {
+        "name": "asset_id",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "mmr",
+        "type": "object"
+      },
+      {
+        "name": "leaf_index",
+        "type": "integer",
+        "description": "0-indexed receipt position inside the accumulator. In the reference implementation this matches receipt.sequence.",
+        "minimum": 0
+      },
+      {
+        "name": "receipt_next_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "leaf_hash",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "peak_index",
+        "type": "integer",
+        "minimum": 0
+      },
+      {
+        "name": "peak_height",
+        "type": "integer",
+        "minimum": 0
+      },
+      {
+        "name": "path",
+        "type": "array"
+      },
+      {
+        "name": "peaks",
+        "type": "array"
+      },
+      {
+        "name": "computed_peak_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "generated_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "checkpoint_digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "checkpoint_ref",
+        "type": "",
+        "description": "Optional typed ArtifactRef to the signed checkpoint payload (excluding proof). When present, artifact_type MUST be \"checkpoint\" or \"smart-asset-receipt-checkpoint\"."
+      }
+    ]
+  },
+  {
+    "file": "smart-asset.manifest.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/smart-asset.manifest.schema.json",
+    "title": "Smart Asset Operational Manifest",
+    "type": "object",
+    "required": [
+      "type",
+      "stack_spec_version",
+      "asset_id",
+      "node_id",
+      "role",
+      "data_dir",
+      "registry"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "SmartAssetManifest"
+      },
+      {
+        "name": "stack_spec_version",
+        "type": "string",
+        "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+      },
+      {
+        "name": "asset_id",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "node_id",
+        "type": "string",
+        "description": "Operator node identifier (could be DID, hostname, or UUID)."
+      },
+      {
+        "name": "role",
+        "type": "string",
+        "enum": [
+          "operator",
+          "witness",
+          "regulator",
+          "auditor",
+          "replica"
+        ]
+      },
+      {
+        "name": "data_dir",
+        "type": "string",
+        "description": "Base data directory for the node (operational DB + cache + logs)."
+      },
+      {
+        "name": "registry",
+        "type": "",
+        "description": "ArtifactRef to the Smart Asset Registry VC (recommended) or to an equivalent registry snapshot."
+      },
+      {
+        "name": "trusted_anchors",
+        "type": "",
+        "description": "Optional trust anchor set (e.g., corridor trust anchors, registry trust anchors)."
+      },
+      {
+        "name": "storage",
+        "type": "object"
+      },
+      {
+        "name": "replication",
+        "type": "object"
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "smart-asset.receipt-chain.checkpoint.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/smart-asset.receipt-chain.checkpoint.schema.json",
+    "title": "Smart Asset Receipt Chain Checkpoint",
+    "type": "object",
+    "required": [
+      "type",
+      "asset_id",
+      "timestamp",
+      "genesis_root",
+      "receipt_count",
+      "final_chain_root",
+      "mmr",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "SmartAssetReceiptChainCheckpoint"
+      },
+      {
+        "name": "asset_id",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      {
+        "name": "timestamp",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "genesis_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "Asset receipt-chain genesis root. For reference implementations this is typically SHA256(JCS({tag,asset_id,purpose}))."
+      },
+      {
+        "name": "purpose",
+        "type": "string",
+        "description": "Optional chain purpose label (e.g., 'core', 'compliance', 'dispute')."
+      },
+      {
+        "name": "receipt_count",
+        "type": "integer",
+        "description": "Number of receipts included in the checkpoint MMR. SHOULD equal mmr.size.",
+        "minimum": 0
+      },
+      {
+        "name": "final_chain_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "The chain head root after applying receipt_count receipts (typically the last receipt.next_root)."
+      },
+      {
+        "name": "lawpack_digest_set",
+        "type": "array"
+      },
+      {
+        "name": "ruleset_digest_set",
+        "type": "array"
+      },
+      {
+        "name": "state_root_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "Optional business/state commitment for the asset as of this checkpoint (e.g., SmartAssetCheckpoint.state_root_sha256)."
+      },
+      {
+        "name": "state_checkpoint_ref",
+        "type": "",
+        "description": "Optional ArtifactRef pointing to the SmartAssetCheckpoint artifact whose digest matches state_root_sha256."
+      },
+      {
+        "name": "registry_ref",
+        "type": "",
+        "description": "Optional ArtifactRef pointing to the active Smart Asset Registry VC used for authorization/compliance at this checkpoint."
+      },
+      {
+        "name": "mmr",
+        "type": "object"
+      },
+      {
+        "name": "anchor",
+        "type": "object",
+        "description": "Optional anchoring metadata for external commitments."
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "One or more cryptographic proofs over the checkpoint payload (excluding the proof field)."
+      }
+    ]
+  },
+  {
+    "file": "smart-asset.receipt-checkpoint.attachment.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/smart-asset.receipt-checkpoint.attachment.schema.json",
+    "title": "Smart Asset Receipt-Chain Checkpoint Attachment",
+    "type": ""
+  },
+  {
+    "file": "smart-asset.receipt.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/smart-asset.receipt.schema.json",
+    "title": "Smart Asset Receipt",
+    "type": "object",
+    "required": [
+      "type",
+      "asset_id",
+      "sequence",
+      "timestamp",
+      "prev_root",
+      "next_root",
+      "lawpack_digest_set",
+      "ruleset_digest_set",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "SmartAssetReceipt"
+      },
+      {
+        "name": "asset_id",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "Asset identifier (sha256 hex), typically derived from SmartAssetGenesis.asset_id."
+      },
+      {
+        "name": "sequence",
+        "type": "integer",
+        "description": "Monotonic sequence number within an asset receipt chain.",
+        "minimum": 0
+      },
+      {
+        "name": "timestamp",
+        "type": "string",
+        "format": "date-time",
+        "description": "RFC3339 timestamp (UTC recommended)."
+      },
+      {
+        "name": "prev_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "Receipt-chain root before this receipt. For sequence=0 this SHOULD equal the asset chain genesis_root."
+      },
+      {
+        "name": "next_root",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "Receipt-chain root after this receipt. MUST equal SHA256(JCS(receipt_without_proof_and_next_root))."
+      },
+      {
+        "name": "jurisdiction_scope",
+        "type": "string",
+        "description": "Optional declaration of the jurisdictional scope this receipt claims to satisfy. Intended for multi-harbor / sharded compliance.",
+        "enum": [
+          "all_active",
+          "subset",
+          "quorum"
+        ]
+      },
+      {
+        "name": "harbor_ids",
+        "type": "array",
+        "description": "Optional list of harbor/jurisdiction identifiers relevant to this receipt's compliance scope. Interpreted according to jurisdiction_scope."
+      },
+      {
+        "name": "harbor_quorum",
+        "type": "integer",
+        "description": "Optional quorum threshold when jurisdiction_scope='quorum'. Verifiers MAY cross-check this against policy (registry VC / ruleset).",
+        "minimum": 1
+      },
+      {
+        "name": "lawpack_digest_set",
+        "type": "array",
+        "description": "Sorted set of lawpack digests (sha256) governing this asset operation snapshot."
+      },
+      {
+        "name": "ruleset_digest_set",
+        "type": "array",
+        "description": "Sorted set of ruleset digests (sha256) governing this asset receipt chain."
+      },
+      {
+        "name": "transition_type_registry_digest_sha256",
+        "type": "",
+        "description": "Optional digest commitment to a Transition Type Registry snapshot (snapshot_digest_sha256 from transition-types.lock.json). When present, receipts MAY omit per-transition schema/ruleset/circuit digests and rely on the registry mapping for semantics. Legacy form is a raw sha256 digest; preferred form is an ArtifactRef with artifact_type='transition-types'."
+      },
+      {
+        "name": "transition",
+        "type": ""
+      },
+      {
+        "name": "zk",
+        "type": "object",
+        "description": "Optional ZK proof scaffold. Proof verification is asset-specific; receipts commit to proof and verifier digests."
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "DataIntegrityProof (JCS + Ed25519) or array of proofs."
+      }
+    ]
+  },
+  {
+    "file": "stack.lock.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/stack.lock.schema.json",
+    "title": "MEZ Stack Lockfile",
+    "type": "object",
+    "required": [
+      "stack_spec_version",
+      "generated_at",
+      "zone_id",
+      "profile",
+      "modules",
+      "lawpacks",
+      "corridors"
+    ],
+    "properties": [
+      {
+        "name": "stack_spec_version",
+        "type": "string"
+      },
+      {
+        "name": "generated_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "zone_id",
+        "type": "string"
+      },
+      {
+        "name": "profile",
+        "type": "object"
+      },
+      {
+        "name": "modules",
+        "type": "array"
+      },
+      {
+        "name": "overlays",
+        "type": "array"
+      },
+      {
+        "name": "corridors",
+        "type": "array"
+      },
+      {
+        "name": "lawpacks",
+        "type": "array",
+        "description": "Pinned lawpack digests for jurisdictional corpora used by this zone."
+      },
+      {
+        "name": "licensepacks",
+        "type": "array",
+        "description": "Pinned licensepack digests for jurisdictional licensing registries used by this zone."
+      },
+      {
+        "name": "regpacks",
+        "type": "array",
+        "description": "Pinned regpack digests for regulatory state snapshots used by this zone."
+      }
+    ]
+  },
+  {
+    "file": "trade.amount.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/trade.amount.v1.schema.json",
+    "title": "Trade Amount (v1)",
+    "type": "object",
+    "required": [
+      "currency",
+      "value"
+    ],
+    "properties": [
+      {
+        "name": "currency",
+        "type": "string",
+        "pattern": "^[A-Z0-9]{2,10}$",
+        "description": "Currency or unit code. Prefer ISO 4217 (e.g., USD, EUR). For non-fiat units, use a stable uppercase code (e.g., XAU)."
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "pattern": "^[0-9]+(\\.[0-9]{1,18})?$",
+        "description": "Decimal string with up to 18 fractional digits."
+      },
+      {
+        "name": "scale",
+        "type": "integer",
+        "description": "Optional explicit scale. If provided, value SHOULD have <= scale fractional digits.",
+        "minimum": 0
+      }
+    ]
+  },
+  {
+    "file": "trade.bill-of-lading.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/trade.bill-of-lading.v1.schema.json",
+    "title": "Bill of Lading (v1)",
+    "type": "object",
+    "required": [
+      "bol_id",
+      "issue_date",
+      "carrier",
+      "shipper",
+      "consignee",
+      "port_of_loading",
+      "port_of_discharge",
+      "goods"
+    ],
+    "properties": [
+      {
+        "name": "bol_id",
+        "type": "string",
+        "description": "Stable BOL identifier."
+      },
+      {
+        "name": "bol_number",
+        "type": "string",
+        "description": "Human-facing BOL number."
+      },
+      {
+        "name": "issue_date",
+        "type": "string",
+        "format": "date",
+        "description": "BOL issue date (YYYY-MM-DD)."
+      },
+      {
+        "name": "consignment_type",
+        "type": "string",
+        "description": "Title/consignment semantics.",
+        "enum": [
+          "straight",
+          "to-order",
+          "bearer"
+        ]
+      },
+      {
+        "name": "carrier",
+        "type": ""
+      },
+      {
+        "name": "shipper",
+        "type": ""
+      },
+      {
+        "name": "consignee",
+        "type": ""
+      },
+      {
+        "name": "notify_party",
+        "type": ""
+      },
+      {
+        "name": "vessel_name",
+        "type": "string"
+      },
+      {
+        "name": "voyage_number",
+        "type": "string"
+      },
+      {
+        "name": "port_of_loading",
+        "type": "string"
+      },
+      {
+        "name": "port_of_discharge",
+        "type": "string"
+      },
+      {
+        "name": "place_of_receipt",
+        "type": "string"
+      },
+      {
+        "name": "place_of_delivery",
+        "type": "string"
+      },
+      {
+        "name": "freight_terms",
+        "type": "string",
+        "description": "Optional freight terms (prepaid, collect, etc.)."
+      },
+      {
+        "name": "goods",
+        "type": "array"
+      },
+      {
+        "name": "originals_count",
+        "type": "integer",
+        "description": "Number of original BOLs issued.",
+        "minimum": 0
+      },
+      {
+        "name": "endorsements",
+        "type": "array",
+        "description": "Optional endorsement history; canonical provenance SHOULD be carried by corridor receipt chains."
+      },
+      {
+        "name": "attachment_refs",
+        "type": "array",
+        "description": "Optional attachment artifact references (PDF BOL, carrier signed copy, etc.)."
+      },
+      {
+        "name": "meta",
+        "type": "object",
+        "description": "Non-normative extension metadata."
+      }
+    ]
+  },
+  {
+    "file": "trade.invoice.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/trade.invoice.v1.schema.json",
+    "title": "Trade Invoice (v1)",
+    "type": "object",
+    "required": [
+      "invoice_id",
+      "issue_date",
+      "seller",
+      "buyer",
+      "total"
+    ],
+    "properties": [
+      {
+        "name": "invoice_id",
+        "type": "string",
+        "description": "Stable invoice identifier (internal or globally unique)."
+      },
+      {
+        "name": "invoice_number",
+        "type": "string",
+        "description": "Human-facing invoice number (may be non-unique across systems)."
+      },
+      {
+        "name": "issue_date",
+        "type": "string",
+        "format": "date",
+        "description": "Invoice issue date (YYYY-MM-DD)."
+      },
+      {
+        "name": "due_date",
+        "type": "string",
+        "format": "date",
+        "description": "Payment due date (YYYY-MM-DD)."
+      },
+      {
+        "name": "seller",
+        "type": ""
+      },
+      {
+        "name": "buyer",
+        "type": ""
+      },
+      {
+        "name": "total",
+        "type": ""
+      },
+      {
+        "name": "tax",
+        "type": ""
+      },
+      {
+        "name": "line_items",
+        "type": "array"
+      },
+      {
+        "name": "purchase_order_ref",
+        "type": "string",
+        "description": "Optional purchase order reference."
+      },
+      {
+        "name": "contract_ref",
+        "type": "string",
+        "description": "Optional contract reference (e.g., master sales agreement)."
+      },
+      {
+        "name": "incoterms",
+        "type": "string",
+        "description": "Optional Incoterms code (e.g., FOB, CIF) and place."
+      },
+      {
+        "name": "shipment_ref",
+        "type": "string",
+        "description": "Optional shipment reference (links to BOL or logistics system)."
+      },
+      {
+        "name": "governing_law",
+        "type": "string",
+        "description": "Optional governing law / lawpack identifier (deployment-specific)."
+      },
+      {
+        "name": "jurisdiction_tags",
+        "type": "array",
+        "description": "Optional tags used for routing/compliance policy (e.g., zone ids, customs regimes)."
+      },
+      {
+        "name": "attachment_refs",
+        "type": "array",
+        "description": "Optional attachment artifact references (PDF invoice, signed copies, packing list, etc.)."
+      },
+      {
+        "name": "meta",
+        "type": "object",
+        "description": "Non-normative extension metadata."
+      }
+    ]
+  },
+  {
+    "file": "trade.letter-of-credit.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/trade.letter-of-credit.v1.schema.json",
+    "title": "Letter of Credit (v1)",
+    "type": "object",
+    "required": [
+      "lc_id",
+      "issue_date",
+      "applicant",
+      "beneficiary",
+      "issuing_bank",
+      "amount",
+      "expiry_date"
+    ],
+    "properties": [
+      {
+        "name": "lc_id",
+        "type": "string",
+        "description": "Stable LC identifier."
+      },
+      {
+        "name": "lc_number",
+        "type": "string",
+        "description": "Human-facing LC number."
+      },
+      {
+        "name": "issue_date",
+        "type": "string",
+        "format": "date",
+        "description": "LC issue date (YYYY-MM-DD)."
+      },
+      {
+        "name": "expiry_date",
+        "type": "string",
+        "format": "date",
+        "description": "LC expiry date (YYYY-MM-DD)."
+      },
+      {
+        "name": "rules",
+        "type": "string",
+        "description": "Optional rules reference (e.g., UCP600, ISP98)."
+      },
+      {
+        "name": "applicant",
+        "type": ""
+      },
+      {
+        "name": "beneficiary",
+        "type": ""
+      },
+      {
+        "name": "issuing_bank",
+        "type": ""
+      },
+      {
+        "name": "advising_bank",
+        "type": ""
+      },
+      {
+        "name": "confirming_bank",
+        "type": ""
+      },
+      {
+        "name": "amount",
+        "type": ""
+      },
+      {
+        "name": "latest_shipment_date",
+        "type": "string",
+        "format": "date",
+        "description": "Optional latest shipment date."
+      },
+      {
+        "name": "presentation_period_days",
+        "type": "integer",
+        "description": "Optional presentation period in days.",
+        "minimum": 0
+      },
+      {
+        "name": "incoterms",
+        "type": "string",
+        "description": "Optional Incoterms code and place."
+      },
+      {
+        "name": "documents_required",
+        "type": "array",
+        "description": "Document checklist for presentation."
+      },
+      {
+        "name": "governing_law",
+        "type": "string",
+        "description": "Optional governing law / lawpack identifier (deployment-specific)."
+      },
+      {
+        "name": "jurisdiction_tags",
+        "type": "array",
+        "description": "Optional routing/compliance tags."
+      },
+      {
+        "name": "attachment_refs",
+        "type": "array",
+        "description": "Optional attachment artifact references (PDF LC, amendments, SWIFT MT700/MT707, etc.)."
+      },
+      {
+        "name": "meta",
+        "type": "object",
+        "description": "Non-normative extension metadata."
+      }
+    ]
+  },
+  {
+    "file": "trade.party.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/trade.party.v1.schema.json",
+    "title": "Trade Party (v1)",
+    "type": "object",
+    "required": [
+      "party_id"
+    ],
+    "properties": [
+      {
+        "name": "party_id",
+        "type": "string",
+        "description": "Stable identifier for the party. Examples: did:key:..., lei:..., reg:..., internal:..."
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "lei",
+        "type": "string",
+        "pattern": "^[A-Z0-9]{18}[0-9]{2}$",
+        "description": "Optional Legal Entity Identifier (LEI)."
+      },
+      {
+        "name": "did",
+        "type": "string",
+        "pattern": "^did:[a-z0-9]+:.*$",
+        "description": "Optional Decentralized Identifier (DID)."
+      },
+      {
+        "name": "account_id",
+        "type": "string",
+        "description": "Optional account identifier (bank account, rail-specific account, etc.)."
+      },
+      {
+        "name": "agent_id",
+        "type": "string",
+        "description": "Optional agent identifier (bank BIC, PSP ID, corridor node ID, etc.)."
+      },
+      {
+        "name": "address",
+        "type": "object"
+      },
+      {
+        "name": "meta",
+        "type": "object",
+        "description": "Optional extension metadata; implementers SHOULD treat this as non-normative."
+      }
+    ]
+  },
+  {
+    "file": "transition-envelope.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition-envelope.schema.json",
+    "title": "MEZ Transition Envelope",
+    "type": "object",
+    "required": [
+      "type",
+      "kind",
+      "payload_sha256"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZTransitionEnvelope"
+      },
+      {
+        "name": "kind",
+        "type": "string"
+      },
+      {
+        "name": "schema",
+        "type": "string",
+        "description": "Optional schema identifier/URI for the payload."
+      },
+      {
+        "name": "schema_digest_sha256",
+        "type": "",
+        "description": "Optional payload schema commitment. Legacy form is a raw sha256 digest; preferred form is an ArtifactRef with artifact_type='schema'."
+      },
+      {
+        "name": "ruleset_digest_sha256",
+        "type": "",
+        "description": "Optional transition ruleset commitment. Legacy form is a raw sha256 digest; preferred form is an ArtifactRef with artifact_type='ruleset'."
+      },
+      {
+        "name": "zk_circuit_digest_sha256",
+        "type": "",
+        "description": "Optional ZK circuit commitment for proof-carrying transitions. Legacy form is a raw sha256 digest; preferred form is an ArtifactRef with artifact_type='circuit'."
+      },
+      {
+        "name": "registry_override",
+        "type": "boolean",
+        "description": "If true, allows this envelope to override registry-derived digests (schema/ruleset/circuit). Verifiers MAY reject overrides based on corridor policy."
+      },
+      {
+        "name": "payload",
+        "type": "",
+        "description": "Optional inlined payload. If omitted, payload_sha256 commits to an out-of-band payload."
+      },
+      {
+        "name": "payload_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "SHA256(JCS(payload)) when payload is present, otherwise SHA256 of an out-of-band payload per corridor policy."
+      },
+      {
+        "name": "attachments",
+        "type": "array",
+        "description": "Optional list of referenced artifacts committed by digest. Attachments are typed artifact references so they can point at blobs, schemas, VCs, checkpoints, etc."
+      },
+      {
+        "name": "meta",
+        "type": "object",
+        "description": "Optional free-form metadata."
+      }
+    ]
+  },
+  {
+    "file": "transition-types.lock.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition-types.lock.schema.json",
+    "title": "MEZ Transition Type Registry Lock",
+    "type": "object",
+    "required": [
+      "transition_types_lock_version",
+      "generated_at",
+      "snapshot",
+      "snapshot_digest_sha256"
+    ],
+    "properties": [
+      {
+        "name": "transition_types_lock_version",
+        "type": "integer",
+        "minimum": 1
+      },
+      {
+        "name": "generated_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "source",
+        "type": "object",
+        "description": "Optional provenance describing the authoring registry used to produce this snapshot."
+      },
+      {
+        "name": "snapshot",
+        "type": "object"
+      },
+      {
+        "name": "snapshot_digest_sha256",
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$",
+        "description": "SHA256(JCS(snapshot)) where snapshot excludes provenance and timestamps. Used as a stable content-addressed identifier for the registry snapshot."
+      }
+    ]
+  },
+  {
+    "file": "transition-types.registry.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition-types.registry.schema.json",
+    "title": "MEZ Transition Type Registry",
+    "type": "object",
+    "required": [
+      "version",
+      "transition_types"
+    ],
+    "properties": [
+      {
+        "name": "version",
+        "type": "integer",
+        "minimum": 1
+      },
+      {
+        "name": "transition_types",
+        "type": "array"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.example.transfer.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.example.transfer.v1.schema.json",
+    "title": "Example Transfer Transition Payload (v1)",
+    "type": "object",
+    "required": [
+      "asset_id",
+      "from",
+      "to",
+      "amount",
+      "nonce"
+    ],
+    "properties": [
+      {
+        "name": "asset_id",
+        "type": "string"
+      },
+      {
+        "name": "from",
+        "type": "string",
+        "description": "Sender identifier (DID, account id, or corridor-specific identifier)."
+      },
+      {
+        "name": "to",
+        "type": "string",
+        "description": "Recipient identifier (DID, account id, or corridor-specific identifier)."
+      },
+      {
+        "name": "amount",
+        "type": "string",
+        "pattern": "^[0-9]+(\\.[0-9]+)?$",
+        "description": "Decimal amount encoded as a string to avoid floating-point ambiguity."
+      },
+      {
+        "name": "asset_type",
+        "type": "string",
+        "description": "Optional asset type/ticker."
+      },
+      {
+        "name": "memo",
+        "type": "string"
+      },
+      {
+        "name": "nonce",
+        "type": "string",
+        "description": "Unique per-sender nonce for replay protection."
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.settle.swift.pacs008.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.settle.swift.pacs008.v1.schema.json",
+    "title": "SWIFT ISO20022 pacs.008 settlement payload (v1)",
+    "type": "object",
+    "required": [
+      "message_type",
+      "amount",
+      "currency",
+      "debtor",
+      "creditor"
+    ],
+    "properties": [
+      {
+        "name": "message_type",
+        "type": "pacs.008.001.08"
+      },
+      {
+        "name": "message_id",
+        "type": "string"
+      },
+      {
+        "name": "instruction_id",
+        "type": "string"
+      },
+      {
+        "name": "end_to_end_id",
+        "type": "string"
+      },
+      {
+        "name": "uetr",
+        "type": "string"
+      },
+      {
+        "name": "amount",
+        "type": "string",
+        "pattern": "^[0-9]+(\\.[0-9]{1,12})?$"
+      },
+      {
+        "name": "currency",
+        "type": "string",
+        "pattern": "^[A-Z]{3}$"
+      },
+      {
+        "name": "debtor",
+        "type": "object"
+      },
+      {
+        "name": "creditor",
+        "type": "object"
+      },
+      {
+        "name": "remittance_info",
+        "type": "string"
+      },
+      {
+        "name": "raw_message_base64",
+        "type": "string",
+        "description": "Optional raw ISO20022 XML message (base64). Prefer carrying raw messages as attachment artifacts for privacy/size control."
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.bol.endorse.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.bol.endorse.v1.schema.json",
+    "title": "BOL Endorse transition payload (v1)",
+    "type": "object",
+    "required": [
+      "from_party_id",
+      "to_party_id",
+      "endorsed_at"
+    ],
+    "properties": [
+      {
+        "name": "bol_id",
+        "type": "string"
+      },
+      {
+        "name": "bol_ref",
+        "type": ""
+      },
+      {
+        "name": "from_party_id",
+        "type": "string"
+      },
+      {
+        "name": "to_party_id",
+        "type": "string"
+      },
+      {
+        "name": "endorsed_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "endorsement_type",
+        "type": "string",
+        "enum": [
+          "blank",
+          "to-order"
+        ]
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.bol.issue.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.bol.issue.v1.schema.json",
+    "title": "BOL Issue transition payload (v1)",
+    "type": "object",
+    "properties": [
+      {
+        "name": "bol",
+        "type": ""
+      },
+      {
+        "name": "bol_ref",
+        "type": ""
+      },
+      {
+        "name": "issued_by_party_id",
+        "type": "string",
+        "description": "Optional issuer identifier (typically carrier or agent)."
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.bol.release.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.bol.release.v1.schema.json",
+    "title": "BOL Release transition payload (v1)",
+    "type": "object",
+    "required": [
+      "released_at",
+      "released_to_party_id"
+    ],
+    "properties": [
+      {
+        "name": "bol_id",
+        "type": "string"
+      },
+      {
+        "name": "bol_ref",
+        "type": ""
+      },
+      {
+        "name": "released_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "released_to_party_id",
+        "type": "string"
+      },
+      {
+        "name": "release_location",
+        "type": "string"
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.invoice.accept.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.invoice.accept.v1.schema.json",
+    "title": "Trade Invoice Accept transition payload (v1)",
+    "type": "object",
+    "required": [
+      "accepted_by_party_id",
+      "accepted_at"
+    ],
+    "properties": [
+      {
+        "name": "invoice_id",
+        "type": "string"
+      },
+      {
+        "name": "invoice_ref",
+        "type": ""
+      },
+      {
+        "name": "accepted_by_party_id",
+        "type": "string"
+      },
+      {
+        "name": "accepted_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "enum": [
+          "accepted",
+          "disputed"
+        ]
+      },
+      {
+        "name": "dispute_reason",
+        "type": "string"
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.invoice.issue.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.invoice.issue.v1.schema.json",
+    "title": "Trade Invoice Issue transition payload (v1)",
+    "type": "object",
+    "properties": [
+      {
+        "name": "invoice",
+        "type": ""
+      },
+      {
+        "name": "invoice_ref",
+        "type": ""
+      },
+      {
+        "name": "issued_by_party_id",
+        "type": "string",
+        "description": "Optional party identifier asserting issuance (typically the seller)."
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.invoice.settle.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.invoice.settle.v1.schema.json",
+    "title": "Trade Invoice Settle transition payload (v1)",
+    "type": "object",
+    "required": [
+      "settled_at",
+      "amount"
+    ],
+    "properties": [
+      {
+        "name": "invoice_id",
+        "type": "string"
+      },
+      {
+        "name": "invoice_ref",
+        "type": ""
+      },
+      {
+        "name": "amount",
+        "type": ""
+      },
+      {
+        "name": "settled_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "settlement_corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "settlement_reference",
+        "type": "",
+        "description": "Optional reference to a proof-binding / settlement-anchor / external rail receipt artifact. Prefer attaching typed artifacts to the corridor receipt transition attachments."
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.lc.amend.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.lc.amend.v1.schema.json",
+    "title": "LC Amend transition payload (v1)",
+    "type": "object",
+    "required": [
+      "amended_at",
+      "amendment_id"
+    ],
+    "properties": [
+      {
+        "name": "lc_id",
+        "type": "string"
+      },
+      {
+        "name": "lc_ref",
+        "type": ""
+      },
+      {
+        "name": "amendment_id",
+        "type": "string"
+      },
+      {
+        "name": "amended_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "amended_by_party_id",
+        "type": "string"
+      },
+      {
+        "name": "amendment",
+        "type": "object",
+        "description": "Minimal structured amendment fields. For complex amendments, carry the canonical message (e.g., SWIFT MT707) as an attachment artifact and reference it via amendment_ref."
+      },
+      {
+        "name": "amendment_ref",
+        "type": "",
+        "description": "Optional reference to a full amendment artifact (e.g., MT707)."
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.lc.honor.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.lc.honor.v1.schema.json",
+    "title": "LC Honor/Reject transition payload (v1)",
+    "type": "object",
+    "required": [
+      "decision",
+      "decision_at"
+    ],
+    "properties": [
+      {
+        "name": "lc_id",
+        "type": "string"
+      },
+      {
+        "name": "lc_ref",
+        "type": ""
+      },
+      {
+        "name": "decision",
+        "type": "string",
+        "enum": [
+          "honor",
+          "reject"
+        ]
+      },
+      {
+        "name": "decision_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "decided_by_party_id",
+        "type": "string"
+      },
+      {
+        "name": "honor_amount",
+        "type": ""
+      },
+      {
+        "name": "reason",
+        "type": "string",
+        "description": "If rejected, an optional reason."
+      },
+      {
+        "name": "settlement_reference",
+        "type": "",
+        "description": "Optional reference to a proof-binding / settlement-anchor / external rail receipt artifact. Prefer attaching typed artifacts to the corridor receipt transition attachments."
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.lc.issue.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.lc.issue.v1.schema.json",
+    "title": "LC Issue transition payload (v1)",
+    "type": "object",
+    "properties": [
+      {
+        "name": "lc",
+        "type": ""
+      },
+      {
+        "name": "lc_ref",
+        "type": ""
+      },
+      {
+        "name": "issued_by_party_id",
+        "type": "string",
+        "description": "Optional issuer identifier (typically issuing bank)."
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "transition.payload.trade.lc.present.v1.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/transition.payload.trade.lc.present.v1.schema.json",
+    "title": "LC Present Documents transition payload (v1)",
+    "type": "object",
+    "required": [
+      "presented_at",
+      "presented_by_party_id",
+      "document_refs"
+    ],
+    "properties": [
+      {
+        "name": "lc_id",
+        "type": "string"
+      },
+      {
+        "name": "lc_ref",
+        "type": ""
+      },
+      {
+        "name": "presented_at",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "presented_by_party_id",
+        "type": "string"
+      },
+      {
+        "name": "document_refs",
+        "type": "array",
+        "description": "Artifact references to presented documents (invoice, BOL, insurance certificate, inspection cert, etc.)."
+      },
+      {
+        "name": "notes",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "trust-anchors.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/trust-anchors.schema.json",
+    "title": "Corridor Trust Anchors",
+    "type": "object",
+    "required": [
+      "version",
+      "trust_anchors"
+    ],
+    "properties": [
+      {
+        "name": "version",
+        "type": "integer"
+      },
+      {
+        "name": "trust_anchors",
+        "type": "array"
+      }
+    ]
+  },
+  {
+    "file": "vc.arbitration-award.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.arbitration-award.schema.json",
+    "title": "MEZ Arbitration Award Verifiable Credential",
+    "type": ""
+  },
+  {
+    "file": "vc.arbitration-ruling.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.arbitration-ruling.schema.json",
+    "title": "MEZ Arbitration Ruling Verifiable Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "array"
+      },
+      {
+        "name": "type",
+        "type": "array"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "format": "uri"
+      },
+      {
+        "name": "issuer",
+        "type": "string",
+        "pattern": "^did:",
+        "description": "DID of the arbitration institution"
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "Institution's signature on the ruling"
+      }
+    ]
+  },
+  {
+    "file": "vc.artifact-availability.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.artifact-availability.schema.json",
+    "title": "MEZ Artifact Availability Attestation Verifiable Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "array"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "array"
+      },
+      {
+        "name": "issuer",
+        "type": ""
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": ""
+      }
+    ]
+  },
+  {
+    "file": "vc.artifact-witness-bundle.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.artifact-witness-bundle.schema.json",
+    "title": "MEZ Artifact Witness Bundle Attestation Verifiable Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "array"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "array"
+      },
+      {
+        "name": "issuer",
+        "type": ""
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": ""
+      }
+    ]
+  },
+  {
+    "file": "vc.authority-registry.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.authority-registry.schema.json",
+    "title": "MEZ Authority Registry Verifiable Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "array"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "array"
+      },
+      {
+        "name": "issuer",
+        "type": ""
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": ""
+      }
+    ]
+  },
+  {
+    "file": "vc.corridor-agreement.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.corridor-agreement.schema.json",
+    "title": "MEZ Corridor Agreement Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "",
+        "description": "JSON-LD context(s)."
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "",
+        "description": "Credential types. MUST include 'VerifiableCredential'."
+      },
+      {
+        "name": "issuer",
+        "type": "string"
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "One or more cryptographic proofs over the credential payload (excluding the proof field)."
+      }
+    ]
+  },
+  {
+    "file": "vc.corridor-anchor.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.corridor-anchor.schema.json",
+    "title": "MEZ Corridor Anchor Verifiable Credential",
+    "type": ""
+  },
+  {
+    "file": "vc.corridor-definition.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.corridor-definition.schema.json",
+    "title": "MEZ Corridor Definition Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "",
+        "description": "JSON-LD context(s)."
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "",
+        "description": "Credential types. MUST include 'VerifiableCredential'."
+      },
+      {
+        "name": "issuer",
+        "type": "string"
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "One or more cryptographic proofs over the credential payload (excluding the proof field)."
+      }
+    ]
+  },
+  {
+    "file": "vc.corridor-fork-alarm.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.corridor-fork-alarm.schema.json",
+    "title": "MEZ Corridor Fork Alarm Verifiable Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "array"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "array"
+      },
+      {
+        "name": "issuer",
+        "type": ""
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": ""
+      }
+    ]
+  },
+  {
+    "file": "vc.corridor-fork-resolution.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.corridor-fork-resolution.schema.json",
+    "title": "MEZ Corridor Fork Resolution Verifiable Credential",
+    "type": ""
+  },
+  {
+    "file": "vc.corridor-lifecycle-transition.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.corridor-lifecycle-transition.schema.json",
+    "title": "MEZ Corridor Lifecycle Transition Verifiable Credential",
+    "type": ""
+  },
+  {
+    "file": "vc.corridor-watcher-attestation.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.corridor-watcher-attestation.schema.json",
+    "title": "MEZ Corridor Watcher Attestation Verifiable Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "array"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "array"
+      },
+      {
+        "name": "issuer",
+        "type": ""
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": ""
+      }
+    ]
+  },
+  {
+    "file": "vc.dispute-claim.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.dispute-claim.schema.json",
+    "title": "MEZ Dispute Claim Verifiable Credential",
+    "type": ""
+  },
+  {
+    "file": "vc.lawpack-attestation.schema.json",
+    "id": "",
+    "title": "MEZ Lawpack Validity Attestation Verifiable Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "array"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "array"
+      },
+      {
+        "name": "issuer",
+        "type": ""
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": ""
+      }
+    ]
+  },
+  {
+    "file": "vc.node-capability.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.node-capability.schema.json",
+    "title": "MEZ Node Capability Attestation VC",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "array"
+      },
+      {
+        "name": "type",
+        "type": "array"
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "issuer",
+        "type": [
+          "string",
+          "object"
+        ]
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": "object"
+      }
+    ]
+  },
+  {
+    "file": "vc.proof.jcs-ed25519.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.proof.jcs-ed25519.schema.json",
+    "title": "MEZ JCS Ed25519 Proof",
+    "type": "object",
+    "required": [
+      "type",
+      "created",
+      "verificationMethod",
+      "proofPurpose",
+      "jws"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MezEd25519Signature2025"
+      },
+      {
+        "name": "created",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "verificationMethod",
+        "type": "string"
+      },
+      {
+        "name": "proofPurpose",
+        "type": "string"
+      },
+      {
+        "name": "jws",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "file": "vc.regpack-attestation.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.regpack-attestation.schema.json",
+    "title": "MEZ RegPack Attestation VC",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "array"
+      },
+      {
+        "name": "type",
+        "type": "array"
+      },
+      {
+        "name": "id",
+        "type": "string",
+        "format": "uri"
+      },
+      {
+        "name": "issuer",
+        "type": "string",
+        "description": "DID of the attestor."
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "DataIntegrityProof for the credential."
+      }
+    ]
+  },
+  {
+    "file": "vc.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.schema.json",
+    "title": "Verifiable Credential (MEZ minimal profile)",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "",
+        "description": "JSON-LD context(s)."
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "",
+        "description": "Credential types. MUST include 'VerifiableCredential'."
+      },
+      {
+        "name": "issuer",
+        "type": "string"
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "One or more cryptographic proofs over the credential payload (excluding the proof field)."
+      }
+    ]
+  },
+  {
+    "file": "vc.smart-asset-fork-resolution.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.smart-asset-fork-resolution.schema.json",
+    "title": "MEZ Smart Asset Fork Resolution Verifiable Credential",
+    "type": ""
+  },
+  {
+    "file": "vc.smart-asset-registry.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.smart-asset-registry.schema.json",
+    "title": "MEZ Smart Asset Registry Credential",
+    "type": "object",
+    "required": [
+      "@context",
+      "type",
+      "issuer",
+      "issuanceDate",
+      "credentialSubject",
+      "proof"
+    ],
+    "properties": [
+      {
+        "name": "@context",
+        "type": "",
+        "description": "JSON-LD context(s)."
+      },
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "type": "",
+        "description": "Credential types. MUST include 'VerifiableCredential'."
+      },
+      {
+        "name": "issuer",
+        "type": "string"
+      },
+      {
+        "name": "issuanceDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "expirationDate",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "credentialSubject",
+        "type": "object"
+      },
+      {
+        "name": "proof",
+        "type": "",
+        "description": "JCS Ed25519 proof(s)"
+      }
+    ]
+  },
+  {
+    "file": "vc.watcher-bond.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/vc.watcher-bond.schema.json",
+    "title": "MEZ Watcher Bond Verifiable Credential",
+    "type": ""
+  },
+  {
+    "file": "watcher-compare-result.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/watcher-compare-result.schema.json",
+    "title": "MEZ Watcher Compare Result",
+    "type": "object",
+    "required": [
+      "type",
+      "corridor_id",
+      "analysis_timestamp",
+      "attestations",
+      "divergences",
+      "quorum"
+    ],
+    "properties": [
+      {
+        "name": "type",
+        "type": "MEZWatcherCompareResult"
+      },
+      {
+        "name": "corridor_id",
+        "type": "string"
+      },
+      {
+        "name": "analysis_timestamp",
+        "type": "string",
+        "format": "date-time"
+      },
+      {
+        "name": "summary",
+        "type": "object",
+        "description": "High-level stats useful for dashboards."
+      },
+      {
+        "name": "attestations",
+        "type": "array"
+      },
+      {
+        "name": "divergences",
+        "type": "array"
+      },
+      {
+        "name": "quorum",
+        "type": "object"
+      },
+      {
+        "name": "outputs",
+        "type": "object",
+        "description": "Optional additional artifacts emitted by the command (paths, digests)."
+      }
+    ]
+  },
+  {
+    "file": "zone.schema.json",
+    "id": "https://schemas.momentum-ez.org/mez/zone.schema.json",
+    "title": "MEZ Zone Manifest",
+    "type": "object",
+    "required": [
+      "zone_id",
+      "jurisdiction_id",
+      "zone_name",
+      "profile",
+      "corridors"
+    ],
+    "properties": [
+      {
+        "name": "zone_id",
+        "type": "string"
+      },
+      {
+        "name": "jurisdiction_id",
+        "type": "string",
+        "description": "Short identifier, e.g. gm, ae, kz"
+      },
+      {
+        "name": "zone_name",
+        "type": "string"
+      },
+      {
+        "name": "profile",
+        "type": "object"
+      },
+      {
+        "name": "overlays",
+        "type": "array"
+      },
+      {
+        "name": "params_overrides",
+        "type": "object",
+        "description": "Map module_id -> params override object"
+      },
+      {
+        "name": "corridors",
+        "type": "array",
+        "description": "List of enabled corridor IDs"
+      },
+      {
+        "name": "trust_anchors",
+        "type": "array",
+        "description": "Optional global trust anchors"
+      },
+      {
+        "name": "corridor_peers",
+        "type": "array",
+        "description": "Optional peer zone declarations for corridor discovery."
+      },
+      {
+        "name": "national_adapters",
+        "type": "object",
+        "description": "Map of adapter name to enablement and endpoint configuration."
+      },
+      {
+        "name": "key_rotation_policy",
+        "type": "",
+        "description": "Legacy key policy form. Modern manifests may use key_management instead."
+      },
+      {
+        "name": "key_management",
+        "type": "object"
+      },
+      {
+        "name": "lockfile_path",
+        "type": "string"
+      },
+      {
+        "name": "jurisdiction_stack",
+        "type": "array",
+        "description": "Optional ordered list of governing law layers (e.g., ['ae','ae-dubai','ae-dubai-difc']). Defaults to [jurisdiction_id]."
+      },
+      {
+        "name": "lawpack_domains",
+        "type": "array",
+        "description": "Optional list of lawpack domains to pin (default: ['civil','financial'])."
+      },
+      {
+        "name": "licensepack_domains",
+        "type": "array",
+        "description": "Optional list of licensepack domains to pin (e.g., ['financial', 'corporate']). Licensepacks capture live licensing registry state."
+      },
+      {
+        "name": "licensepack_refresh_policy",
+        "type": "object",
+        "description": "Licensepack refresh policy per domain. Keys are domain names or 'default'."
+      },
+      {
+        "name": "regpack_domains",
+        "type": "array",
+        "description": "Optional list of regpack domains to pin."
+      },
+      {
+        "name": "regpacks",
+        "type": "array",
+        "description": "Pinned regpack references resolved at bootstrap."
+      },
+      {
+        "name": "lawpacks",
+        "type": "array",
+        "description": "Pinned lawpack references."
+      },
+      {
+        "name": "licensepacks",
+        "type": "array",
+        "description": "Pinned licensepack references."
+      },
+      {
+        "name": "compliance_domains",
+        "type": "array",
+        "description": "Explicit runtime compliance domains enforced by the zone."
+      },
+      {
+        "name": "domains",
+        "type": "array",
+        "description": "Legacy alias for compliance_domains."
+      },
+      {
+        "name": "compliance_rules",
+        "type": "object",
+        "description": "Jurisdiction-specific compliance rule overrides. Unspecified fields use hardcoded defaults from JurisdictionRules::for_jurisdiction()."
+      }
+    ]
+  }
+]

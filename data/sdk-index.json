@@ -1,0 +1,85 @@
+{
+  "updated_at": "2026-03-07T23:18:37.617991+00:00",
+  "curated": {
+    "name": "@mass/primitives",
+    "version": "0.1.0",
+    "path": "sdk/mass-primitives",
+    "scripts": [
+      "build",
+      "clean",
+      "dev",
+      "generate",
+      "test",
+      "test:watch",
+      "typecheck"
+    ],
+    "repository": "https://github.com/momentum-sez/stack",
+    "clients": [
+      "entities",
+      "ownership",
+      "fiscal",
+      "identity",
+      "consent",
+      "operations",
+      "documents",
+      "compliance",
+      "instruments",
+      "corridors",
+      "assets",
+      "disputes",
+      "watchers",
+      "peers",
+      "trade",
+      "govos",
+      "agentic",
+      "governance",
+      "licensing",
+      "notifications",
+      "csp",
+      "govos_sc",
+      "oauth"
+    ],
+    "client_count": 23
+  },
+  "generated_targets": [
+    {
+      "language": "Go",
+      "generator": "go",
+      "package_name": "mass",
+      "config_path": "sdk/openapi-generator/go.json",
+      "config_url": "https://github.com/momentum-sez/stack/blob/main/sdk/openapi-generator/go.json"
+    },
+    {
+      "language": "Python",
+      "generator": "python",
+      "package_name": "mass_primitives",
+      "config_path": "sdk/openapi-generator/python.json",
+      "config_url": "https://github.com/momentum-sez/stack/blob/main/sdk/openapi-generator/python.json"
+    },
+    {
+      "language": "TypeScript",
+      "generator": "typescript-fetch",
+      "package_name": "@mass/openapi-typescript-fetch",
+      "config_path": "sdk/openapi-generator/typescript-fetch.json",
+      "config_url": "https://github.com/momentum-sez/stack/blob/main/sdk/openapi-generator/typescript-fetch.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "sdk/mass-openapi.json",
+      "url": "https://github.com/momentum-sez/stack/blob/main/sdk/mass-openapi.json"
+    },
+    {
+      "path": "sdk/mass-openapi-fixed.json",
+      "url": "https://github.com/momentum-sez/stack/blob/main/sdk/mass-openapi-fixed.json"
+    },
+    {
+      "path": "sdk/scripts/generate-multilang.sh",
+      "url": "https://github.com/momentum-sez/stack/blob/main/sdk/scripts/generate-multilang.sh"
+    },
+    {
+      "path": ".github/workflows/sdk-artifacts.yml",
+      "url": "https://github.com/momentum-sez/stack/blob/main/.github/workflows/sdk-artifacts.yml"
+    }
+  ]
+}

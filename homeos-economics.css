@@ -1,0 +1,483 @@
+/* ═══════════════════════════════════════
+   PRODUCTION LINE ECONOMICS CALCULATOR
+   Styles — Momentum design system
+   ═══════════════════════════════════════ */
+
+#homeos-calc {
+  max-width: 720px;
+  margin: 2.5rem auto;
+  font-family: var(--font-text, 'EB Garamond', 'Hoefler Text', Garamond, serif);
+  color: var(--ink, #2C2C2C);
+}
+
+/* ─── Header ─── */
+.hc-header { text-align: center; margin-bottom: 2rem; }
+
+.hc-title {
+  font-family: var(--font-text, 'EB Garamond', Garamond, serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink-navy, #1B2A4A);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.hc-rule {
+  width: 40px;
+  height: 2px;
+  background: var(--gold, #C5A572);
+  margin: 0 auto 0.75rem;
+}
+
+.hc-subtitle {
+  font-size: 0.9375rem;
+  color: var(--ink-mid, #4A4A4A);
+  line-height: 1.55;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+/* ─── Inputs ─── */
+.hc-inputs {
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Slider ─── */
+.hc-slider-block { margin-bottom: 0.5rem; }
+
+.hc-slider-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.hc-slider-label {
+  font-size: 0.6875rem;
+  color: var(--ink-ghost, #8A8A7A);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hc-big-num {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink-navy, #1B2A4A);
+  line-height: 1;
+}
+
+.hc-range {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 0;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    var(--ink-navy, #1B2A4A) 0%,
+    var(--ink-navy, #1B2A4A) var(--fill, 50%),
+    var(--rule, #D4D0C8) var(--fill, 50%),
+    var(--rule, #D4D0C8) 100%
+  );
+}
+
+.hc-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--ink-navy, #1B2A4A);
+  border: 2px solid var(--gold, #C5A572);
+  border-radius: 0;
+  cursor: grab;
+}
+
+.hc-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--ink-navy, #1B2A4A);
+  border: 2px solid var(--gold, #C5A572);
+  border-radius: 0;
+  cursor: grab;
+}
+
+.hc-range:active::-webkit-slider-thumb { cursor: grabbing; }
+.hc-range:active::-moz-range-thumb { cursor: grabbing; }
+
+.hc-milestones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.hc-ms {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-family: var(--font-text, 'EB Garamond', Garamond, serif);
+  font-size: 0.75rem;
+  color: var(--ink-ghost, #8A8A7A);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.hc-ms:hover { color: var(--ink-navy, #1B2A4A); }
+.hc-ms.active {
+  color: var(--ink-navy, #1B2A4A);
+  font-weight: 600;
+}
+
+/* ─── Product Mix ─── */
+.hc-mix-section {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--rule, #D4D0C8);
+  padding: 1rem 1.25rem;
+}
+
+.hc-mix-head {
+  font-size: 0.6875rem;
+  color: var(--ink-ghost, #8A8A7A);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule, #D4D0C8);
+}
+
+.hc-mix-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 48px;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.625rem;
+}
+
+.hc-mix-label {
+  font-size: 0.8125rem;
+  color: var(--ink-mid, #4A4A4A);
+}
+
+.hc-mix-pct {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 0.8125rem;
+  color: var(--ink-navy, #1B2A4A);
+  font-weight: 600;
+  text-align: right;
+}
+
+.hc-mix-slider {
+  height: 4px;
+}
+
+.hc-mix-slider::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.hc-mix-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.hc-mix-presets {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule, #D4D0C8);
+}
+
+.hc-preset {
+  background: none;
+  border: 1px solid var(--rule, #D4D0C8);
+  cursor: pointer;
+  padding: 4px 10px;
+  font-family: var(--font-text, 'EB Garamond', Garamond, serif);
+  font-size: 0.6875rem;
+  color: var(--ink-ghost, #8A8A7A);
+  letter-spacing: 0.04em;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.hc-preset:hover {
+  color: var(--ink-navy, #1B2A4A);
+  border-color: var(--ink-mid, #4A4A4A);
+}
+
+.hc-preset.active {
+  color: var(--ink-navy, #1B2A4A);
+  border-color: var(--gold, #C5A572);
+  font-weight: 600;
+}
+
+/* ─── Fee Schedule (Product Prices) ─── */
+.hc-fee-schedule {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--rule, #D4D0C8);
+  padding: 1rem 1.25rem;
+}
+
+.hc-fee-head {
+  font-size: 0.6875rem;
+  color: var(--ink-ghost, #8A8A7A);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule, #D4D0C8);
+}
+
+.hc-fee-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--ink-mid, #4A4A4A);
+  padding: 0.25rem 0;
+  line-height: 1.5;
+}
+
+.hc-fee-row span:last-child {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 0.8125rem;
+  color: var(--ink, #2C2C2C);
+}
+
+/* ─── Gold Rules ─── */
+.hc-rule-gold {
+  height: 1px;
+  background: var(--gold, #C5A572);
+  margin: 1.5rem 0;
+  opacity: 0.5;
+}
+
+/* ─── Hero Metric ─── */
+.hc-hero {
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.hc-hero-val {
+  font-family: var(--font-text, 'EB Garamond', Garamond, serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--ink-navy, #1B2A4A);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hc-hero-label {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--ink-ghost, #8A8A7A);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+}
+
+.hc-hero-sub {
+  font-size: 0.9375rem;
+  color: var(--ink-mid, #4A4A4A);
+  font-style: italic;
+  margin-top: 0.375rem;
+}
+
+/* ─── Metrics Grid ─── */
+.hc-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule, #D4D0C8);
+  border: 1px solid var(--rule, #D4D0C8);
+  margin-bottom: 1.5rem;
+}
+
+.hc-metric {
+  padding: 1.25rem 1rem 1rem;
+  background: var(--paper, #FAF8F5);
+  text-align: center;
+}
+
+.hc-metric.hc-highlight {
+  background: rgba(197, 165, 114, 0.08);
+}
+
+.hc-metric-val {
+  font-family: var(--font-text, 'EB Garamond', Garamond, serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--ink-navy, #1B2A4A);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.hc-metric-label {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--ink-ghost, #8A8A7A);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.hc-metric-sub {
+  font-size: 0.8125rem;
+  color: var(--ink-mid, #4A4A4A);
+  font-style: italic;
+  margin-top: 0.375rem;
+}
+
+/* ─── Stacked Bar ─── */
+.hc-bar-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.hc-bar-label {
+  font-size: 0.6875rem;
+  color: var(--ink-ghost, #8A8A7A);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.hc-bar {
+  display: flex;
+  height: 32px;
+  overflow: hidden;
+}
+
+.hc-bar-seg {
+  transition: width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  min-width: 0;
+}
+
+.hc-bar-legend {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.hc-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.hc-legend-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+.hc-legend-text {
+  font-size: 0.75rem;
+  color: var(--ink-mid, #4A4A4A);
+}
+
+.hc-legend-pct {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 0.6875rem;
+  color: var(--ink-ghost, #8A8A7A);
+}
+
+/* ─── Table ─── */
+.hc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+  margin-bottom: 1.5rem;
+}
+
+.hc-table th {
+  padding: 0.625rem 0.5rem;
+  text-align: right;
+  font-weight: 400;
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-ghost, #8A8A7A);
+  border-bottom: 2px solid var(--ink-navy, #1B2A4A);
+}
+
+.hc-table th.left,
+.hc-table td.left {
+  text-align: left;
+}
+
+.hc-table td {
+  padding: 0.625rem 0.5rem;
+  text-align: right;
+  border-bottom: 1px solid var(--rule, #D4D0C8);
+  color: var(--ink, #2C2C2C);
+}
+
+.hc-table tr { cursor: pointer; transition: background 0.15s; }
+.hc-table tr:hover { background: rgba(197, 165, 114, 0.06); }
+.hc-table tr.active { background: rgba(197, 165, 114, 0.15); }
+.hc-table tr.active td { color: var(--ink-navy, #1B2A4A); font-weight: 600; }
+
+.hc-table .mono {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.hc-table .gold { color: var(--gold, #C5A572); font-weight: 600; }
+
+/* ─── Insight ─── */
+.hc-insight {
+  border-left: 3px solid var(--gold, #C5A572);
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--ink-dark, #2C2C2C);
+}
+
+/* ─── Footer ─── */
+.hc-footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule, #D4D0C8);
+  font-size: 0.75rem;
+  color: var(--ink-ghost, #8A8A7A);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 600px) {
+  .hc-metrics { grid-template-columns: 1fr; }
+  .hc-big-num { font-size: 1.5rem; }
+  .hc-hero-val { font-size: 2.5rem; }
+  .hc-metric-val { font-size: 1.375rem; }
+  .hc-milestones { flex-wrap: wrap; justify-content: center; gap: 0.25rem; }
+  .hc-ms { padding: 6px 12px; font-size: 0.8125rem; }
+  .hc-mix-row { grid-template-columns: 1fr 1fr 44px; gap: 0.5rem; }
+  .hc-mix-row .hc-mix-label { font-size: 0.75rem; }
+  .hc-mix-section { padding: 0.75rem 1rem; }
+  .hc-mix-presets { flex-wrap: wrap; }
+  .hc-preset { padding: 6px 12px; font-size: 0.75rem; }
+  .hc-bar-legend { flex-wrap: wrap; gap: 0.5rem; }
+  .hc-table { font-size: 0.75rem; }
+  .hc-table th, .hc-table td { padding: 0.5rem 0.25rem; }
+  .hc-fee-schedule { padding: 0.75rem 1rem; }
+  .hc-fee-row { font-size: 0.8125rem; }
+}
+
+@media (max-width: 375px) {
+  .hc-mix-row { grid-template-columns: 1fr 40px; }
+  .hc-mix-row .hc-mix-slider { display: none; }
+  .hc-hero-val { font-size: 2rem; }
+  #homeos-calc { margin: 1.5rem auto; }
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .hc-ms, .hc-preset, .hc-table tr { transition: none; }
+  .hc-bar-seg { transition: none; }
+}

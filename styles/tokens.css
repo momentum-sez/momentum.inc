@@ -1,0 +1,219 @@
+/* ═══════════════════════════════════════
+   DESIGN TOKENS
+   Single source of truth for all visual values.
+   Every hardcoded number in the codebase should
+   trace back to a token defined here.
+   ═══════════════════════════════════════ */
+
+:root {
+    /* ── Typography ── */
+    --font-text:    'garamond-premier-pro', 'EB Garamond', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+    --font-display: 'garamond-premier-pro-display', var(--font-text);
+    --font-caption: 'garamond-premier-pro-caption', var(--font-text);
+    --font-mono:    'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', 'Monaco', 'Inconsolata', monospace;
+
+    /* Type scale — fluid, no breakpoint jumps */
+    --text-xs:   clamp(11px, 0.6875rem + 0.1vw, 13px);
+    --text-sm:   clamp(13px, 0.8125rem + 0.15vw, 15px);
+    --text-base: clamp(17px, 1rem + 0.25vw, 20px);
+    --text-lg:   clamp(20px, 1.25rem + 0.3vw, 24px);
+    --text-xl:   clamp(24px, 1.5rem + 0.5vw, 32px);
+    --text-2xl:  clamp(32px, 2rem + 1vw, 48px);
+    --text-3xl:  clamp(40px, 2.5rem + 1.5vw, 64px);
+    --text-stat: clamp(48px, 3rem + 2vw, 80px);
+
+    /* Line heights */
+    --leading-body:    1.65;
+    --leading-heading: 1.2;
+    --leading-tight:   1.0;
+
+    /* Letter spacing */
+    --tracking-display: -0.012em;
+    --tracking-body:    0;
+    --tracking-caps:    0.1em;
+    --tracking-logo:    0.1em;
+
+    /* ── Spacing scale ── */
+    --space-0-5: 4px;
+    --space-1:   8px;
+    --space-1-5: 12px;
+    --space-2:  16px;
+    --space-3:  24px;
+    --space-4:  32px;
+    --space-5:  40px;
+    --space-6:  48px;
+    --space-8:  64px;
+    --space-10: 80px;
+    --space-12: 96px;
+    --space-16: 128px;
+    --space-20: 160px;
+
+    /* Layout */
+    --measure:   72ch;
+    --gutter:    clamp(24px, 5vw, 48px);
+    --max-width: 1120px;
+
+    /* ── Colors — ink hierarchy (dark → light) ── */
+    --ink:         #1a1917;
+    --ink-muted:   #4a4744;
+    --ink-subtle:  #5a5652;
+    --ink-faint:   #7a7672;
+    --ink-ghost:   #79756f;     /* AA-compliant: 4.5:1 on --paper */
+    --ink-whisper: #ccc8c4;
+    --ink-hint:    #e5e2df;
+
+    /* Colors — paper hierarchy (light → dark) */
+    --paper:       #fefdfb;
+    --paper-dim:   #f8f6f3;
+    --paper-hover: #f3f0ec;
+
+    /* Accent colors */
+    --gold:        #C5A572;     /* Genesis counter, hub advantage, corridor gold */
+    --color-live:    #8db88d;   /* Sage green — Momentum Mocha */
+    --color-sandbox: #6ba89a;   /* Verdigris — Momentum Mocha */
+    --color-testnet: var(--color-sandbox);
+
+    /* Selection */
+    --selection-bg: rgba(184, 159, 130, 0.15);
+    --selection-bg-dark: rgba(197, 165, 114, 0.35);
+    --selection-color-dark: #fefdfb;
+
+    /* ── Transitions ── */
+    --transition-micro: 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-fast: 150ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-base: 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-smooth: 350ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    --transition-slow: 400ms var(--ease-out-expo);
+    --transition-reveal: 600ms var(--ease-out-expo);
+
+    /* Easing curves */
+    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart:   cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-smooth:      cubic-bezier(0.25, 0.1, 0.25, 1);
+    --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+    --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* ── Network visualization ── */
+    --corridor-cross:   #8b4c3a;
+    --corridor-federal: #3a5f7a;
+    --corridor-fz-host: #4a6b4a;
+    --corridor-fz-fz:   #7a6b4a;
+    --node-natural:     #0d0b09;
+    --node-synthetic:   #4d4740;
+    --particle:         #8b4c3a;
+    --particle-glow:    rgba(139, 76, 58, 0.15);
+
+    /* ── Momentum Mocha ──
+       Catppuccin-structured warm palette. H≈30° amber undertone.
+       Named layers for semantic depth, Momentum brand accents.
+
+       Depth:    crust → mantle → base
+       Surface:  surface0 → surface1 → surface2
+       Text:     overlay0..2 → subtext0..1 → text
+       Accents:  14 colors, warm–cool spectrum */
+
+    /* Depth layers */
+    --mm-crust:       #050403;
+    --mm-mantle:      #090807;
+    --mm-base:        #0d0b09;
+
+    /* Surface layers */
+    --mm-surface0:    #1c1916;
+    --mm-surface1:    #272320;
+    --mm-surface2:    #332e2a;
+
+    /* Text hierarchy */
+    --mm-overlay0:    #4d4740;
+    --mm-overlay1:    #635c54;
+    --mm-overlay2:    #7a726a;
+    --mm-subtext0:    #968d83;
+    --mm-subtext1:    #b3a99f;
+    --mm-text:        #e5e0da;
+
+    /* Warm accents */
+    --mm-rosewater:   #e8d4c4;
+    --mm-flamingo:    #d9bca4;
+    --mm-pink:        #cba68e;
+    --mm-mauve:       #b89f82;
+    --mm-red:         #c97a5a;
+    --mm-maroon:      #a86852;
+    --mm-peach:       #d4a373;
+    --mm-yellow:      #C5A572;
+
+    /* Cool accents */
+    --mm-green:       #8db88d;
+    --mm-teal:        #6ba89a;
+    --mm-sky:         #82a8c0;
+    --mm-sapphire:    #5d8bb0;
+    --mm-blue:        #4a7a9e;
+    --mm-lavender:    #a8b3c8;
+
+    /* Terminal palette — backward compat
+       Ordering: deep < chrome < surface < bg */
+    --terminal-deep:       #0d0b09;
+    --terminal-chrome:     #131110;
+    --terminal-surface:    #1c1916;
+    --terminal-bg:         #272320;
+    --terminal-text:       #e5e0da;
+    --terminal-accent:     #b89f82;
+    --terminal-dim:        #968d83;
+    --terminal-accent-30:  rgba(184, 159, 130, 0.3);
+    --terminal-text-65:    rgba(229, 224, 218, 0.65);
+    --terminal-border:     rgba(255, 255, 255, 0.06);
+    --terminal-border-dim: rgba(255, 255, 255, 0.04);
+    --terminal-scrollbar:  rgba(255, 255, 255, 0.12);
+
+    /* Chrome dots — accent palette */
+    --dot-red:    #c97a5a;
+    --dot-yellow: #d4a373;
+    --dot-green:  #8db88d;
+
+    /* Syntax coloring */
+    --syntax-key:    #b3a99f;
+    --syntax-string: #d4a373;
+
+    /* ── Shadows ── */
+    --shadow-border:     0 1px 0 rgba(26, 25, 23, 0.06);
+    --shadow-xs:         0 2px 8px rgba(26, 25, 23, 0.06);
+    --shadow-sm:         0 2px 8px rgba(26, 25, 23, 0.12);
+    --shadow-md:         0 3px 12px rgba(26, 25, 23, 0.04);
+    --shadow-lg:         0 3px 12px rgba(26, 25, 23, 0.05);
+    --shadow-xl:         0 4px 20px rgba(26, 25, 23, 0.06), 0 1px 3px rgba(26, 25, 23, 0.04);
+    --shadow-dark-md:    0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-dark-lg:    0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-focus:      0 0 0 6px rgba(26, 25, 23, 0.06);
+    --shadow-focus-accent: 0 0 0 6px rgba(139, 76, 58, 0.08);
+    --shadow-terminal:
+        0 0 0 1px rgba(255, 255, 255, 0.03),
+        0 2px 4px rgba(0, 0, 0, 0.08),
+        0 8px 24px rgba(0, 0, 0, 0.15),
+        0 32px 80px rgba(0, 0, 0, 0.25);
+    --shadow-terminal-deep:
+        0 24px 80px rgba(0, 0, 0, 0.4),
+        0 8px 24px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.02),
+        0 0 60px rgba(139, 76, 58, 0.03);
+
+    /* ── Z-index stack ── */
+    --z-below:     -1;
+    --z-base:       1;
+    --z-raised:     4;
+    --z-floating:   6;
+    --z-overlay:    8;
+    --z-popup:      10;
+    --z-header:     100;
+    --z-skip-link:  1000;
+    --z-texture:    9999;
+
+    /* Animation tokens */
+    --duration-particle: 8s;
+    --duration-pulse:    3s;
+    --duration-reveal:   1s;
+    --duration-type:     2.5s;
+}
+
+@media (max-width: 375px) {
+    :root {
+        --gutter: 24px;
+    }
+}

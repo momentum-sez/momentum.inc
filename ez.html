@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>The EZ Stack — Momentum</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+
+    <!-- SEO -->
+    <meta name="description" content="Deploy economic zones in 90 days. The EZ Stack composes regulatory environments from primitives. 13+ live jurisdictions. 90 days to deployment.">
+    <meta name="author" content="Momentum">
+    <link rel="canonical" href="https://momentum.inc/ez.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The EZ Stack — Momentum">
+    <meta property="og:description" content="Complete economic zone infrastructure in 90 days for under $10M. Programmable institutions that mediate activity between AI and the real economy. 13+ live jurisdictions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://momentum.inc/ez.html">
+    <meta property="og:image" content="https://momentum.inc/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The EZ Stack — Momentum">
+    <meta name="twitter:description" content="Complete economic zone infrastructure in 90 days for under $10M. Programmable institutions that mediate activity between AI and the real economy. 13+ live jurisdictions.">
+    <meta name="twitter:image" content="https://momentum.inc/og-image.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <!-- Adobe Fonts -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+    <link rel="preload" href="https://use.typekit.net/zlu2quo.css" as="style">
+    <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
+
+    <!-- Fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles.css">
+    <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+    <style>
+        /* ez.html: visual consistency overrides */
+
+        /* All sections use the same max-width and left edge */
+        .page-ez .bridge-section .container--narrow,
+        .page-ez .bridge-section .container {
+            max-width: var(--max-width);
+        }
+
+        /* Stats: 4-column grid */
+        .page-ez .stats-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Problem section: tighter padding */
+        .page-ez .bridge-section {
+            padding: var(--space-6) 0;
+        }
+
+        /* Commercial Model: headlines aligned with header */
+        .commercial-headlines {
+            max-width: var(--measure);
+            margin-top: var(--space-5);
+        }
+
+        /* Commercial stats: 4-column */
+        .page-ez .commercial-evidence {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Fiscal table: constrain to same width as all other content */
+        .page-ez .zone-board {
+            max-width: var(--max-width);
+        }
+
+        /* Sovereignty section: consistent left alignment */
+        .page-ez .ez-sovereignty-section .container--narrow {
+            max-width: var(--max-width);
+            padding-left: var(--gutter);
+            padding-right: var(--gutter);
+        }
+
+        /* Kill excessive whitespace between sections */
+        .page-ez section + section {
+            margin-top: 0;
+        }
+
+        /* Constrain prose width inside full-width containers */
+        .page-ez .bridge-section p,
+        .page-ez .bridge-section .section-lead {
+            max-width: var(--measure);
+        }
+
+        /* Methodology note: match prose width */
+        .page-ez .methodology-note {
+            max-width: var(--measure);
+        }
+
+        @media (max-width: 768px) {
+            .page-ez .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .page-ez .commercial-evidence { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .page-ez .stats-grid { grid-template-columns: 1fr; }
+            .page-ez .commercial-evidence { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="page-ez">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-container">
+        <!-- HEADER -->
+        <header class="site-header">
+          <div class="container">
+            <div class="header-inner">
+              <a href="/" class="logo">Momentum</a>
+              <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">Menu</button>
+              <nav class="nav-primary" id="primary-nav" aria-label="Primary navigation">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html" aria-current="page">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <main id="main">
+            <!-- HERO -->
+            <section class="hero">
+                <div class="container">
+                    <span class="hero-eyebrow">Programmable Economic Zones</span>
+                    <h1 class="hero-title">Deploy economic zones in 90 days</h1>
+                    <p class="hero-subtitle">Complete zone infrastructure (entity formation, banking, compliance, licensing) deployed and locally operated in 90 days. Every zone connects to every other zone on the network.</p>
+                </div>
+            </section>
+
+            <!-- STATS -->
+            <section class="stats-section reveal">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="90">0</div>
+                            <div class="stat-label">Days to Deploy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-prefix="<" data-target="10" data-suffix="M">&lt;$10M</div>
+                            <div class="stat-label">Total Cost</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">Integrated Components</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="13" data-suffix="+">0</div>
+                            <div class="stat-label">Live Jurisdictions</div>
+                        </div>
+                    </div>
+                    <p class="stats-asof">As of March 2026</p>
+                </div>
+            </section>
+
+
+            <!-- THE PROBLEM -->
+            <section class="bridge-section reveal">
+                <div class="container">
+                    <span class="section-eyebrow">The Problem</span>
+                    <h2 class="section-title">Only 1 in 20 succeed</h2>
+
+                    <p>Over 5,400 economic zones exist today. Fewer than 1,300 have meaningful activity. Only 250 generate real GDP impact. Most fail for the same reasons: no banking, no anchor tenants, political discontinuity, isolation from capital flows. The traditional path takes 9&ndash;12 years and $50&ndash;500M.</p>
+                </div>
+            </section>
+
+            <!-- MAGNITUDE OF CHANGE -->
+            <section class="magnitude-section reveal">
+                <div class="container">
+                    <header class="section-header">
+                        <span class="section-eyebrow">The Magnitude</span>
+                        <h2 class="section-title">What took 18 months now takes 90 days</h2>
+                    </header>
+
+                    <table class="magnitude-table">
+                        <thead>
+                            <tr>
+                                <th>Capability</th>
+                                <th>Traditional</th>
+                                <th>Momentum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Time to first entity</td>
+                                <td>18&ndash;36 months</td>
+                                <td>90 days</td>
+                            </tr>
+                            <tr>
+                                <td>Banking access</td>
+                                <td>6&ndash;12 months</td>
+                                <td>72 hours</td>
+                            </tr>
+                            <tr>
+                                <td>First license</td>
+                                <td>12&ndash;24 months</td>
+                                <td>30 days</td>
+                            </tr>
+                            <tr>
+                                <td>First building</td>
+                                <td>3&ndash;5 years</td>
+                                <td>90 days</td>
+                            </tr>
+                            <tr>
+                                <td>Cost to 1,000 entities</td>
+                                <td>$50&ndash;100M</td>
+                                <td>$5&ndash;10M</td>
+                            </tr>
+                            <tr>
+                                <td>Physical infrastructure</td>
+                                <td>$50&ndash;500M</td>
+                                <td>$3&ndash;8M</td>
+                            </tr>
+                            <tr>
+                                <td>Building intelligence</td>
+                                <td>None</td>
+                                <td>Self-reporting asset</td>
+                            </tr>
+                            <tr>
+                                <td>Compliance proof</td>
+                                <td>Annual audits</td>
+                                <td>Continuous attestation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- FOR GOVERNMENTS -->
+            <section class="ez-gov-section reveal">
+                <div class="container">
+                    <header class="section-header">
+                        <span class="section-eyebrow">For Governments</span>
+                        <h2 class="section-title">What changes for your jurisdiction in 90 days</h2>
+                    </header>
+
+                    <p class="section-lead">Your government already operates digital infrastructure: national identity, company registries, tax systems, payment rails. Mass connects them into a single programmable layer, exposes every business function as an agent-drivable API, and links that layer to 13+ live jurisdictions. Your systems, your authority, your fee schedules. Unchanged. Mass adds speed, automation, and cross-border access.</p>
+
+                    <div class="ez-gov-points">
+                      <div class="ez-gov-point">
+                        <strong>Your Systems Stay</strong>
+                        <p>Mass integrates with your existing national infrastructure (identity, registries, tax, banking). No systems replaced. Each gains programmatic access and cross-border connectivity.</p>
+                      </div>
+                      <div class="ez-gov-point">
+                        <strong>Your Authority Stays</strong>
+                        <p>Regulators define the rules. Mass executes them. Your regulatory staff edit compliance rules directly. No vendor dependency.</p>
+                      </div>
+                      <div class="ez-gov-point">
+                        <strong>Network Access from Day One</strong>
+                        <p>Every entity in your jurisdiction becomes investable from the UAE, US, BVI, Cayman, Hong Kong, and Singapore.</p>
+                      </div>
+                      <div class="ez-gov-point">
+                        <strong>90 Days to Operational Independence</strong>
+                        <p>Complete deployment in 90 days. Your technical staff trained and operating independently by Day 90. Contractually bound.</p>
+                      </div>
+                      <div class="ez-gov-point">
+                        <strong>Evidence</strong>
+                        <p>Dubai FZC (27 zones). ADGM ($1T+ assets). Kazakhstan Alatau (government legislation active). Pr&oacute;spera (50-year charter, local staff operating independently). Pakistan (binding government agreement).</p>
+                      </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- THREE-LAYER ECONOMICS FOR THE SOVEREIGN -->
+            <section class="ez-gov-section reveal">
+                <div class="container">
+                    <header class="section-header">
+                        <span class="section-eyebrow">Revenue Architecture</span>
+                        <h2 class="section-title">Your treasury, your opco, and the IP layer</h2>
+                    </header>
+                    <p class="section-lead">Three independent revenue streams. Three independent parties. No fee-sharing between Mass and the sovereign.</p>
+                    <table class="zone-board integration-table">
+                        <thead>
+                            <tr>
+                                <th>Layer</th>
+                                <th>Party</th>
+                                <th>Revenue</th>
+                                <th>Pricing control</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Sovereign statutory</strong></td>
+                                <td>Your government</td>
+                                <td>Entity formation, licensing, regulatory filings, tax &mdash; per your existing fee schedule</td>
+                                <td>100% sovereign. Schedule unchanged.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Local operating company</strong></td>
+                                <td>Mass-operated opco in your jurisdiction</td>
+                                <td>Processing, compliance reviews, banking access, corridor transactions</td>
+                                <td>Opco board with sovereign representation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Protocol fees</strong></td>
+                                <td>Mass Cayman</td>
+                                <td>Protocol fees for kernel access, corridor routing, and network connectivity</td>
+                                <td>Fixed, published, invariant across zones</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="methodology-note">Government volume, not fee split. Governments gain speed, automation, and cross-border network access. The statutory fees they earn grow because the volume of entity formations, licensing, and filings grows &mdash; not because they take a cut from Mass.</p>
+                </div>
+            </section>
+
+            <!-- HOW IT INTEGRATES — Service Bus Diagram -->
+            <section class="bridge-section reveal">
+                <div class="container">
+                    <header class="section-header">
+                        <span class="section-eyebrow">Integration Architecture</span>
+                        <h2 class="section-title">Mass connects your existing systems</h2>
+                        <p class="section-subtitle">A service bus between your government&rsquo;s existing systems and the zone&rsquo;s regulatory, commercial, and cross-border functions.</p>
+                    </header>
+
+                    <div class="integration-diagram">
+                        <div class="integration-col integration-col--gov">
+                            <div class="integration-col-label">Your Existing Systems</div>
+                            <div class="integration-item">National Identity System</div>
+                            <div class="integration-item">Company Registry</div>
+                            <div class="integration-item">Tax Authority</div>
+                            <div class="integration-item">Central Bank / Payment System</div>
+                            <div class="integration-item">Digital Signatures</div>
+                        </div>
+                        <div class="integration-col integration-col--mass">
+                            <div class="integration-col-label">Mass Service Bus</div>
+                            <div class="integration-item integration-item--mass">Identity Primitive</div>
+                            <div class="integration-item integration-item--mass">Entities Primitive</div>
+                            <div class="integration-item integration-item--mass">Fiscal Primitive</div>
+                            <div class="integration-item integration-item--mass">Ownership Primitive</div>
+                            <div class="integration-item integration-item--mass">Consent Primitive</div>
+                        </div>
+                        <div class="integration-col integration-col--output">
+                            <div class="integration-col-label">What You Gain</div>
+                            <div class="integration-item">Programmatic entity formation</div>
+                            <div class="integration-item">Automated compliance</div>
+                            <div class="integration-item">Cross-border corridors</div>
+                            <div class="integration-item">Real-time regulatory dashboards</div>
+                            <div class="integration-item">Revenue on every transaction</div>
+                        </div>
+                    </div>
+
+                    <table class="zone-board integration-table">
+                        <thead>
+                            <tr>
+                                <th>Mass Primitive</th>
+                                <th>Integrates With</th>
+                                <th>What Changes</th>
+                                <th>What Does Not Change</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Identity</strong></td>
+                                <td>National identity system</td>
+                                <td>Corporate KYB/KYC anchored to national identity root; reusable across all entities</td>
+                                <td>National identity system unchanged; citizen data stays sovereign</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Entities</strong></td>
+                                <td>Company registry / regulatory authority</td>
+                                <td>Programmatic formation in hours; automated lifecycle compliance</td>
+                                <td>Registry authority and fee schedule unchanged; existing entities unaffected</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ownership</strong></td>
+                                <td>Registrar general / business registry</td>
+                                <td>Tamper-evident, auditable ownership records; real-time beneficial ownership disclosure</td>
+                                <td>Registrar authority unchanged; existing paper records preserved</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fiscal</strong></td>
+                                <td>Tax authority / central bank payment system</td>
+                                <td>Entity-level accounts and settlement; automated tax event reporting</td>
+                                <td>Tax rates unchanged; central bank sovereignty intact; existing payment rails preserved</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Consent</strong></td>
+                                <td>Digital signature system</td>
+                                <td>Corporate governance executed programmatically: board resolutions, shareholder votes, audit trails</td>
+                                <td>Signature authority unchanged; existing legal frameworks preserved</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- COMMERCIAL MODEL -->
+            <section class="ez-commercial-section reveal">
+                <div class="container">
+                    <header class="section-header">
+                        <span class="section-eyebrow">Commercial Model</span>
+                        <h2 class="section-title">How the economics work</h2>
+                    </header>
+
+                    <div class="commercial-headlines">
+                        <p class="commercial-headline">Your existing fees are untouched. Your regulatory authority is unchanged.</p>
+                        <p class="commercial-headline">Your consumers pay less than they do today. More entities choose your jurisdiction. More statutory fees flow to you.</p>
+                        <p class="commercial-headline">Full API access to build new revenue-generating services: building permits, VASP compliance, land registry. You keep the majority of everything you build.</p>
+                    </div>
+
+                    <div class="bridge-evidence commercial-evidence">
+                        <div class="bridge-evidence-item">
+                            <div class="bridge-evidence-number">$0</div>
+                            <div class="bridge-evidence-label">Upfront cost to government. Momentum covers all deployment costs.</div>
+                        </div>
+                        <div class="bridge-evidence-item">
+                            <div class="bridge-evidence-number">100%</div>
+                            <div class="bridge-evidence-label">Existing fee base preserved. Government statutory revenue untouched.</div>
+                        </div>
+                        <div class="bridge-evidence-item">
+                            <div class="bridge-evidence-number">90 days</div>
+                            <div class="bridge-evidence-label">Sovereign exit clause at Day 90. Full documentation and transferable infrastructure retained.</div>
+                        </div>
+                        <div class="bridge-evidence-item">
+                            <div class="bridge-evidence-number">13+</div>
+                            <div class="bridge-evidence-label">Jurisdictions your zone connects to from Day 1.</div>
+                        </div>
+                    </div>
+
+                    <div class="commercial-flow">
+                        <div class="commercial-flow-step">
+                            <div class="commercial-flow-label">Consumer Action</div>
+                            <div class="commercial-flow-detail">Entity formation, license renewal, compliance filing, ownership transfer</div>
+                        </div>
+                        <div class="commercial-flow-arrow">&rarr;</div>
+                        <div class="commercial-flow-step">
+                            <div class="commercial-flow-label">Government Fee</div>
+                            <div class="commercial-flow-detail">100% to government. Existing fee schedule. Unchanged.</div>
+                        </div>
+                        <div class="commercial-flow-plus">+</div>
+                        <div class="commercial-flow-step">
+                            <div class="commercial-flow-label">Volume Growth</div>
+                            <div class="commercial-flow-detail">Lower consumer costs &rarr; more entities &rarr; more statutory fees.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- GOVERNMENT FISCAL IMPACT -->
+            <section class="bridge-section reveal">
+                <div class="container">
+                    <span class="section-eyebrow">Fiscal Impact</span>
+                    <h2 class="section-title">What your jurisdiction earns</h2>
+                    <p style="max-width: var(--measure); margin-bottom: var(--space-6);">Lower friction means more entities. More entities means more statutory fees at your existing rates. Your fee schedule is untouched. Volume does the work.</p>
+                </div>
+                <div class="container">
+                    <table class="zone-board">
+                        <thead>
+                            <tr>
+                                <th>Revenue Source</th>
+                                <th>Before Mass</th>
+                                <th>After Mass</th>
+                                <th>Who Pays</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Entity formation fees</strong></td>
+                                <td>$150&ndash;500 per entity, manual processing</td>
+                                <td>Same fee schedule, 10&ndash;50&times; more entities</td>
+                                <td>Consumer &rarr; Government (100%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Annual renewals</strong></td>
+                                <td>$300&ndash;1,000 per entity, paper-based</td>
+                                <td>Same fee, automated collection, higher compliance rate</td>
+                                <td>Consumer &rarr; Government (100%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>License fees</strong></td>
+                                <td>$500&ndash;5,000 per license, months to process</td>
+                                <td>Same fee, issued in hours, new license categories possible</td>
+                                <td>Consumer &rarr; Government (100%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Government-built services</strong></td>
+                                <td>Does not exist</td>
+                                <td>Building permits, VASP compliance, land registry. New revenue streams</td>
+                                <td>Consumer &rarr; Government (majority share)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Network access premium</strong></td>
+                                <td>Isolated jurisdiction</td>
+                                <td>Connected to 13+ live jurisdictions. Entities choose you for the network</td>
+                                <td>Indirect: more entities, more fees</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container">
+                    <p class="methodology-note">Indicative fee ranges reflect published schedules across comparable jurisdictions (BVI, Cayman, Mauritius, DIFC). Actual fees are set by the government and remain unchanged. The platform does not touch, reduce, or redirect government statutory revenue. Volume uplift analysis, benchmarked against BVI and Cayman entity growth curves, available in the data room.</p>
+                </div>
+            </section>
+
+            <!-- OPERATIONAL INDEPENDENCE -->
+            <section class="bridge-section reveal">
+                <div class="container">
+                    <span class="section-eyebrow">Sovereignty by Design</span>
+                    <h2 class="section-title">Your team operates independently by Day 90</h2>
+
+                    <p>Your technical staff operate every component without Momentum involvement from Day 90. This is a contractual deliverable with a deadline. If Momentum exits, your government holds documented, transferable infrastructure.</p>
+
+                    <p><strong>Day 30:</strong> Integration complete. Full technical documentation delivered. API surfaces specified. Your development team has access to full technical documentation and deployment infrastructure.</p>
+
+                    <p><strong>Day 60:</strong> Staff training complete. Your engineers operate the system in parallel with Momentum support. Issue escalation paths established. Knowledge transfer verified through operational exercises.</p>
+
+                    <p><strong>Day 90:</strong> Your team operates independently. Momentum continues only by invitation. Success criterion: your team can deploy updates, onboard entities, configure compliance rules, and resolve incidents without Momentum involvement.</p>
+
+                    <p>Pr&oacute;spera achieved this. Local staff now operate the full five-primitive stack without ongoing Momentum involvement.</p>
+                </div>
+            </section>
+
+
+            <!-- ECONOMICS PER DEPLOYMENT -->
+            <section class="deployments-section reveal">
+                <div class="container">
+                    <header class="section-header">
+                        <span class="section-eyebrow">Economics</span>
+                        <h2 class="section-title">The economics of a deployment</h2>
+                        <p class="section-subtitle">Mass-platform revenue segregated from portfolio-company attribution.</p>
+                    </header>
+
+                    <div class="economics-grid">
+                        <div class="economics-line">
+                            <span class="economics-label">Layer 1 &mdash; Protocol fees (Mass Cayman)</span>
+                            <span class="economics-value">$5&ndash;15M</span>
+                        </div>
+                        <p class="economics-assumption">Per-action protocol fee; 2,500&ndash;6,000 active entities at Year-3 median zone; 85%+ gross margin</p>
+                        <div class="economics-line">
+                            <span class="economics-label">Layer 2 &mdash; Local opco processing</span>
+                            <span class="economics-value">$3&ndash;8M</span>
+                        </div>
+                        <p class="economics-assumption">Consumer fees on formation, renewals, filings, banking, payments, FX; 45&ndash;60% gross margin (Carta / Trident Trust / Tyler cluster)</p>
+                        <div class="economics-line">
+                            <span class="economics-label">Layer 3 &mdash; GovOS share</span>
+                            <span class="economics-value">$1&ndash;5M</span>
+                        </div>
+                        <p class="economics-assumption">Share on government-built services (permits, VASP, land registry); 50&ndash;70% gross margin (Tyler / Palantir range)</p>
+                        <div class="economics-line">
+                            <span class="economics-label">Data intelligence licensing</span>
+                            <span class="economics-value">$1&ndash;3M</span>
+                        </div>
+                        <p class="economics-assumption">Cross-jurisdictional compliance analytics, entity behavior modeling, corridor optimization</p>
+                        <div class="economics-total">
+                            <span class="economics-label">Mass platform per zone (Y3 steady-state)</span>
+                            <span class="economics-value">$10&ndash;31M</span>
+                        </div>
+                        <div class="economics-total">
+                            <span class="economics-label">Year-0 fully-loaded deployment</span>
+                            <span class="economics-value">$3&ndash;9M</span>
+                        </div>
+                        <p class="economics-margin-note">Core tech $0.3&ndash;0.8M + regulatory counsel $0.2&ndash;0.6M + local opco $0.15&ndash;0.4M + government-relations capital $0.3&ndash;1.0M + infrastructure $0.15&ndash;0.5M + Y1 opex $1.5&ndash;4.0M + contingency $0.5&ndash;2.0M. Blended platform gross margin 55&ndash;65% at scale. Y10 DIFC-class mature zone: $40&ndash;120M ARR.</p>
+                    </div>
+
+                    <div class="economics-grid" style="margin-top: var(--space-6);">
+                        <p class="economics-margin-note" style="margin-bottom: var(--space-3);"><strong>Portfolio attribution (reported separately from Mass-platform revenue):</strong></p>
+                        <div class="economics-line">
+                            <span class="economics-label">Broad Group construction flow-through</span>
+                            <span class="economics-value">$50&ndash;200M</span>
+                        </div>
+                        <p class="economics-assumption">JV portfolio company, factory-built modular; attributes to Broad Group, not Mass platform. Momentum attribution = JV equity share.</p>
+                        <div class="economics-line">
+                            <span class="economics-label">Building operations (HomeOS)</span>
+                            <span class="economics-value">$5&ndash;15M</span>
+                        </div>
+                        <p class="economics-assumption">Subscriptions, energy-reduction operating economics; portfolio-attributed.</p>
+                        <div class="economics-line">
+                            <span class="economics-label">Facilitated FDI into the zone</span>
+                            <span class="economics-value">$500M+</span>
+                        </div>
+                        <p class="economics-assumption">Benefit accrues to the jurisdiction, not Mass.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+          <div class="container">
+            <div class="footer-inner">
+              <div class="footer-contact">
+                <p class="footer-label">Schedule a deployment discussion</p>
+                <a href="mailto:info@momentum.inc">info@momentum.inc</a>
+                <p class="footer-secondary">Saadiyat Island, Abu Dhabi · Miami, USA · Cape Town, South Africa · Shanghai, China</p>
+              </div>
+              <nav class="footer-nav" aria-label="Footer">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+            <div class="footer-legal">
+              <p>The materials on this website are for illustration and discussion purposes only and do not constitute an offer to sell, or a solicitation of an offer to buy, any securities or interests. Any such offering may be made only to eligible investors via one or more confidential offering documents. Past performance is not indicative of future results. &copy; 2026 Momentum</p>
+            </div>
+          </div>
+        </footer>
+    </div>
+
+    <script src="/site.js" defer></script>
+</body>
+</html>

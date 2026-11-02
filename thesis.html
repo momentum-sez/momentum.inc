@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>The Fund That Builds the Institutions — Momentum</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+
+    <!-- SEO -->
+    <meta name="description" content="Momentum is simultaneously trusted by governments as infrastructure partner and deploying private capital into those governments' zones. No other entity holds both positions. 13+ live jurisdictions. 30+ zones in the network.">
+    <meta name="author" content="Momentum">
+    <link rel="canonical" href="https://momentum.inc/thesis.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Fund That Builds the Institutions — Momentum">
+    <meta property="og:description" content="Momentum is simultaneously trusted by governments as infrastructure partner and deploying private capital into those governments' zones. No other entity holds both positions.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://momentum.inc/thesis.html">
+    <meta property="og:image" content="https://momentum.inc/og-image.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Fund That Builds the Institutions — Momentum">
+    <meta name="twitter:description" content="Momentum is simultaneously trusted by governments as infrastructure partner and deploying private capital into those governments' zones. No other entity holds both positions.">
+    <meta name="twitter:image" content="https://momentum.inc/og-image.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <!-- Adobe Fonts -->
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+    <link rel="preload" href="https://use.typekit.net/zlu2quo.css" as="style">
+    <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
+
+    <!-- Fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+    <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+
+    <style>
+        /* Thesis — section rhythm + two-column grid. Everything else from styles.css */
+        .thesis-section { padding: var(--space-10) 0; }
+        .thesis-section--dim {
+            background: var(--paper-dim);
+            border-top: 1px solid var(--ink-hint);
+            border-bottom: 1px solid var(--ink-hint);
+        }
+        /* Use article-content for prose but kill its own padding (sections handle that) */
+        .thesis-section .article-content { padding: 0; max-width: 52ch; }
+        .thesis-section .article-content p:last-child { margin-bottom: 0; }
+
+        .thesis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-8);
+            align-items: start;
+        }
+        .thesis-grid .section-header { margin-bottom: 0; }
+        .thesis-grid--reversed { direction: rtl; }
+        .thesis-grid--reversed > * { direction: ltr; }
+
+        @media (max-width: 900px) {
+            .thesis-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+        }
+        /* Drop cap — only on the opening section */
+        .thesis-opening .article-content > p:first-of-type::first-letter {
+            font-family: var(--font-display);
+            float: left;
+            font-size: 3.4em;
+            line-height: 0.78;
+            padding-right: 0.08em;
+            padding-top: 0.06em;
+            color: var(--ink);
+            font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "titl" 1;
+        }
+
+        /* Separate paths from footer — both share --paper-dim */
+        .site-footer { border-top: 1px solid var(--ink-hint); }
+
+        @media (max-width: 768px) {
+            .thesis-section { padding: var(--space-6) 0; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"The Fund That Builds the Institutions","author":{"@type":"Person","name":"Raeez Lorgat"},"publisher":{"@type":"Organization","name":"Momentum","url":"https://momentum.inc"},"datePublished":"2026-01-15","url":"https://momentum.inc/thesis.html"}
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-container">
+        <!-- HEADER -->
+        <header class="site-header">
+          <div class="container">
+            <div class="header-inner">
+              <a href="/" class="logo">Momentum</a>
+              <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">Menu</button>
+              <nav class="nav-primary" id="primary-nav" aria-label="Primary navigation">
+                <a href="/thesis.html" aria-current="page">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <main id="main">
+            <!-- HERO -->
+            <section class="hero" style="padding: var(--space-12) 0 var(--space-10);">
+                <div class="container">
+                    <div class="hero-content" style="max-width: 64ch;">
+                        <span class="hero-eyebrow">Investment Thesis</span>
+                        <h1 class="hero-title" style="max-width: 22ch;">The Fund That Builds the Institutions</h1>
+                        <p class="hero-subtitle" style="max-width: 54ch;">Momentum is simultaneously trusted by governments as infrastructure partner, deploying private capital into those governments&rsquo; zones, and operating the institutional world model built from every operation across the network.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FUND STATS -->
+            <section class="stats-section reveal">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="13" data-suffix="+">0</div>
+                            <div class="stat-label">Live Jurisdictions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="30" data-suffix="+">0</div>
+                            <div class="stat-label">Zones in Network</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="6">0</div>
+                            <div class="stat-label">Zones in Testnet</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="23">0</div>
+                            <div class="stat-label">Compliance Domains</div>
+                        </div>
+                    </div>
+                    <p class="stats-asof">As of April 2026. Network and jurisdiction counts reflect current zone manifests; compliance domain count follows the Mass 23-domain tensor.</p>
+                </div>
+            </section>
+
+            <!-- I. THE POSITION -->
+            <section class="thesis-section thesis-section--dim">
+                <div class="container">
+                    <div class="thesis-grid">
+                        <header class="section-header">
+                            <span class="section-eyebrow">The Position</span>
+                            <h2 class="section-title" style="max-width: 18ch;">The fund that writes the rules its portfolio operates under</h2>
+                        </header>
+                        <div class="article-content">
+                            <p>Momentum designs the regulatory environments in which its portfolio companies operate. Broad Group needs building codes across the network. Momentum writes them. EHang needs multi-jurisdictional eVTOL approval. Momentum designs the passporting. The regulatory infrastructure goes in first. The capital follows.</p>
+
+                            <p>Governments do not want software. They want jobs, revenue, and industrial capacity. Each zone receives a factory employing hundreds (Broad Group, $86M annual revenue per production line) and a transport hub connecting cities (EHang). Portfolio companies anchor each zone. New zones open corridors to every existing zone on the network.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- II. THE GAP -->
+            <section class="thesis-section">
+                <div class="container">
+                    <div class="thesis-grid">
+                        <header class="section-header">
+                            <span class="section-eyebrow">The Structural Gap</span>
+                            <h2 class="section-title" style="max-width: 18ch;">Intelligence without institutions. Institutions without intelligence.</h2>
+                        </header>
+                        <div class="article-content">
+                            <p>AI can analyze every jurisdiction on earth in seconds. It cannot incorporate a company in any of them. The institutions that govern economic life &mdash; registries, compliance, banking, identity &mdash; were built for human speed and walled-garden jurisdictions. $270 billion is spent annually on compliance that is manual, periodic, and adversarial.</p>
+
+                            <p>Programmable institutions close this gap. Incorporation, compliance, banking, identity, and consent exposed as APIs, accessed by humans and AI agents through the same interface. A company incorporates under ADGM law, custodies assets through Hong Kong, holds a Delaware entity structure with Cayman fund administration, and moves between jurisdictions at machine speed. Thirteen jurisdictions are <a href="/ez.html">live</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- III. NETWORK ECONOMICS -->
+            <section class="thesis-section thesis-section--dim">
+                <div class="container">
+                    <div class="thesis-grid">
+                        <header class="section-header">
+                            <span class="section-eyebrow">Network Economics</span>
+                            <h2 class="section-title" style="max-width: 18ch;">Every zone multiplies every other zone</h2>
+                        </header>
+                        <div class="article-content">
+                            <p>A company in Kazakhstan needs to bank in Singapore. Today that takes six months, a quarter million dollars, and a compliance team that speaks both regulatory languages. On the network, it routes through ADGM in seconds. Compliance re-evaluates at every border. The company pays less. The jurisdictions earn more. Momentum captures a fee at every hop.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IV. THE MOAT -->
+            <section class="thesis-section">
+                <div class="container">
+                    <div class="thesis-grid">
+                        <header class="section-header">
+                            <span class="section-eyebrow">Defensibility</span>
+                            <h2 class="section-title" style="max-width: 18ch;">Compounding trust, combinatorial cost of entry</h2>
+                        </header>
+                        <div class="article-content">
+                            <p>Momentum owns the machine-executable model of how 210 jurisdictions interact. Every entity on Mass is a multi-harbored entity &mdash; an entity that can harbor in multiple jurisdictions simultaneously, with the strictest applicable rule worked out automatically across every compliance domain and jurisdiction it touches. How those rules compose is learned from operational reality &mdash; which thresholds actually trigger review, what evidence regulators accept, where formal rules diverge from practice.</p>
+
+                            <p>Trust takes 18&ndash;36 months per government partnership. Thirteen jurisdictions, each negotiated individually. A full-stack charter city deployed at Pr&oacute;spera. Portfolio companies physically inside every zone: Broad Group factories, EHang transport hubs. Hardware you cannot replicate with a codebase. Each zone added opens compliance paths to every other zone on the network.</p>
+
+                            <p>The <a href="/ez.html">architecture</a> and <a href="https://research.momentum.inc/one-entity-in-many-jurisdictions.html">research</a> are published.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- V. WHY NOW -->
+            <section class="thesis-section">
+                <div class="container">
+                    <div class="thesis-grid">
+                        <header class="section-header">
+                            <span class="section-eyebrow">Timing</span>
+                            <h2 class="section-title" style="max-width: 18ch;">Three conditions that did not previously coexist</h2>
+                        </header>
+                        <div class="article-content">
+                            <p>AI agents need institutional surfaces at machine speed. This demand did not exist three years ago. Which jurisdictions accept which entity types, how compliance domains interact across borders, where corridors exist and what they cost. Only the infrastructure that processes real operations knows.</p>
+
+                            <p>Pakistan published its SIFC digital infrastructure mandate. Kazakhstan passed enabling legislation for Alatau City. Dubai FZC is coordinating 27 free zones under a unified digital architecture. Mass delivers real-time cross-jurisdictional compliance across 13+ live jurisdictions.</p>
+
+                            <p>Hub positioning is irreversible. Governments will not permit two competing operating-system providers for their economy. Latecomers build parallel infrastructure or join the existing network on the operator&rsquo;s terms. Each government partnership requires 18&ndash;36 months, non-parallelizable.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VI. PORTFOLIO ATTRIBUTION -->
+            <section class="thesis-section">
+                <div class="container">
+                    <div class="thesis-grid">
+                        <header class="section-header">
+                            <span class="section-eyebrow">Portfolio Attribution</span>
+                            <h2 class="section-title" style="max-width: 18ch;">What Momentum owns across the network</h2>
+                        </header>
+                        <div class="article-content">
+                            <p><strong>Broad Group JV.</strong> Factory-built modular construction, 37-year track record, 3.5M m&sup2; delivered. Momentum&rsquo;s attribution is the international-distribution JV equity, not Broad Group&rsquo;s consolidated balance sheet.</p>
+
+                            <p><strong>Mass platform run-rate.</strong> The fund underwrites $10&ndash;31M Year-3 ARR per deployed zone at the median, scaling to $40&ndash;120M at DIFC-class maturity.</p>
+
+                            <p><strong>EHang position.</strong> Public position (NASDAQ: EH), marked to market.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="cta-section--dark">
+                <div class="container">
+                    <div class="cta-content">
+                        <span class="section-eyebrow">Partnership</span>
+                        <h2>Access the data room</h2>
+                        <p>Thirteen jurisdictions live. Thirty zones in the network. Six in testnet. Detailed zone economics and portfolio materials are available in the data room.</p>
+                        <div class="cta-actions">
+                            <a href="mailto:partnerships@momentum.inc?subject=Data%20Room%20Access%20Request" class="btn-primary btn-primary--inverse">Access data room <span class="btn-arrow">&rarr;</span></a>
+                            <a href="mailto:partnerships@momentum.inc?subject=Introductory%20Meeting" class="btn-secondary btn-secondary--inverse">Schedule a meeting <span class="btn-arrow">&rarr;</span></a>
+                        </div>
+                        <p class="cta-note">Sovereign wealth funds, pension funds, endowments, family offices, and institutional allocators.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AUDIENCE PATHS -->
+            <section class="paths-section">
+                <div class="container">
+                    <div class="paths-grid">
+                        <a href="mailto:partnerships@momentum.inc?subject=Data%20Room%20Access%20Request" class="path-card">
+                            <div class="path-audience">For Institutions</div>
+                            <h3 class="path-title">Access Data Room <span class="path-arrow">&rarr;</span></h3>
+                            <p class="path-desc">Detailed financials, unit economics, and engagement models.</p>
+                        </a>
+                        <a href="/ez.html" class="path-card">
+                            <div class="path-audience">For Governments</div>
+                            <h3 class="path-title">Deploy Institutions <span class="path-arrow">&rarr;</span></h3>
+                            <p class="path-desc">Zone status board, deployment architecture, and case studies.</p>
+                        </a>
+                        <a href="https://dev.momentum.inc" class="path-card">
+                            <div class="path-audience">For Builders</div>
+                            <h3 class="path-title">Build on the OS <span class="path-arrow">&rarr;</span></h3>
+                            <p class="path-desc">API documentation, SDKs, and interactive explorer.</p>
+                        </a>
+                        <a href="https://research.momentum.inc/one-entity-in-many-jurisdictions.html" class="path-card">
+                            <div class="path-audience">Research</div>
+                            <h3 class="path-title">Read the Essay <span class="path-arrow">&rarr;</span></h3>
+                            <p class="path-desc">One Entity in Many Jurisdictions, then the papers and technical specifications.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+          <div class="container">
+            <div class="footer-inner">
+              <div class="footer-contact">
+                <p class="footer-label">Inquiries</p>
+                <a href="mailto:info@momentum.inc">info@momentum.inc</a>
+                <p class="footer-secondary">Saadiyat Island, Abu Dhabi &middot; Miami, USA &middot; Cape Town, South Africa &middot; Shanghai, China</p>
+              </div>
+              <nav class="footer-nav" aria-label="Footer">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+            <div class="footer-legal">
+              <p>The materials on this website are for illustration and discussion purposes only and do not constitute an offer to sell, or a solicitation of an offer to buy, any securities or interests. Any such offering may be made only to eligible investors via one or more confidential offering documents. Past performance is not indicative of future results. &copy; 2026 Momentum</p>
+            </div>
+          </div>
+        </footer>
+    </div>
+
+    <script src="/site.js" defer></script>
+</body>
+</html>

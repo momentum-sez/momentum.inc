@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Intelligent Assets — Momentum</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+
+    <meta name="description" content="A theory of intelligent assets: financial instruments that carry executable programs and a compliance function as intrinsic properties, enabling autonomous cross-jurisdictional operation.">
+    <meta name="author" content="Momentum">
+    <link rel="canonical" href="https://momentum.inc/smart-assets.html">
+    <link rel="alternate" type="application/json" title="Machine-readable whitepaper" href="https://momentum.inc/smart-assets.json">
+    <link rel="alternate" type="application/pdf" title="PDF version" href="https://momentum.inc/smart-assets.pdf">
+
+    <meta property="og:title" content="Intelligent Assets — Momentum">
+    <meta property="og:description" content="Financial instruments that carry executable programs and a compliance function as intrinsic properties.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://momentum.inc/smart-assets.html">
+    <meta property="og:image" content="https://momentum.inc/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intelligent Assets — Momentum">
+    <meta name="twitter:description" content="Financial instruments that carry executable programs and a compliance function as intrinsic properties.">
+    <meta name="twitter:image" content="https://momentum.inc/og-image.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "Intelligent Assets: Autonomous Financial Instruments with Embedded Compliance",
+        "alternativeHeadline": "Intelligent Assets",
+        "author": {
+            "@type": "Person",
+            "name": "Raeez Lorgat",
+            "affiliation": {"@type": "Organization", "name": "Momentum", "url": "https://momentum.inc"}
+        },
+        "publisher": {"@type": "Organization", "name": "Momentum", "url": "https://momentum.inc"},
+        "datePublished": "2026-03-06",
+        "version": "2.0",
+        "description": "A theory of intelligent assets: financial instruments that carry executable programs and a compliance function as intrinsic properties.",
+        "keywords": ["intelligent assets", "autonomous financial instruments", "compliance lattice", "sovereign attestation", "jurisdictional composition"]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8T5J8M28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JP8T5J8M28');
+    </script>
+
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+    <link rel="preload" href="https://use.typekit.net/zlu2quo.css" as="style">
+    <link rel="stylesheet" href="https://use.typekit.net/zlu2quo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+    <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+
+    <style>
+        .wp-container { max-width: 65ch; margin-inline: auto; padding: var(--space-10) var(--gutter) var(--space-16); }
+        .wp-header { margin-bottom: var(--space-6); padding-bottom: var(--space-5); border-bottom: 1px solid var(--ink-hint); }
+        .wp-title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-heading); margin-bottom: var(--space-2); }
+        .wp-subtitle { font-size: var(--text-lg); font-weight: 400; font-style: italic; line-height: 1.35; color: var(--ink-muted); }
+        .wp-meta { font-family: var(--font-caption); font-size: var(--text-sm); color: var(--ink-faint); margin-top: var(--space-3); }
+        .wp-meta a { color: var(--ink-muted); text-decoration: underline; text-decoration-color: var(--ink-whisper); text-decoration-thickness: 1px; text-underline-offset: 0.12em; }
+        .wp-meta a:hover { text-decoration-color: var(--ink-muted); }
+        .wp-formats { margin-top: var(--space-2); font-family: var(--font-caption); font-size: var(--text-xs); color: var(--ink-ghost); }
+        .wp-formats a { color: var(--ink-faint); text-decoration: none; border-bottom: 1px solid var(--ink-whisper); }
+        .wp-formats a:hover { color: var(--ink-muted); border-color: var(--ink-muted); }
+        .wp-abstract { margin-bottom: var(--space-8); padding: var(--space-4) var(--space-5); background: var(--paper-dim); border-left: 3px solid var(--ink-hint); font-size: var(--text-sm); line-height: 1.618; color: var(--ink-muted); }
+        .wp-abstract-label { font-family: var(--font-caption); font-variant-caps: small-caps; font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1; letter-spacing: 0.04em; font-size: var(--text-xs); color: var(--ink-faint); display: block; margin-bottom: var(--space-2); }
+        .wp-toc { margin-bottom: var(--space-8); padding-bottom: var(--space-5); border-bottom: 1px solid var(--ink-hint); }
+        .wp-toc-title { font-family: var(--font-caption); font-variant-caps: small-caps; font-feature-settings: "smcp" 1, "c2sc" 1, "kern" 1; letter-spacing: 0.04em; font-size: var(--text-sm); color: var(--ink-faint); margin-bottom: var(--space-3); }
+        .wp-toc ol { list-style: none; counter-reset: toc-s; }
+        .wp-toc > ol > li { counter-increment: toc-s; margin-bottom: var(--space-1); }
+        .wp-toc > ol > li > a::before { content: counter(toc-s) ".\2003"; font-variant-numeric: tabular-nums lining-nums; color: var(--ink-ghost); }
+        .wp-toc a { color: var(--ink-muted); text-decoration: none; font-size: var(--text-sm); }
+        .wp-toc a:hover { color: var(--ink); }
+        .wp-body h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 400; letter-spacing: var(--tracking-display); line-height: var(--leading-heading); margin-top: var(--space-10); margin-bottom: var(--space-4); }
+        .wp-body h3 { font-size: var(--text-lg); font-weight: 400; line-height: 1.35; margin-top: var(--space-8); margin-bottom: var(--space-3); }
+        .wp-body p { margin-bottom: var(--space-3); line-height: var(--leading-body); }
+        .wp-body p + p { text-indent: 1.5em; }
+        .wp-def, .wp-prop, .wp-rem, .wp-prob, .wp-proof { margin: var(--space-4) 0; padding: var(--space-3) var(--space-4); }
+        .wp-def { background: var(--paper-dim); border-left: 3px solid var(--ink-muted); }
+        .wp-prop { background: var(--paper-dim); border-left: 3px solid var(--ink-subtle); }
+        .wp-proof { border-left: 2px solid var(--ink-hint); font-style: italic; color: var(--ink-muted); }
+        .wp-proof .qed { float: right; font-style: normal; }
+        .wp-rem { border-left: 2px solid var(--ink-whisper); color: var(--ink-muted); font-size: calc(var(--text-base) * 0.95); }
+        .wp-prob { background: var(--paper-dim); border-left: 3px solid var(--ink-faint); }
+        .wp-env-label { font-family: var(--font-caption); font-variant-caps: small-caps; font-feature-settings: "smcp" 1, "kern" 1; font-weight: 600; font-size: var(--text-sm); letter-spacing: 0.015em; display: block; margin-bottom: 4px; }
+        .wp-def .wp-env-label { color: var(--ink); }
+        .wp-prop .wp-env-label { color: var(--ink-muted); }
+        .wp-proof .wp-env-label { color: var(--ink-subtle); font-style: normal; }
+        .wp-prob .wp-env-label { color: var(--ink-faint); }
+        .m { font-style: italic; font-feature-settings: "kern" 1, "liga" 0; white-space: nowrap; }
+        .m sub, .m sup { font-size: 0.75em; font-style: italic; }
+        .sc { font-variant-caps: small-caps; font-feature-settings: "smcp" 1, "kern" 1; font-style: normal; }
+        .wp-body ol, .wp-body ul { margin: var(--space-3) 0; padding-left: 2em; }
+        .wp-body li { margin-bottom: var(--space-1); }
+        .wp-body ol { list-style-type: decimal; }
+        code { font-family: var(--font-mono); font-size: 0.85em; background: var(--paper-dim); padding: 0.1em 0.3em; border-radius: 2px; }
+        .wp-refs { margin-top: var(--space-8); padding-top: var(--space-4); border-top: 1px solid var(--ink-hint); }
+        .wp-refs h2 { font-family: var(--font-caption); font-variant-caps: small-caps; font-size: var(--text-sm); font-weight: 400; color: var(--ink-faint); margin-bottom: var(--space-3); margin-top: 0; }
+        .wp-refs ol { list-style: none; counter-reset: ref; padding-left: 0; }
+        .wp-refs li { counter-increment: ref; margin-bottom: var(--space-2); padding-left: 2.5em; text-indent: -2.5em; font-size: var(--text-sm); color: var(--ink-muted); }
+        .wp-refs li::before { content: "[" counter(ref) "]\2003"; font-variant-numeric: tabular-nums lining-nums; color: var(--ink-ghost); }
+        sup.fn-ref { font-size: 0.7em; font-variant-numeric: lining-nums; vertical-align: super; line-height: 0; }
+        sup.fn-ref a { color: var(--ink-muted); text-decoration: none; }
+        .wp-footnotes { margin-top: var(--space-8); padding-top: var(--space-4); border-top: 1px solid var(--ink-hint); font-size: var(--text-sm); color: var(--ink-muted); }
+        .wp-footnotes ol { padding-left: 1.5em; }
+        @media print { .site-header, .site-footer, .wp-formats { display: none; } .wp-body h2 { page-break-after: avoid; } .wp-def, .wp-prop { page-break-inside: avoid; } }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="site-container">
+        <header class="site-header">
+          <div class="container">
+            <div class="header-inner">
+              <a href="/" class="logo">Momentum</a>
+              <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">Menu</button>
+              <nav class="nav-primary" id="primary-nav" aria-label="Primary navigation">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <main id="main">
+            <div class="wp-container">
+
+                <header class="wp-header">
+                    <h1 class="wp-title">Intelligent Assets</h1>
+                    <p class="wp-subtitle">Autonomous Financial Instruments with Embedded Compliance</p>
+                    <p class="wp-meta">
+                        Raeez Lorgat &middot; Momentum &middot; March 2026 &middot; v2.0
+                    </p>
+                    <div class="wp-formats">
+                        Also available as: <a href="/smart-assets.json">JSON</a> &middot; <a href="/smart-assets.pdf">PDF</a>
+                    </div>
+                </header>
+
+                <div class="wp-abstract">
+                    <span class="wp-abstract-label">Abstract</span>
+                    We formalize <em>intelligent assets</em>: financial instruments that carry executable programs and a compliance function as intrinsic properties. The programs enable autonomous operation: an intelligent asset can rebalance a portfolio, negotiate trades, migrate between jurisdictions, and file regulatory reports without human intervention. The compliance function (a map from twenty-three regulatory domains to a five-element ordered set) ensures that every autonomous action is evaluated against applicable regulations before execution. The compliance function is fail-closed by construction and sanctions violations are algebraically non-overridable. Cross-jurisdictional compliance composes through lattice operations, enabling an asset to accumulate sovereign attestations as it moves between jurisdictions. We describe the execution architecture and trace a worked example through the lifecycle of an autonomous private equity fund.
+                </div>
+
+                <nav class="wp-toc" aria-label="Table of contents">
+                    <p class="wp-toc-title">Contents</p>
+                    <ol>
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#lattice">The Compliance Lattice</a></li>
+                        <li><a href="#execution">Execution</a></li>
+                        <li><a href="#composition">Composition</a></li>
+                        <li><a href="#pe-fund">Worked Example: An Autonomous PE Fund</a></li>
+                        <li><a href="#comparison">Comparison</a></li>
+                        <li><a href="#limitations">Boundaries</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                    </ol>
+                </nav>
+
+                <article class="wp-body">
+
+                    <h2 id="introduction">1. Introduction</h2>
+
+                    <p>A financial instrument (a fund, a bond, a structured product) carries programs that let it act on its own: rebalance a portfolio when allocations drift, file a regulatory report at quarter-end, migrate to a new jurisdiction when terms improve. Before each action, a compliance function evaluates the action against every applicable regulatory domain. If the evaluation passes, the action executes. If it fails, the action halts and the failure is recorded. The compliance verdicts are signed by sovereign evaluators and travel with the asset as portable attestations.</p>
+
+                    <p>The programs make the asset autonomous. The compliance function makes it legal.</p>
+
+                    <p>Consider a private equity fund domiciled in Abu Dhabi. It holds positions across MENA real estate and Southeast Asian infrastructure debt. Its rebalancing program monitors portfolio concentration. When MENA allocation exceeds a threshold, the program initiates a rotation: it identifies counterparty assets, evaluates twenty-three regulatory domains (anti-money laundering, sanctions, securities classification, tax, custody, cross-border capital controls) and, if every domain clears, executes the trade. If the fund later identifies better terms in Singapore, a migration program evaluates exit requirements, presents the fund's attestation portfolio to Singapore's regulator, obtains fresh clearances where required, and completes the move. Rebalancing or migration takes seconds.</p>
+
+                    <p>This is not how cross-border finance works today. Autonomous operation across jurisdictions has been regulatorily impractical &mdash; not because rules prohibit it, but because no infrastructure existed to satisfy compliance at machine speed. A fund rebalancing across three jurisdictions needs three law firms, three compliance teams, and months of manual process. Global compliance costs exceed $270 billion annually.<sup class="fn-ref"><a href="#fn1" id="fnref1">1</a></sup> The real loss is the financial instruments that cannot exist because compliance overhead makes autonomous cross-border operation uneconomic.</p>
+
+                    <p>The missing piece is a compliance primitive that is <em>intrinsic</em> to the asset (not maintained by an external institution), <em>machine-executable</em> (evaluable in microseconds), <em>sovereignly attested</em> (carrying legal authority), and <em>composable</em> across jurisdictions (combinable through algebraic operations). This paper provides that primitive.</p>
+
+
+                    <h2 id="architecture">2. Architecture</h2>
+
+                    <div class="wp-def">
+                        <span class="wp-env-label">Definition 2.1 (Intelligent Asset)</span>
+                        An <em>intelligent asset</em> <span class="m">A = (g, &pi;, &sigma;, s, P)</span> consists of: <span class="m">g</span>, an immutable genesis document recording the asset's type, issuing jurisdiction, initial parameters, and content-addressed identity; <span class="m">&pi;</span>, an attestation portfolio, the set of sovereign-issued compliance verdicts accumulated over the asset's lifetime; <span class="m">&sigma;</span>, a receipt log, a hash-linked sequence of execution records; <span class="m">s: W &rarr; W</span>, a persistent key-value store (32-byte keys and values) that survives across program executions; <span class="m">P = {p<sub>1</sub>, &hellip;, p<sub>k</sub>}</span>, a set of bound programs, bytecode executed by the asset's virtual machine.
+                    </div>
+
+                    <p>Without <span class="m">P</span>, the asset is a record with signed metadata. With <span class="m">P</span>, the asset observes external events, makes decisions, and acts, subject to a compliance gate described in &sect;3. The five-tuple is what separates an intelligent asset from a ledger entry.</p>
+
+                    <div class="wp-def">
+                        <span class="wp-env-label">Definition 2.2 (Jurisdiction)</span>
+                        A <em>jurisdiction</em> <span class="m">J = (E<sub>J</sub>, L<sub>J</sub>, K<sub>J</sub>)</span> is a compliance evaluation service: <span class="m">E<sub>J</sub></span> is an evaluator function, <span class="m">L<sub>J</sub></span> is a content-addressed set of regulatory rules (a lawpack), and <span class="m">K<sub>J</sub></span> is a signing key. The jurisdiction evaluates an asset's intended action against its rules and, if the action is compliant, signs an attestation.
+                    </div>
+
+                    <p>The jurisdiction does not execute the asset's programs. It certifies compliance; the asset executes only upon certification.</p>
+
+                    <div class="wp-def">
+                        <span class="wp-env-label">Definition 2.3 (Compliance Domain)</span>
+                        The set of compliance domains <span class="m"><span class="sc">D</span></span> is fixed at twenty: anti-money laundering, know-your-customer, sanctions, tax, securities, corporate governance, custody, data privacy, licensing, digital assets, consumer protection, environmental and social, cross-border, reporting, insurance, banking, payment, investment, intellectual property, dispute resolution.
+                    </div>
+
+                    <p>Every domain must be explicitly addressed for every operation. Adding or removing a domain is a breaking change. The set is exhaustive by design: there is no regulatory surface an asset can touch without evaluation.</p>
+
+                    <div class="wp-def">
+                        <span class="wp-env-label">Definition 2.4 (Attestation)</span>
+                        An <em>attestation</em> <span class="m">&alpha; = (J, d, v, t<sub>issue</sub>, t<sub>expire</sub>, &sigma;<sub>J</sub>)</span> records that jurisdiction <span class="m">J</span> evaluated domain <span class="m">d</span> and assigned compliance state <span class="m">v</span>, valid from <span class="m">t<sub>issue</sub></span> to <span class="m">t<sub>expire</sub></span>, signed with <span class="m">K<sub>J</sub></span>.
+                    </div>
+
+                    <p>Attestations are W3C Verifiable Credentials signed with Ed25519. They expire by design, forcing periodic re-evaluation. They are revocable, because regulations change and errors must be correctable. The trust model is explicit and scoped: accepting an attestation means trusting the issuer's evaluator for the attested domain under the attested lawpack version.</p>
+
+                    <div class="wp-def">
+                        <span class="wp-env-label">Definition 2.5 (Corridor)</span>
+                        A <em>corridor</em> <span class="m">C(J<sub>1</sub>, J<sub>2</sub>) = (R, &phi;)</span> between jurisdictions specifies a re-evaluation set <span class="m">R &sube; <span class="sc">D</span></span> (domains requiring fresh evaluation by <span class="m">J<sub>2</sub></span>) and a domain mapping <span class="m">&phi;</span> (regulatory equivalences). Corridors are asymmetric: <span class="m">C(J<sub>1</sub>, J<sub>2</sub>) &ne; C(J<sub>2</sub>, J<sub>1</sub>)</span> in general.
+                    </div>
+
+
+                    <h2 id="lattice">3. The Compliance Lattice</h2>
+
+                    <p>Every domain of an intelligent asset is in one of five states, totally ordered:</p>
+                    <p style="text-align:center;font-style:italic"><span class="sc">NonCompliant</span> &lt; <span class="sc">Pending</span> &lt; <span class="sc">Exempt</span> &lt; <span class="sc">Compliant</span> &lt; <span class="sc">NotApplicable</span></p>
+                    <p>This is a bounded lattice with <span class="m">&and; = min</span>, <span class="m">&or; = max</span>, bottom <span class="m">&perp;</span> = <span class="sc">NonCompliant</span>, top <span class="m">&top;</span> = <span class="sc">NotApplicable</span>. The passing states are {<span class="sc">Exempt</span>, <span class="sc">Compliant</span>, <span class="sc">NotApplicable</span>}, everything strictly above <span class="sc">Pending</span>.</p>
+
+                    <div class="wp-def">
+                        <span class="wp-env-label">Definition 3.1 (Compliance Tensor)</span>
+                        The <em>compliance tensor</em> <span class="m">T<sub>J</sub>(A): <span class="sc">D</span> &rarr; <span class="sc">S</span></span> assigns each of the twenty-three domains a compliance state, parameterized by jurisdiction <span class="m">J</span> and asset <span class="m">A</span>. (The name is conventional. The object is a function <span class="m"><span class="sc">D</span> &rarr; <span class="sc">S</span></span>, equivalently a 23-element array over <span class="m"><span class="sc">S</span></span>.)
+                    </div>
+
+                    <div class="wp-def">
+                        <span class="wp-env-label">Definition 3.2 (Verdict)</span>
+                        The <em>verdict</em> of tensor <span class="m">T</span> with respect to an operation requiring domains <span class="m">D<sub>req</sub> &sube; <span class="sc">D</span></span> is <span class="m">V(T) = &and;<sub>d &isin; D<sub>req</sub></sub> T[d]</span>. The asset may act if and only if <span class="m">V(T)</span> is passing.
+                    </div>
+
+                    <p>The verdict is operation-specific. A domestic rebalancing might require {AML, KYC, Sanctions, Securities}. A cross-border migration requires all twenty.</p>
+
+                    <div class="wp-prop">
+                        <span class="wp-env-label">Proposition 3.1 (Sanctions Non-Overridability)</span>
+                        If <span class="m">T</span>[Sanctions] = <span class="sc">NonCompliant</span> and Sanctions &isin; <span class="m">D<sub>req</sub></span>, then <span class="m">V(T)</span> = <span class="sc">NonCompliant</span> regardless of all other domains.
+                    </div>
+                    <div class="wp-proof"><span class="wp-env-label">Proof.</span> <span class="m">&perp; &and; x = &perp;</span> for all <span class="m">x</span>. <span class="qed">&#9633;</span></div>
+
+                    <p>No combination of passing attestations in other domains can override a sanctions violation. This is a structural property of the lattice, not a policy that could be misconfigured.</p>
+
+                    <div class="wp-prop">
+                        <span class="wp-env-label">Proposition 3.2 (Fail-Closed Default)</span>
+                        The tensor initializes every domain to <span class="sc">Pending</span>. Updates require temporally valid, cryptographically verified attestations. In the absence of an attestation for domain <span class="m">d</span>, <span class="m">T[d]</span> remains <span class="sc">Pending</span> (non-passing).
+                    </div>
+
+                    <p>An intelligent asset whose compliance state is unknown cannot act. Ignorance blocks; it does not permit.</p>
+
+                    <p>The lattice also admits a residual operation: given current state <span class="m">a</span> and target <span class="m">b</span>, the residual <span class="m">a &rarr; b</span> computes the minimum improvement needed to reach <span class="m">b</span>. This answers a practical question: what additional attestations must an asset obtain to become compliant for a given operation?</p>
+
+
+                    <h2 id="execution">4. Execution</h2>
+
+                    <h3>4.1 The Virtual Machine</h3>
+
+                    <p>The Asset Virtual Machine is a stack-based bytecode interpreter: 47 opcodes across 12 categories, 32-byte words aligned with SHA-256 digests, gas metering across 18 cost classes, deterministic storage via BTreeMap, and hash-linked execution receipts.</p>
+
+                    <h3>4.2 The Compliance Gate</h3>
+
+                    <p>Compliance is enforced at two levels.</p>
+
+                    <p><strong>System level.</strong> Before any program executes, the runtime evaluates the compliance tensor for the operation's required domains. If the verdict is non-passing, execution does not begin. After execution completes, the tensor is re-evaluated to confirm that the program's effects have not invalidated compliance. This preflight/postflight gate cannot be bypassed by a program.</p>
+
+                    <p><strong>Program level.</strong> Four opcodes let programs query and interact with the compliance tensor during execution: <code>TENSOR_GET</code> (read the compliance state of a domain), <code>TENSOR_SET</code> (write a compliance state, restricted to zone-level authority), <code>ATTEST</code> (record an attestation reference), and <code>VERIFY_ZK</code> (verify a zero-knowledge proof via Groth16 or PLONK).</p>
+
+                    <p>The system-level gate ensures no program can act without compliance clearance. The program-level opcodes let programs make compliance-dependent decisions within their logic: for instance, choosing a different counterparty if the first fails a sanctions check.</p>
+
+                    <h3>4.3 Receipts</h3>
+
+                    <p>Every execution produces a receipt, including failed executions. Receipts are hash-linked: each contains the digest of its predecessor. The log records what the asset did, what it attempted and failed, which domains blocked it, and which attestations it consumed. A regulator can reconstruct the asset's complete decision history from the log alone.</p>
+
+                    <p>Storage mutations persist across executions, giving the asset continuity: its portfolio state, performance history, and operational parameters survive between program runs.</p>
+
+                    <h3>4.4 Triggers</h3>
+
+                    <p>Triggers bind external events to bound programs: regulatory events (sanctions list update, attestation expiry), settlement events (payment received, custody transferred), asset events (NAV breach, concentration limit), corridor events (migration opportunity, fee change), and temporal events (reporting deadline, distribution date). When an event matches a trigger, the runtime executes the bound program. The compliance gate applies: a non-passing verdict reverts execution and the receipt records the cause.</p>
+
+                    <h3>4.5 Negotiation</h3>
+
+                    <p>Two intelligent assets can negotiate through a two-phase atomic protocol. In the first phase, one asset proposes terms and both evaluate the proposal against their own tensors. In the second phase, if both verdicts pass, settlement is atomic: both storage states update, both receipt logs extend, and attestations cross-reference. If either verdict fails, the negotiation aborts.</p>
+
+
+                    <h2 id="composition">5. Composition</h2>
+
+                    <p>When an intelligent asset migrates from <span class="m">J<sub>1</sub></span> to <span class="m">J<sub>2</sub></span>, the corridor <span class="m">C(J<sub>1</sub>, J<sub>2</sub>) = (R, &phi;)</span> determines what happens: domains in <span class="m">R</span> are freshly evaluated by <span class="m">J<sub>2</sub></span>; domains with a mapping through <span class="m">&phi;</span> carry attestations from <span class="m">J<sub>1</sub></span>; unmapped domains not in <span class="m">R</span> default to <span class="sc">Pending</span>.</p>
+
+                    <p>Tensor meet is associative: <span class="m">(T<sub>1</sub> &and; T<sub>2</sub>) &and; T<sub>3</sub> = T<sub>1</sub> &and; (T<sub>2</sub> &and; T<sub>3</sub>)</span>, since <span class="m">&and; = min</span> on a total order. Multi-hop composition is well-defined regardless of grouping.</p>
+
+                    <p>Migration is not commutative. The path <span class="m">J<sub>1</sub> &rarr; J<sub>2</sub> &rarr; J<sub>3</sub></span> may produce a different compliance state than <span class="m">J<sub>1</sub> &rarr; J<sub>3</sub> &rarr; J<sub>2</sub></span>, because each corridor defines its own re-evaluation set. Route choice matters: a fund should prefer paths that maximize attestation reuse and minimize fresh evaluation.</p>
+
+                    <p>A <em>mutual recognition agreement</em> between <span class="m">J<sub>1</sub></span> and <span class="m">J<sub>2</sub></span> for domain subset <span class="m">D&prime; &sube; <span class="sc">D</span></span> means neither jurisdiction requires re-evaluation for domains in <span class="m">D&prime;</span>. MRAs reduce the corridor's re-evaluation set, lowering migration cost and latency.</p>
+
+                    <p>When exit costs approach zero, jurisdictional competition sharpens. An intelligent asset that encounters regulatory friction does not petition for reform; it migrates, and the receipt log records why. This is Hirschman's exit-voice framework applied to financial regulation. Whether the resulting feedback improves regulatory quality or triggers a race to the bottom is a political economy question addressed in &sect;8.</p>
+
+
+                    <h2 id="pe-fund">6. Worked Example: An Autonomous PE Fund</h2>
+
+                    <p><strong>Genesis.</strong> A private equity fund is created in ADGM (Abu Dhabi Global Market). Its genesis document records: fund type, investment mandate (global multi-asset, &le;40% MENA concentration), NAV parameters. Five programs are bound: portfolio rebalancing, NAV computation, investor distribution, regulatory reporting, migration evaluation. Triggers are set: MENA concentration exceeds 40%, quarterly NAV, distribution dates, reporting deadlines, sanctions list updates. ADGM's evaluator assesses all twenty-three domains. The tensor passes. The fund is active.</p>
+
+                    <p><strong>Rebalancing.</strong> Three months in, MENA real estate appreciation pushes allocation to 43%. The concentration trigger fires. The rebalancing program reads the portfolio from storage, computes a target allocation, and identifies counterparty assets (Southeast Asian infrastructure bonds, each itself an intelligent asset). For each proposed trade, the program calls <code>TENSOR_GET</code> for sanctions, AML, KYC, securities, and cross-border domains. All pass. The fund initiates negotiation with each counterparty. Both sides' tensors clear. Settlement is atomic. The portfolio updates in storage. Gas metering caps execution cost. The receipt log records every step.</p>
+
+                    <p><strong>Migration.</strong> The fund's migration program identifies that MAS (Singapore) offers lower custody fees. It evaluates ADGM exit requirements: the tensor must pass all twenty-three domains. It does. ADGM issues an exit attestation. The fund presents its portfolio to MAS. The corridor <span class="m">C</span>(ADGM, MAS) defines re-evaluation set <span class="m">R</span> = {Securities, Licensing}, because ADGM's &ldquo;Specified Investment&rdquo; does not map to MAS's &ldquo;Capital Markets Product.&rdquo; MAS evaluates these two domains and issues fresh attestations. The remaining twenty-one carry over. All twenty-three pass. MAS issues an entry attestation. The fund is domiciled in Singapore. Its programs continue under MAS rules.</p>
+
+                    <p><strong>Sanctions event.</strong> A beneficial owner of a portfolio company appears on a sanctions list. The sanctions trigger fires. The tensor updates: <span class="m">T</span>[Sanctions] &larr; <span class="sc">NonCompliant</span>. By Proposition 3.1, <span class="m">V(T) = &perp;</span>. Every program is blocked. The fund cannot trade, rebalance, distribute, or migrate. The receipt records the cause. Resolution requires sanctions clearance, a fresh attestation, and a tensor update. Until then, the fund is frozen: immediately, automatically, and by the algebra, without possibility of override.</p>
+
+
+                    <h2 id="comparison">7. Comparison</h2>
+
+                    <h3>7.1 Executable Contracts</h3>
+
+                    <p>Both intelligent assets and executable contracts embed executable logic in financial instruments. The difference is the relationship between the logic and authority. An executable contract executes unconditionally: its code is its law. When the DAO was exploited in 2016 through a reentrancy vulnerability, the $60 million drain was &ldquo;correct&rdquo; by the code's own standard. An intelligent asset executes conditionally: the compliance tensor must pass before any action proceeds, and sovereign evaluators can revoke attestations after the fact. The asset's logic runs under law, not as law.</p>
+
+                    <p>Executable contracts optimize for trustlessness. Intelligent assets make trust explicit and scoped: an attestation from ADGM means that ADGM's evaluator assessed compliance under a specific versioned lawpack. The receiving jurisdiction can verify the signature, inspect the lawpack, and decide whether to accept or re-evaluate. Trust is auditable, not absent.</p>
+
+                    <p>Executable contract state is fixed once bound. Attestations expire and are revocable. When regulations change or evaluations err, the system adapts.</p>
+
+                    <h3>7.2 Traditional Compliance</h3>
+
+                    <p>Traditional compliance produces proprietary, non-portable, non-composable artifacts. Cross-jurisdictional requirements are assembled by lawyers. Three differences: attestations are portable (W3C Verifiable Credentials with standard formats and verification); composition is algebraic (multi-jurisdictional requirements combine through lattice meet, not legal memoranda); and evaluation rules are versioned and content-addressed.</p>
+
+                    <p>The structural difference: intelligent assets operate autonomously. Traditional compliance is a human process measured in months per jurisdiction. When every cross-border action requires manual review, entire categories of financial instrument are uneconomic.</p>
+
+
+                    <h2 id="limitations">8. Boundaries</h2>
+
+                    <p>The system's guarantees are bounded by two properties: evaluator correctness (an institutional property, enforced through audit rights, cross-jurisdictional challenges, and reputational accountability rather than cryptographic proof) and jurisdictional adoption (sovereign authorities must deploy evaluators and recognize attestations). Thirteen jurisdictions operate this architecture today. The sanctions hard-block provides an algebraic floor that no evaluator can override. A full treatment of these boundaries appears in the technical specification.</p>
+
+
+                    <h2 id="conclusion">9. Conclusion</h2>
+
+                    <p>An intelligent asset carries programs, a compliance tensor, sovereign attestations, and a hash-linked execution record. The programs give it autonomy. The tensor gives it legality. The attestations give it portability. The receipt log gives it auditability.</p>
+
+                    <p>The tensor is a function from twenty-three regulatory domains to a five-element bounded lattice. Its properties (fail-closed default, sanctions non-overridability, associative composition) follow from the lattice structure and require no runtime enforcement beyond initialization.</p>
+
+                    <p>The SAVM interpreter, compliance tensor algebra, attestation issuance (Ed25519 VCs), policy compiler, and asset lifecycle state machine are production-grade and deployed across 13+ live jurisdictions. The trigger system and negotiation protocol are implemented. ZK verification (Groth16 over BN254, PLONK over Pallas) is available. The Pr&oacute;spera deployment targets full-stack operational independence within roughly 90 days and entity formation at scale (illustrative figures).</p>
+
+                </article>
+
+                <section class="wp-refs">
+                    <h2>References</h2>
+                    <ol>
+                        <li>A. O. Hirschman, <em>Exit, Voice, and Loyalty</em>, Harvard University Press, 1970.</li>
+                        <li>W3C, Verifiable Credentials Data Model v2.0, 2024.</li>
+                        <li>G. Birkhoff, <em>Lattice Theory</em>, 3rd ed., AMS, 1967.</li>
+                        <li>B. A. Davey and H. A. Priestley, <em>Introduction to Lattices and Order</em>, 2nd ed., CUP, 2002.</li>
+                        <li>J. H. Saltzer, D. P. Reed, D. D. Clark, End-to-end arguments in system design, <em>ACM TOCS</em>, 2(4), 1984.</li>
+                        <li>C. M. Tiebout, A Pure Theory of Local Expenditures, <em>JPE</em>, 64(5), 1956.</li>
+                        <li>G. C. Necula, Proof-carrying code, <em>POPL</em>, pp. 106&ndash;119, 1997.</li>
+                    </ol>
+                </section>
+
+                <section class="wp-footnotes">
+                    <ol>
+                        <li id="fn1">Thomson Reuters, Cost of Compliance, 2024. <a href="#fnref1">&uarr;</a></li>
+                    </ol>
+                </section>
+
+            </div>
+        </main>
+
+        <footer class="site-footer">
+          <div class="container">
+            <div class="footer-inner">
+              <div class="footer-contact">
+                <p class="footer-label">Inquiries</p>
+                <a href="mailto:info@momentum.inc">info@momentum.inc</a>
+                <p class="footer-secondary">Miami, USA &middot; Cape Town, South Africa &middot; Shanghai, China</p>
+              </div>
+              <nav class="footer-nav" aria-label="Footer">
+                <a href="/thesis.html">Thesis</a>
+                <a href="/ez.html">Infrastructure</a>
+                <a href="/team.html">Team</a>
+                <a href="https://dev.momentum.inc" class="nav-cta">For Builders</a>
+                <a href="https://research.momentum.inc">Research</a>
+              </nav>
+            </div>
+            <div class="footer-legal">
+              <p>The materials on this website are for illustration and discussion purposes only and do not constitute an offer to sell, or a solicitation of an offer to buy, any securities or interests. Any such offering may be made only to eligible investors via one or more confidential offering documents. Past performance is not indicative of future results. &copy; 2026 Momentum</p>
+            </div>
+          </div>
+        </footer>
+    </div>
+
+    <script src="/site.js" defer></script>
+</body>
+</html>

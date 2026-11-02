@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "document": {
+    "title": "Intelligent Assets: Autonomous Financial Instruments with Embedded Compliance",
+    "short_title": "Intelligent Assets",
+    "author": {
+      "name": "Raeez Lorgat",
+      "affiliation": "Momentum",
+      "email": "raeez@momentum.inc"
+    },
+    "version": "2.0.0",
+    "date": "2026-03-06",
+    "license": "All rights reserved. (c) 2026 Momentum",
+    "canonical_urls": {
+      "institutional": "https://momentum.inc/smart-assets.html"
+    },
+    "abstract": "We develop a theory of intelligent assets — financial instruments that carry executable programs and a compliance function as intrinsic properties. The programs enable autonomous operation: an intelligent asset can rebalance a portfolio, negotiate trades, migrate between jurisdictions, and file regulatory reports without human intervention. The compliance function — a map from twenty-three regulatory domains to a five-element ordered set — ensures that every autonomous action is evaluated against applicable regulations before execution. We show that the compliance function is fail-closed by construction and that sanctions violations are algebraically non-overridable. Cross-jurisdictional compliance composes through lattice operations, enabling an asset to accumulate sovereign attestations as it moves between jurisdictions. We describe the execution architecture, trace a worked example through the lifecycle of an autonomous private equity fund, and identify the hard open problems.",
+    "keywords": [
+      "intelligent assets",
+      "autonomous financial instruments",
+      "compliance lattice",
+      "sovereign attestation",
+      "jurisdictional composition",
+      "asset virtual machine"
+    ]
+  },
+  "sections": [
+    {
+      "id": "introduction",
+      "number": "1",
+      "title": "Introduction"
+    },
+    {
+      "id": "architecture",
+      "number": "2",
+      "title": "Architecture",
+      "subsections": [
+        {"id": "def-asset", "title": "Intelligent Asset (Definition 2.1)"},
+        {"id": "def-jurisdiction", "title": "Jurisdiction (Definition 2.2)"},
+        {"id": "def-domain", "title": "Compliance Domain (Definition 2.3)"},
+        {"id": "def-attestation", "title": "Attestation (Definition 2.4)"},
+        {"id": "def-corridor", "title": "Corridor (Definition 2.5)"}
+      ]
+    },
+    {
+      "id": "lattice",
+      "number": "3",
+      "title": "The Compliance Lattice",
+      "subsections": [
+        {"id": "def-tensor", "title": "Compliance Tensor (Definition 3.1)"},
+        {"id": "def-verdict", "title": "Verdict (Definition 3.2)"},
+        {"id": "prop-sanctions", "title": "Sanctions Non-Overridability (Proposition 3.1)"},
+        {"id": "prop-fail-closed", "title": "Fail-Closed Default (Proposition 3.2)"}
+      ]
+    },
+    {
+      "id": "execution",
+      "number": "4",
+      "title": "Execution",
+      "subsections": [
+        {"id": "exec-vm", "title": "The Virtual Machine"},
+        {"id": "exec-gate", "title": "The Compliance Gate"},
+        {"id": "exec-receipts", "title": "Receipts"},
+        {"id": "exec-triggers", "title": "Triggers"},
+        {"id": "exec-negotiation", "title": "Negotiation"}
+      ]
+    },
+    {
+      "id": "composition",
+      "number": "5",
+      "title": "Composition"
+    },
+    {
+      "id": "pe-fund",
+      "number": "6",
+      "title": "Worked Example: An Autonomous PE Fund"
+    },
+    {
+      "id": "comparison",
+      "number": "7",
+      "title": "Comparison",
+      "subsections": [
+        {"id": "cmp-executable-contracts", "title": "Executable Contracts"},
+        {"id": "cmp-traditional", "title": "Traditional Compliance"}
+      ]
+    },
+    {
+      "id": "limitations",
+      "number": "8",
+      "title": "Limitations"
+    },
+    {
+      "id": "conclusion",
+      "number": "9",
+      "title": "Conclusion"
+    }
+  ],
+  "definitions": [
+    {
+      "id": "def:asset",
+      "label": "Definition 2.1",
+      "term": "Intelligent Asset",
+      "formal": "A = (g, pi, sigma, s, P): genesis document, attestation portfolio, receipt log, persistent storage, bound programs."
+    },
+    {
+      "id": "def:jurisdiction",
+      "label": "Definition 2.2",
+      "term": "Jurisdiction",
+      "formal": "J = (E_J, L_J, K_J): evaluator function, content-addressed lawpack, signing key."
+    },
+    {
+      "id": "def:tensor",
+      "label": "Definition 3.1",
+      "term": "Compliance Tensor",
+      "formal": "T_J(A): D -> S, a function assigning each of 23 compliance domains a state; composition is pointwise meet on the applicable fragment (F135 + F142 + F144)."
+    },
+    {
+      "id": "def:verdict",
+      "label": "Definition 3.2",
+      "term": "Verdict",
+      "formal": "V(T) = meet over D_req of T[d]. The asset may act iff V(T) is passing."
+    }
+  ],
+  "propositions": [
+    {
+      "id": "prop:sanctions",
+      "label": "Proposition 3.1",
+      "statement": "If T[Sanctions] = NonCompliant, then V(T) = NonCompliant regardless of all other domains.",
+      "proof": "Bottom is absorbing under meet."
+    },
+    {
+      "id": "prop:fail-closed",
+      "label": "Proposition 3.2",
+      "statement": "Unevaluated domains default to Pending (non-passing). Absence of attestation blocks action."
+    }
+  ],
+  "limitations": [
+    {"id": "lim:oracle", "title": "The Oracle Problem", "summary": "Evaluator correctness unverifiable from within the system."},
+    {"id": "lim:legal-force", "title": "Legal Force", "summary": "Attestations require sovereign authority recognition."},
+    {"id": "lim:bootstrapping", "title": "Bootstrapping", "summary": "Requires jurisdictional adoption that has not yet occurred."},
+    {"id": "lim:race-bottom", "title": "Race to the Bottom", "summary": "Fraudulent attestations cannot be detected cryptographically."},
+    {"id": "lim:complexity", "title": "Irreducible Complexity", "summary": "Some evaluations require human judgment."},
+    {"id": "lim:alignment", "title": "Agent Alignment", "summary": "Who governs the asset's bound programs?"},
+    {"id": "lim:privacy", "title": "Privacy", "summary": "ZK proofs resolve tension only for circuit-expressible predicates."}
+  ]
+}

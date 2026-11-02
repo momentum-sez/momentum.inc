@@ -1,0 +1,478 @@
+[
+  {
+    "file": "agentic.openapi.yaml",
+    "title": "MEZ Agentic Policy Engine API",
+    "version": "0.5.0",
+    "description": "Autonomous policy engine for reactive compliance operations.\nAccepts environmental triggers, evaluates them against registered\npolicies, and dispatches actions to domain operations.\n\nWhen the policy e",
+    "path_count": 3,
+    "operation_count": 3,
+    "operations": [
+      {
+        "method": "POST",
+        "path": "/v1/triggers",
+        "summary": "Submit an environmental trigger for policy evaluation",
+        "operationId": "submitTrigger"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/policies",
+        "summary": "List all registered policies",
+        "operationId": "listPolicies"
+      },
+      {
+        "method": "DELETE",
+        "path": "/v1/policies/{id}",
+        "summary": "Unregister a policy",
+        "operationId": "deletePolicy"
+      }
+    ]
+  },
+  {
+    "file": "corridor-peers.openapi.yaml",
+    "title": "MEZ Corridor Peers API",
+    "version": "0.5.0",
+    "description": "Inter-zone corridor peer exchange protocol (P0-CORRIDOR-NET-001).\nHandles zone-to-zone corridor proposals, acceptances, receipt\nexchange, and watcher attestation delivery.\n\nAll peer messages are Ed255",
+    "path_count": 6,
+    "operation_count": 6,
+    "operations": [
+      {
+        "method": "GET",
+        "path": "/v1/corridors/peers",
+        "summary": "List known corridor peers",
+        "operationId": "listPeers"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/corridors/peers/{zone_id}",
+        "summary": "Get a specific peer by zone ID",
+        "operationId": "getPeer"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/peers/propose",
+        "summary": "Receive a corridor proposal from a peer zone",
+        "operationId": "proposeCorridor"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/peers/accept",
+        "summary": "Receive a corridor acceptance from a peer zone",
+        "operationId": "acceptCorridor"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/peers/receipts",
+        "summary": "Receive an inbound receipt from a peer zone",
+        "operationId": "receiveReceipt"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/peers/attestations",
+        "summary": "Receive a watcher attestation from a peer zone",
+        "operationId": "receiveAttestation"
+      }
+    ]
+  },
+  {
+    "file": "corridor-state.openapi.yaml",
+    "title": "MEZ Corridor State API",
+    "version": "0.5.0",
+    "description": "Corridor lifecycle operations: creation, typestate transitions,\nreceipt chain management, fork resolution, anchor verification,\nand finality status.\n\nCorridors are bilateral state channels connecting ",
+    "path_count": 7,
+    "operation_count": 8,
+    "operations": [
+      {
+        "method": "GET",
+        "path": "/v1/corridors",
+        "summary": "List corridors with pagination",
+        "operationId": "listCorridors"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors",
+        "summary": "Create a new corridor in DRAFT state",
+        "operationId": "createCorridor"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/corridors/{id}",
+        "summary": "Get corridor by ID",
+        "operationId": "getCorridor"
+      },
+      {
+        "method": "PUT",
+        "path": "/v1/corridors/{id}/transition",
+        "summary": "Transition a corridor's lifecycle state",
+        "operationId": "transitionCorridor"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/state/propose",
+        "summary": "Propose a receipt to the corridor's receipt chain",
+        "operationId": "proposeReceipt"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/state/fork-resolve",
+        "summary": "Resolve a fork between two competing receipt branches",
+        "operationId": "forkResolve"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/state/anchor",
+        "summary": "Anchor a corridor commitment to the settlement anchor",
+        "operationId": "anchorCommitment"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/state/finality-status",
+        "summary": "Compute finality status for a corridor commitment",
+        "operationId": "finalityStatus"
+      }
+    ]
+  },
+  {
+    "file": "credentials.openapi.yaml",
+    "title": "MEZ Credentials API",
+    "version": "0.5.0",
+    "description": "Credential issuance and verification endpoints. Issues signed\nW3C Verifiable Credentials on compliance evaluation results and\nverifies VCs presented by counterparties.\n\nThe compliance tensor produces ",
+    "path_count": 2,
+    "operation_count": 2,
+    "operations": [
+      {
+        "method": "POST",
+        "path": "/v1/assets/{id}/credentials/compliance",
+        "summary": "Evaluate compliance and issue a signed Verifiable Credential",
+        "operationId": "issueComplianceCredential"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/credentials/verify",
+        "summary": "Verify a Verifiable Credential",
+        "operationId": "verifyCredential"
+      }
+    ]
+  },
+  {
+    "file": "govos.openapi.yaml",
+    "title": "MEZ GovOS Console API",
+    "version": "0.5.0",
+    "description": "Pakistan GovOS experience layer dashboards. Provides four read-only\ndashboard views aggregating data from the EZ Stack's stores and\nMass APIs:\n\n1. GovOS Console — 40+ ministries overview and operation",
+    "path_count": 4,
+    "operation_count": 4,
+    "operations": [
+      {
+        "method": "GET",
+        "path": "/v1/govos/console",
+        "summary": "GovOS Console dashboard for 40+ ministries",
+        "operationId": "govosConsole"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/govos/tax-revenue",
+        "summary": "Tax & Revenue dashboard",
+        "operationId": "taxRevenueDashboard"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/govos/freezone",
+        "summary": "Digital Free Zone dashboard",
+        "operationId": "freezoneDashboard"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/govos/citizen",
+        "summary": "Citizen Tax & Services dashboard",
+        "operationId": "citizenDashboard"
+      }
+    ]
+  },
+  {
+    "file": "identity.openapi.yaml",
+    "title": "MEZ Identity Verification API",
+    "version": "0.5.0",
+    "description": "Pakistan national identity verification endpoints. Provides\nCNIC verification (via NADRA), NTN verification (via FBR IRIS),\nper-entity identity aggregation, and service status monitoring.\n\nThese are E",
+    "path_count": 4,
+    "operation_count": 4,
+    "operations": [
+      {
+        "method": "POST",
+        "path": "/v1/identity/cnic/verify",
+        "summary": "Verify a CNIC via NADRA",
+        "operationId": "verifyCnic"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/identity/ntn/verify",
+        "summary": "Verify an NTN via FBR IRIS",
+        "operationId": "verifyNtn"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/identity/entity/{entity_id}",
+        "summary": "Get aggregated identity information for an entity",
+        "operationId": "getEntityIdentity"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/identity/status",
+        "summary": "Identity service status",
+        "operationId": "identityServiceStatus"
+      }
+    ]
+  },
+  {
+    "file": "mass-node.openapi.yaml",
+    "title": "MEZ Mass Node Integration API",
+    "version": "0.5.0",
+    "description": "Orchestration proxy for Zone Node ↔ Mass Node communication.\nProvides entity management, ownership (cap tables), fiscal operations\n(accounts, payments), identity verification, and consent management.\n",
+    "path_count": 10,
+    "operation_count": 12,
+    "operations": [
+      {
+        "method": "GET",
+        "path": "/v1/entities",
+        "summary": "List entities via Mass API",
+        "operationId": "listEntities"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/entities",
+        "summary": "Create an entity with compliance orchestration",
+        "operationId": "createEntity"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/entities/{id}",
+        "summary": "Get entity by ID via Mass API",
+        "operationId": "getEntity"
+      },
+      {
+        "method": "PUT",
+        "path": "/v1/entities/{id}",
+        "summary": "Update an entity with compliance orchestration",
+        "operationId": "updateEntity"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/ownership/cap-tables",
+        "summary": "Create a cap table with compliance orchestration",
+        "operationId": "createCapTable"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/ownership/cap-tables/{id}",
+        "summary": "Get cap table by ID via Mass API",
+        "operationId": "getCapTable"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/fiscal/accounts",
+        "summary": "Create a fiscal account with compliance orchestration",
+        "operationId": "createAccount"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/fiscal/payments",
+        "summary": "Initiate a payment with compliance orchestration",
+        "operationId": "initiatePayment"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/identity/verify",
+        "summary": "Verify an identity with compliance orchestration",
+        "operationId": "verifyIdentity"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/identity/{id}",
+        "summary": "Get identity by ID via Mass API",
+        "operationId": "getIdentity"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/consent",
+        "summary": "Create a consent record with compliance orchestration",
+        "operationId": "createConsent"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/consent/{id}",
+        "summary": "Get consent record by ID via Mass API",
+        "operationId": "getConsent"
+      }
+    ]
+  },
+  {
+    "file": "regulator-console.openapi.yaml",
+    "title": "MEZ Regulator Console API",
+    "version": "0.5.0",
+    "description": "Role-gated, auditable query endpoints for regulatory oversight.\nAll requests are logged in an immutable audit trail.\n\nProvides attestation queries, compliance summaries, real-time\ndashboard, and per-e",
+    "path_count": 4,
+    "operation_count": 4,
+    "operations": [
+      {
+        "method": "POST",
+        "path": "/v1/regulator/query/attestations",
+        "summary": "Query attestations with policy-based access control",
+        "operationId": "queryAttestations"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/regulator/summary",
+        "summary": "Compliance summary counts",
+        "operationId": "complianceSummary"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/regulator/dashboard",
+        "summary": "Full regulator dashboard",
+        "operationId": "regulatorDashboard"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/compliance/{entity_id}",
+        "summary": "Per-entity compliance posture",
+        "operationId": "getEntityCompliance"
+      }
+    ]
+  },
+  {
+    "file": "settlement.openapi.yaml",
+    "title": "MEZ Settlement API",
+    "version": "0.5.0",
+    "description": "Corridor settlement operations: multilateral netting, bridge\nroute discovery, and ISO 20022 pacs.008 payment instruction\ngeneration.\n\nThe settlement engine computes net positions from gross\nobligation",
+    "path_count": 3,
+    "operation_count": 3,
+    "operations": [
+      {
+        "method": "POST",
+        "path": "/v1/corridors/{id}/settlement/compute",
+        "summary": "Compute multilateral netting for a corridor",
+        "operationId": "computeSettlement"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/route",
+        "summary": "Find an optimal route between two zones",
+        "operationId": "findRoute"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/corridors/{id}/settlement/instruct",
+        "summary": "Generate ISO 20022 pacs.008 payment instructions",
+        "operationId": "generateInstructions"
+      }
+    ]
+  },
+  {
+    "file": "smart-assets.openapi.yaml",
+    "title": "MEZ Smart Assets API",
+    "version": "0.5.0",
+    "description": "Smart Asset lifecycle operations: genesis, registry, compliance evaluation,\nattestation, checkpoint, migration, and corridor anchor verification.\n\nAll mutating endpoints are idempotent when called wit",
+    "path_count": 8,
+    "operation_count": 8,
+    "operations": [
+      {
+        "method": "POST",
+        "path": "/v1/assets/genesis",
+        "summary": "Create a Smart Asset genesis document",
+        "operationId": "createAssetGenesis"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/assets/registry",
+        "summary": "Submit a Smart Asset registry VC",
+        "operationId": "submitRegistryVC"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/assets/{asset_id}",
+        "summary": "Get smart asset current view",
+        "operationId": "getAsset"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/assets/{asset_id}/attestations",
+        "summary": "Submit an asset attestation",
+        "operationId": "submitAttestation"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/assets/{asset_id}/checkpoint",
+        "summary": "Submit an asset state checkpoint",
+        "operationId": "submitCheckpoint"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/assets/{asset_id}/migration/propose",
+        "summary": "Propose a migration saga for an asset",
+        "operationId": "proposeMigration"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/assets/{asset_id}/compliance/evaluate",
+        "summary": "Evaluate a transition envelope against jurisdiction bindings",
+        "operationId": "evaluateCompliance"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/assets/{asset_id}/anchors/corridor/verify",
+        "summary": "Verify corridor anchoring evidence for an asset checkpoint",
+        "operationId": "verifyCorridorAnchor"
+      }
+    ]
+  },
+  {
+    "file": "tax.openapi.yaml",
+    "title": "MEZ Tax Collection Pipeline API",
+    "version": "0.5.0",
+    "description": "EZ-Stack-owned tax collection pipeline. Provides jurisdictional tax\nawareness on top of Mass fiscal operations: tax event recording,\nwithholding computation, obligation tracking, report generation,\nan",
+    "path_count": 6,
+    "operation_count": 7,
+    "operations": [
+      {
+        "method": "POST",
+        "path": "/v1/tax/events",
+        "summary": "Record a tax event and compute withholding",
+        "operationId": "createTaxEvent"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/tax/events",
+        "summary": "List tax events with filtering",
+        "operationId": "listTaxEvents"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/tax/events/{id}",
+        "summary": "Get a specific tax event by ID",
+        "operationId": "getTaxEvent"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/tax/withhold",
+        "summary": "Compute withholding for a tax event (dry run)",
+        "operationId": "computeWithholding"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/tax/obligations/{entity_id}",
+        "summary": "Get tax obligations for an entity",
+        "operationId": "getTaxObligations"
+      },
+      {
+        "method": "POST",
+        "path": "/v1/tax/report",
+        "summary": "Generate a tax report for authority submission",
+        "operationId": "generateTaxReport"
+      },
+      {
+        "method": "GET",
+        "path": "/v1/tax/rules",
+        "summary": "List loaded withholding rules for a jurisdiction",
+        "operationId": "listWithholdingRules"
+      }
+    ]
+  }
+]

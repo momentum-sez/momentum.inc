@@ -1,0 +1,6623 @@
+[
+  {
+    "id": "_starter",
+    "zone_id": "org.momentum.mez.zone.example",
+    "jurisdiction_id": "ex",
+    "zone_name": "Example Zone",
+    "jurisdiction_stack": [
+      "ex"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae",
+    "zone_id": "org.momentum.mez.zone.ae",
+    "jurisdiction_id": "ae",
+    "zone_name": "UAE Federal",
+    "jurisdiction_stack": [
+      "ae"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos-ae",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-abudhabi",
+    "zone_id": "org.momentum.mez.zone.ae.abudhabi",
+    "jurisdiction_id": "ae-abudhabi",
+    "zone_name": "Abu Dhabi",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-abudhabi"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos-ae",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-abudhabi-adgm",
+    "zone_id": "org.momentum.mez.zone.ae.abudhabi.adgm",
+    "jurisdiction_id": "ae-abudhabi-adgm",
+    "zone_name": "Abu Dhabi Global Market Economic Zone",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-abudhabi",
+      "ae-abudhabi-adgm"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos-ae",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "ae-abudhabi-kezad",
+    "zone_id": "org.momentum.mez.zone.ae.abudhabi.kezad",
+    "jurisdiction_id": "ae-abudhabi-kezad",
+    "zone_name": "KEZAD Abu Dhabi",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-abudhabi",
+      "ae-abudhabi-kezad"
+    ],
+    "profile": "org.momentum.mez.profile.industrial-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-abudhabi-kizad",
+    "zone_id": "org.momentum.mez.zone.ae.abudhabi.kizad",
+    "jurisdiction_id": "ae-abudhabi-kizad",
+    "zone_name": "Khalifa Industrial Zone Abu Dhabi",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-abudhabi",
+      "ae-abudhabi-kizad"
+    ],
+    "profile": "org.momentum.mez.profile.industrial-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-abudhabi-masdar",
+    "zone_id": "org.momentum.mez.zone.ae.abudhabi.masdar",
+    "jurisdiction_id": "ae-abudhabi-masdar",
+    "zone_name": "Masdar City Free Zone",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-abudhabi",
+      "ae-abudhabi-masdar"
+    ],
+    "profile": "org.momentum.mez.profile.free-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-abudhabi-twofour54",
+    "zone_id": "org.momentum.mez.zone.ae.abudhabi.twofour54",
+    "jurisdiction_id": "ae-abudhabi-twofour54",
+    "zone_name": "twofour54 Abu Dhabi",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-abudhabi",
+      "ae-abudhabi-twofour54"
+    ],
+    "profile": "org.momentum.mez.profile.media-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-ajman",
+    "zone_id": "org.momentum.mez.zone.ae.ajman",
+    "jurisdiction_id": "ae-ajman",
+    "zone_name": "Ajman",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-ajman"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-dubai",
+    "zone_id": "org.momentum.mez.zone.ae.dubai",
+    "jurisdiction_id": "ae-dubai",
+    "zone_name": "Dubai",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-dubai"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos-ae",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-dubai-dhcc",
+    "zone_id": "org.momentum.mez.zone.ae.dubai.dhcc",
+    "jurisdiction_id": "ae-dubai-dhcc",
+    "zone_name": "Dubai Healthcare City",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-dubai",
+      "ae-dubai-dhcc"
+    ],
+    "profile": "org.momentum.mez.profile.healthcare-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-dubai-dic",
+    "zone_id": "org.momentum.mez.zone.ae.dubai.dic",
+    "jurisdiction_id": "ae-dubai-dic",
+    "zone_name": "Dubai Internet City / Media City",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-dubai",
+      "ae-dubai-dic"
+    ],
+    "profile": "org.momentum.mez.profile.technology-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-dubai-difc",
+    "zone_id": "org.momentum.mez.zone.ae.dubai.difc",
+    "jurisdiction_id": "ae-dubai-difc",
+    "zone_name": "Dubai International Financial Centre",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-dubai",
+      "ae-dubai-difc"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "ae-dubai-dmcc",
+    "zone_id": "org.momentum.mez.zone.ae.dubai.dmcc",
+    "jurisdiction_id": "ae-dubai-dmcc",
+    "zone_name": "Dubai Multi Commodities Centre",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-dubai",
+      "ae-dubai-dmcc"
+    ],
+    "profile": "org.momentum.mez.profile.commodities-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "ae-dubai-dso",
+    "zone_id": "org.momentum.mez.zone.ae.dubai.dso",
+    "jurisdiction_id": "ae-dubai-dso",
+    "zone_name": "Dubai Silicon Oasis",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-dubai",
+      "ae-dubai-dso"
+    ],
+    "profile": "org.momentum.mez.profile.technology-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-dubai-dwtc",
+    "zone_id": "org.momentum.mez.zone.ae.dubai.dwtc",
+    "jurisdiction_id": "ae-dubai-dwtc",
+    "zone_name": "Dubai World Trade Centre Free Zone",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-dubai",
+      "ae-dubai-dwtc"
+    ],
+    "profile": "org.momentum.mez.profile.free-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-dubai-ifza",
+    "zone_id": "org.momentum.mez.zone.ae.dubai.ifza",
+    "jurisdiction_id": "ae-dubai-ifza",
+    "zone_name": "International Free Zone Authority",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-dubai",
+      "ae-dubai-ifza"
+    ],
+    "profile": "org.momentum.mez.profile.free-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-dubai-jafza",
+    "zone_id": "org.momentum.mez.zone.ae.dubai.jafza",
+    "jurisdiction_id": "ae-dubai-jafza",
+    "zone_name": "Jebel Ali Free Zone",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-dubai",
+      "ae-dubai-jafza"
+    ],
+    "profile": "org.momentum.mez.profile.free-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-rak",
+    "zone_id": "org.momentum.mez.zone.ae.rak",
+    "jurisdiction_id": "ae-rak",
+    "zone_name": "Ras Al Khaimah",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-rak"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ae-rak-rakez",
+    "zone_id": "org.momentum.mez.zone.ae.rak.rakez",
+    "jurisdiction_id": "ae-rak-rakez",
+    "zone_name": "RAKEZ Free Zone",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-rak",
+      "ae-rak-rakez"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "ae-sharjah",
+    "zone_id": "org.momentum.mez.zone.ae.sharjah",
+    "jurisdiction_id": "ae-sharjah",
+    "zone_name": "Sharjah",
+    "jurisdiction_stack": [
+      "ae",
+      "ae-sharjah"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ag",
+    "zone_id": "org.momentum.mez.zone.ag",
+    "jurisdiction_id": "ag",
+    "zone_name": "Antigua and Barbuda",
+    "jurisdiction_stack": [
+      "ag"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "ar",
+    "zone_id": "org.momentum.mez.zone.ar",
+    "jurisdiction_id": "ar",
+    "zone_name": "Argentina",
+    "jurisdiction_stack": [
+      "ar"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "at",
+    "zone_id": "org.momentum.mez.zone.at",
+    "jurisdiction_id": "at",
+    "zone_name": "Austria",
+    "jurisdiction_stack": [
+      "at"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "au",
+    "zone_id": "org.momentum.mez.zone.au",
+    "jurisdiction_id": "au",
+    "zone_name": "Australia",
+    "jurisdiction_stack": [
+      "au"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "bb",
+    "zone_id": "org.momentum.mez.zone.bb",
+    "jurisdiction_id": "bb",
+    "zone_name": "Barbados",
+    "jurisdiction_stack": [
+      "bb"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "bd",
+    "zone_id": "org.momentum.mez.zone.bd",
+    "jurisdiction_id": "bd",
+    "zone_name": "Bangladesh",
+    "jurisdiction_stack": [
+      "bd"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "bh",
+    "zone_id": "org.momentum.mez.zone.bh",
+    "jurisdiction_id": "bh",
+    "zone_name": "Bahrain",
+    "jurisdiction_stack": [
+      "bh"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "bh-bfb",
+    "zone_id": "org.momentum.mez.zone.bh.bfb",
+    "jurisdiction_id": "bh-bfb",
+    "zone_name": "Bahrain FinTech Bay",
+    "jurisdiction_stack": [
+      "bh",
+      "bh-bfb"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "bm",
+    "zone_id": "org.momentum.mez.zone.bm",
+    "jurisdiction_id": "bm",
+    "zone_name": "Bermuda",
+    "jurisdiction_stack": [
+      "bm"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "bn",
+    "zone_id": "org.momentum.mez.zone.bn",
+    "jurisdiction_id": "bn",
+    "zone_name": "Brunei",
+    "jurisdiction_stack": [
+      "bn"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "br",
+    "zone_id": "org.momentum.mez.zone.br",
+    "jurisdiction_id": "br",
+    "zone_name": "Brazil",
+    "jurisdiction_stack": [
+      "br"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial",
+      "tax"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "bs",
+    "zone_id": "org.momentum.mez.zone.bs",
+    "jurisdiction_id": "bs",
+    "zone_name": "Bahamas",
+    "jurisdiction_stack": [
+      "bs"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "ca",
+    "zone_id": "org.momentum.mez.zone.ca",
+    "jurisdiction_id": "ca",
+    "zone_name": "Canada",
+    "jurisdiction_stack": [
+      "ca"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ca-on",
+    "zone_id": "org.momentum.mez.zone.ca.on",
+    "jurisdiction_id": "ca-on",
+    "zone_name": "Ontario",
+    "jurisdiction_stack": [
+      "ca",
+      "ca-on"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ch",
+    "zone_id": "org.momentum.mez.zone.ch",
+    "jurisdiction_id": "ch",
+    "zone_name": "Switzerland",
+    "jurisdiction_stack": [
+      "ch"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ch-zug",
+    "zone_id": "org.momentum.mez.zone.ch.zug",
+    "jurisdiction_id": "ch-zug",
+    "zone_name": "Zug",
+    "jurisdiction_stack": [
+      "ch",
+      "ch-zug"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "ci",
+    "zone_id": "org.momentum.mez.zone.ci",
+    "jurisdiction_id": "ci",
+    "zone_name": "Cote d'Ivoire",
+    "jurisdiction_stack": [
+      "ci"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cl",
+    "zone_id": "org.momentum.mez.zone.cl",
+    "jurisdiction_id": "cl",
+    "zone_name": "Chile",
+    "jurisdiction_stack": [
+      "cl"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cm",
+    "zone_id": "org.momentum.mez.zone.cm",
+    "jurisdiction_id": "cm",
+    "zone_name": "Cameroon",
+    "jurisdiction_stack": [
+      "cm"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cn",
+    "zone_id": "org.momentum.mez.zone.cn",
+    "jurisdiction_id": "cn",
+    "zone_name": "China",
+    "jurisdiction_stack": [
+      "cn"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cn-beijing",
+    "zone_id": "org.momentum.mez.zone.cn.beijing",
+    "jurisdiction_id": "cn-beijing",
+    "zone_name": "Beijing",
+    "jurisdiction_stack": [
+      "cn",
+      "cn-beijing"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cn-hainan",
+    "zone_id": "org.momentum.mez.zone.cn.hainan",
+    "jurisdiction_id": "cn-hainan",
+    "zone_name": "Hainan",
+    "jurisdiction_stack": [
+      "cn",
+      "cn-hainan"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cn-hangzhou",
+    "zone_id": "org.momentum.mez.zone.cn.hangzhou",
+    "jurisdiction_id": "cn-hangzhou",
+    "zone_name": "Hangzhou",
+    "jurisdiction_stack": [
+      "cn",
+      "cn-hangzhou"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cn-shanghai",
+    "zone_id": "org.momentum.mez.zone.cn.shanghai",
+    "jurisdiction_id": "cn-shanghai",
+    "zone_name": "Shanghai",
+    "jurisdiction_stack": [
+      "cn",
+      "cn-shanghai"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cn-shenzhen",
+    "zone_id": "org.momentum.mez.zone.cn.shenzhen",
+    "jurisdiction_id": "cn-shenzhen",
+    "zone_name": "Shenzhen",
+    "jurisdiction_stack": [
+      "cn",
+      "cn-shenzhen"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "co",
+    "zone_id": "org.momentum.mez.zone.co",
+    "jurisdiction_id": "co",
+    "zone_name": "Colombia",
+    "jurisdiction_stack": [
+      "co"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cr",
+    "zone_id": "org.momentum.mez.zone.cr",
+    "jurisdiction_id": "cr",
+    "zone_name": "Costa Rica",
+    "jurisdiction_stack": [
+      "cr"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "cy",
+    "zone_id": "org.momentum.mez.zone.cy",
+    "jurisdiction_id": "cy",
+    "zone_name": "Cyprus",
+    "jurisdiction_stack": [
+      "cy"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "de",
+    "zone_id": "org.momentum.mez.zone.de",
+    "jurisdiction_id": "de",
+    "zone_name": "Germany",
+    "jurisdiction_stack": [
+      "de"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "dk",
+    "zone_id": "org.momentum.mez.zone.dk",
+    "jurisdiction_id": "dk",
+    "zone_name": "Denmark",
+    "jurisdiction_stack": [
+      "dk"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "dm",
+    "zone_id": "org.momentum.mez.zone.dm",
+    "jurisdiction_id": "dm",
+    "zone_name": "Dominica",
+    "jurisdiction_stack": [
+      "dm"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ee",
+    "zone_id": "org.momentum.mez.zone.ee",
+    "jurisdiction_id": "ee",
+    "zone_name": "Estonia",
+    "jurisdiction_stack": [
+      "ee"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "eg",
+    "zone_id": "org.momentum.mez.zone.eg",
+    "jurisdiction_id": "eg",
+    "zone_name": "Egypt",
+    "jurisdiction_stack": [
+      "eg"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "es",
+    "zone_id": "org.momentum.mez.zone.es",
+    "jurisdiction_id": "es",
+    "zone_name": "Spain",
+    "jurisdiction_stack": [
+      "es"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "et",
+    "zone_id": "org.momentum.mez.zone.et",
+    "jurisdiction_id": "et",
+    "zone_name": "Ethiopia",
+    "jurisdiction_stack": [
+      "et"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "fi",
+    "zone_id": "org.momentum.mez.zone.fi",
+    "jurisdiction_id": "fi",
+    "zone_name": "Finland",
+    "jurisdiction_stack": [
+      "fi"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "fj",
+    "zone_id": "org.momentum.mez.zone.fj",
+    "jurisdiction_id": "fj",
+    "zone_name": "Fiji",
+    "jurisdiction_stack": [
+      "fj"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "fr",
+    "zone_id": "org.momentum.mez.zone.fr",
+    "jurisdiction_id": "fr",
+    "zone_name": "France",
+    "jurisdiction_stack": [
+      "fr"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "gb",
+    "zone_id": "org.momentum.mez.zone.gb",
+    "jurisdiction_id": "gb",
+    "zone_name": "United Kingdom",
+    "jurisdiction_stack": [
+      "gb"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "gb-gi",
+    "zone_id": "org.momentum.mez.zone.gb.gi",
+    "jurisdiction_id": "gb-gi",
+    "zone_name": "Gibraltar",
+    "jurisdiction_stack": [
+      "gb",
+      "gb-gi"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "gd",
+    "zone_id": "org.momentum.mez.zone.gd",
+    "jurisdiction_id": "gd",
+    "zone_name": "Grenada",
+    "jurisdiction_stack": [
+      "gd"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ge",
+    "zone_id": "org.momentum.mez.zone.ge",
+    "jurisdiction_id": "ge",
+    "zone_name": "Georgia",
+    "jurisdiction_stack": [
+      "ge"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "gh",
+    "zone_id": "org.momentum.mez.zone.gh",
+    "jurisdiction_id": "gh",
+    "zone_name": "Ghana",
+    "jurisdiction_stack": [
+      "gh"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "hk",
+    "zone_id": "org.momentum.mez.zone.hk",
+    "jurisdiction_id": "hk",
+    "zone_name": "Hong Kong SAR",
+    "jurisdiction_stack": [
+      "hk"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "89dc928a5460dc90..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "6bd125db0d30631d..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.cross-border"
+    ]
+  },
+  {
+    "id": "hn-prospera",
+    "zone_id": "org.momentum.mez.zone.hn.prospera",
+    "jurisdiction_id": "hn-prospera",
+    "zone_name": "Prospera",
+    "jurisdiction_stack": [
+      "hn",
+      "hn-prospera"
+    ],
+    "profile": "org.momentum.mez.profile.charter-city",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "id",
+    "zone_id": "org.momentum.mez.zone.id",
+    "jurisdiction_id": "id",
+    "zone_name": "Indonesia",
+    "jurisdiction_stack": [
+      "id"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ie",
+    "zone_id": "org.momentum.mez.zone.ie",
+    "jurisdiction_id": "ie",
+    "zone_name": "Ireland",
+    "jurisdiction_stack": [
+      "ie"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "in-gift",
+    "zone_id": "org.momentum.mez.zone.in.gift",
+    "jurisdiction_id": "in-gift",
+    "zone_name": "GIFT City",
+    "jurisdiction_stack": [
+      "in",
+      "in-gift"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "in-ifsc",
+    "zone_id": "org.momentum.mez.zone.in.ifsc",
+    "jurisdiction_id": "in-ifsc",
+    "zone_name": "IFSC Gujarat",
+    "jurisdiction_stack": [
+      "in",
+      "in-ifsc"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "iq",
+    "zone_id": "org.momentum.mez.zone.iq",
+    "jurisdiction_id": "iq",
+    "zone_name": "Iraq",
+    "jurisdiction_stack": [
+      "iq"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "it",
+    "zone_id": "org.momentum.mez.zone.it",
+    "jurisdiction_id": "it",
+    "zone_name": "Italy",
+    "jurisdiction_stack": [
+      "it"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "jm",
+    "zone_id": "org.momentum.mez.zone.jm",
+    "jurisdiction_id": "jm",
+    "zone_name": "Jamaica",
+    "jurisdiction_stack": [
+      "jm"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "jo",
+    "zone_id": "org.momentum.mez.zone.jo",
+    "jurisdiction_id": "jo",
+    "zone_name": "Jordan",
+    "jurisdiction_stack": [
+      "jo"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "jp",
+    "zone_id": "org.momentum.mez.zone.jp",
+    "jurisdiction_id": "jp",
+    "zone_name": "Japan",
+    "jurisdiction_stack": [
+      "jp"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ke",
+    "zone_id": "org.momentum.mez.zone.ke",
+    "jurisdiction_id": "ke",
+    "zone_name": "Kenya",
+    "jurisdiction_stack": [
+      "ke"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "kh",
+    "zone_id": "org.momentum.mez.zone.kh",
+    "jurisdiction_id": "kh",
+    "zone_name": "Cambodia",
+    "jurisdiction_stack": [
+      "kh"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "kr",
+    "zone_id": "org.momentum.mez.zone.kr",
+    "jurisdiction_id": "kr",
+    "zone_name": "South Korea",
+    "jurisdiction_stack": [
+      "kr"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "kw",
+    "zone_id": "org.momentum.mez.zone.kw",
+    "jurisdiction_id": "kw",
+    "zone_name": "Kuwait",
+    "jurisdiction_stack": [
+      "kw"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ky",
+    "zone_id": "org.momentum.mez.zone.ky",
+    "jurisdiction_id": "ky",
+    "zone_name": "Cayman Islands",
+    "jurisdiction_stack": [
+      "ky"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "11164f51b4df5ce5..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "e96216921ef8ee21..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "kz",
+    "zone_id": "org.momentum.mez.zone.kz",
+    "jurisdiction_id": "kz",
+    "zone_name": "Kazakhstan",
+    "jurisdiction_stack": [
+      "kz"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "kz-aifc",
+    "zone_id": "org.momentum.mez.zone.kz.aifc",
+    "jurisdiction_id": "kz-aifc",
+    "zone_name": "Astana International Financial Centre",
+    "jurisdiction_stack": [
+      "kz",
+      "kz-aifc"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "kz-alatau",
+    "zone_id": "org.momentum.mez.zone.kz.alatau",
+    "jurisdiction_id": "kz-alatau",
+    "zone_name": "Alatau IT City",
+    "jurisdiction_stack": [
+      "kz",
+      "kz-alatau"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "la",
+    "zone_id": "org.momentum.mez.zone.la",
+    "jurisdiction_id": "la",
+    "zone_name": "Laos",
+    "jurisdiction_stack": [
+      "la"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "lb",
+    "zone_id": "org.momentum.mez.zone.lb",
+    "jurisdiction_id": "lb",
+    "zone_name": "Lebanon",
+    "jurisdiction_stack": [
+      "lb"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "lc",
+    "zone_id": "org.momentum.mez.zone.lc",
+    "jurisdiction_id": "lc",
+    "zone_name": "Saint Lucia",
+    "jurisdiction_stack": [
+      "lc"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "li",
+    "zone_id": "org.momentum.mez.zone.li",
+    "jurisdiction_id": "li",
+    "zone_name": "Liechtenstein",
+    "jurisdiction_stack": [
+      "li"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "lk",
+    "zone_id": "org.momentum.mez.zone.lk",
+    "jurisdiction_id": "lk",
+    "zone_name": "Sri Lanka",
+    "jurisdiction_stack": [
+      "lk"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "lu",
+    "zone_id": "org.momentum.mez.zone.lu",
+    "jurisdiction_id": "lu",
+    "zone_name": "Luxembourg",
+    "jurisdiction_stack": [
+      "lu"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "ma",
+    "zone_id": "org.momentum.mez.zone.ma",
+    "jurisdiction_id": "ma",
+    "zone_name": "Morocco",
+    "jurisdiction_stack": [
+      "ma"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "mm",
+    "zone_id": "org.momentum.mez.zone.mm",
+    "jurisdiction_id": "mm",
+    "zone_name": "Myanmar",
+    "jurisdiction_stack": [
+      "mm"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "mt",
+    "zone_id": "org.momentum.mez.zone.mt",
+    "jurisdiction_id": "mt",
+    "zone_name": "Malta",
+    "jurisdiction_stack": [
+      "mt"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "mu",
+    "zone_id": "org.momentum.mez.zone.mu",
+    "jurisdiction_id": "mu",
+    "zone_name": "Mauritius",
+    "jurisdiction_stack": [
+      "mu"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "mx",
+    "zone_id": "org.momentum.mez.zone.mx",
+    "jurisdiction_id": "mx",
+    "zone_name": "Mexico",
+    "jurisdiction_stack": [
+      "mx"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "my",
+    "zone_id": "org.momentum.mez.zone.my",
+    "jurisdiction_id": "my",
+    "zone_name": "Malaysia",
+    "jurisdiction_stack": [
+      "my"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "my-labuan",
+    "zone_id": "org.momentum.mez.zone.my.labuan",
+    "jurisdiction_id": "my-labuan",
+    "zone_name": "Labuan IBFC",
+    "jurisdiction_stack": [
+      "my",
+      "my-labuan"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "ng",
+    "zone_id": "org.momentum.mez.zone.ng",
+    "jurisdiction_id": "ng",
+    "zone_name": "Nigeria",
+    "jurisdiction_stack": [
+      "ng"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "nl",
+    "zone_id": "org.momentum.mez.zone.nl",
+    "jurisdiction_id": "nl",
+    "zone_name": "Netherlands",
+    "jurisdiction_stack": [
+      "nl"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "no",
+    "zone_id": "org.momentum.mez.zone.no",
+    "jurisdiction_id": false,
+    "zone_name": "Norway",
+    "jurisdiction_stack": [
+      false
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "np",
+    "zone_id": "org.momentum.mez.zone.np",
+    "jurisdiction_id": "np",
+    "zone_name": "Nepal",
+    "jurisdiction_stack": [
+      "np"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "nz",
+    "zone_id": "org.momentum.mez.zone.nz",
+    "jurisdiction_id": "nz",
+    "zone_name": "New Zealand",
+    "jurisdiction_stack": [
+      "nz"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "om",
+    "zone_id": "org.momentum.mez.zone.om",
+    "jurisdiction_id": "om",
+    "zone_name": "Oman",
+    "jurisdiction_stack": [
+      "om"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "pa",
+    "zone_id": "org.momentum.mez.zone.pa",
+    "jurisdiction_id": "pa",
+    "zone_name": "Panama",
+    "jurisdiction_stack": [
+      "pa"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ph",
+    "zone_id": "org.momentum.mez.zone.ph",
+    "jurisdiction_id": "ph",
+    "zone_name": "Philippines",
+    "jurisdiction_stack": [
+      "ph"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "pk",
+    "zone_id": "org.momentum.mez.zone.pk.fed",
+    "jurisdiction_id": "pk-fed",
+    "zone_name": "Pakistan Federal",
+    "jurisdiction_stack": [
+      "pk"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial",
+      "tax",
+      "aml"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "444ddded8419d9de..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "e59056a2b9bdbf3e..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "pk-sifc",
+    "zone_id": "org.momentum.mez.zone.pk-sifc",
+    "jurisdiction_id": "pk",
+    "zone_name": "Pakistan SIFC Economic Zone",
+    "jurisdiction_stack": [
+      "pk"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos-pk",
+    "lawpack_domains": [
+      "civil",
+      "financial",
+      "tax",
+      "aml"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "444ddded8419d9de..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "e59056a2b9bdbf3e..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection",
+      "environmental"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ],
+    "corridor_peers": [
+      "org.momentum.mez.zone.ae-difc",
+      "org.momentum.mez.zone.sg-mas",
+      "org.momentum.mez.zone.gb-fca"
+    ]
+  },
+  {
+    "id": "pt",
+    "zone_id": "org.momentum.mez.zone.pt",
+    "jurisdiction_id": "pt",
+    "zone_name": "Portugal",
+    "jurisdiction_stack": [
+      "pt"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "py",
+    "zone_id": "org.momentum.mez.zone.py",
+    "jurisdiction_id": "py",
+    "zone_name": "Paraguay",
+    "jurisdiction_stack": [
+      "py"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "qa",
+    "zone_id": "org.momentum.mez.zone.qa",
+    "jurisdiction_id": "qa",
+    "zone_name": "Qatar",
+    "jurisdiction_stack": [
+      "qa"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "qa-qfc",
+    "zone_id": "org.momentum.mez.zone.qa.qfc",
+    "jurisdiction_id": "qa-qfc",
+    "zone_name": "Qatar Financial Centre",
+    "jurisdiction_stack": [
+      "qa",
+      "qa-qfc"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "rw",
+    "zone_id": "org.momentum.mez.zone.rw",
+    "jurisdiction_id": "rw",
+    "zone_name": "Rwanda",
+    "jurisdiction_stack": [
+      "rw"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "sa",
+    "zone_id": "org.momentum.mez.zone.sa",
+    "jurisdiction_id": "sa",
+    "zone_name": "Saudi Arabia",
+    "jurisdiction_stack": [
+      "sa"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "sa-neom",
+    "zone_id": "org.momentum.mez.zone.sa.neom",
+    "jurisdiction_id": "sa-neom",
+    "zone_name": "NEOM",
+    "jurisdiction_stack": [
+      "sa",
+      "sa-neom"
+    ],
+    "profile": "org.momentum.mez.profile.charter-city",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "sc",
+    "zone_id": "org.momentum.mez.zone.sc",
+    "jurisdiction_id": "sc",
+    "zone_name": "Seychelles Sovereign Zone",
+    "jurisdiction_stack": [
+      "sc"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "corporate",
+      "financial",
+      "aml",
+      "tax",
+      "digital_assets"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate",
+      "vasp"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "24552e6e5ed9359a..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13c661e68c65bb0a..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection",
+      "banking",
+      "payments",
+      "digital_assets",
+      "custody"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash",
+      "org.momentum.mez.corridor.ae-sc",
+      "org.momentum.mez.corridor.kz-sc"
+    ],
+    "national_adapters": [
+      "seyid",
+      "fsa_sc",
+      "registrar_general",
+      "cbs"
+    ]
+  },
+  {
+    "id": "se",
+    "zone_id": "org.momentum.mez.zone.se",
+    "jurisdiction_id": "se",
+    "zone_name": "Sweden",
+    "jurisdiction_stack": [
+      "se"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "sg",
+    "zone_id": "org.momentum.mez.zone.sg",
+    "jurisdiction_id": "sg",
+    "zone_name": "Singapore Economic Zone",
+    "jurisdiction_stack": [
+      "sg"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos-sg",
+    "lawpack_domains": [
+      "civil",
+      "financial",
+      "tax",
+      "aml"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "dffd1a28d38a3e39..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13e588048c48b768..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "sn",
+    "zone_id": "org.momentum.mez.zone.sn",
+    "jurisdiction_id": "sn",
+    "zone_name": "Senegal",
+    "jurisdiction_stack": [
+      "sn"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "sv",
+    "zone_id": "org.momentum.mez.zone.sv",
+    "jurisdiction_id": "sv",
+    "zone_name": "El Salvador",
+    "jurisdiction_stack": [
+      "sv"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "synth-africa-fintech-gateway",
+    "zone_id": "org.momentum.mez.zone.synthetic.africa-fintech-gateway",
+    "jurisdiction_id": "synth-africa-fintech-gateway",
+    "zone_name": "Africa Fintech Gateway",
+    "jurisdiction_stack": [
+      "synth-africa-fintech-gateway"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-africa-fintech-gateway",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-atlantic-fintech",
+    "zone_id": "org.momentum.mez.zone.synthetic.atlantic-fintech",
+    "jurisdiction_id": "synth-atlantic-fintech",
+    "zone_name": "Atlantic Fintech Hub",
+    "jurisdiction_stack": [
+      "synth-atlantic-fintech"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-atlantic-fintech",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 6,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      },
+      {
+        "domain": "financial",
+        "digest": "89dc928a5460dc90..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "6bd125db0d30631d..."
+      },
+      {
+        "domain": "financial",
+        "digest": "dffd1a28d38a3e39..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13e588048c48b768..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-caribbean-digital-cluster",
+    "zone_id": "org.momentum.mez.zone.synthetic.caribbean-digital-cluster",
+    "jurisdiction_id": "synth-caribbean-digital-cluster",
+    "zone_name": "Caribbean Digital Asset Cluster",
+    "jurisdiction_stack": [
+      "synth-caribbean-digital-cluster"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-caribbean-digital-cluster",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "b2f8c1a6d953e784..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "71a4e8c0d23f59b7..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-central-asian-gateway",
+    "zone_id": "org.momentum.mez.zone.synthetic.central-asian-gateway",
+    "jurisdiction_id": "synth-central-asian-gateway",
+    "zone_name": "Central Asian Gateway Zone",
+    "jurisdiction_stack": [
+      "synth-central-asian-gateway"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-central-asian-gateway",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-digital-asset-native-zone",
+    "zone_id": "org.momentum.mez.zone.synthetic.digital-asset-native-zone",
+    "jurisdiction_id": "synth-digital-asset-native-zone",
+    "zone_name": "Digital-Asset-Native Regulatory Zone",
+    "jurisdiction_stack": [
+      "synth-digital-asset-native-zone"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-digital-asset-native-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 8,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "b2f8c1a6d953e784..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "71a4e8c0d23f59b7..."
+      },
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      },
+      {
+        "domain": "financial",
+        "digest": "dffd1a28d38a3e39..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13e588048c48b768..."
+      },
+      {
+        "domain": "financial",
+        "digest": "89dc928a5460dc90..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "6bd125db0d30631d..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-east-african-innovation",
+    "zone_id": "org.momentum.mez.zone.synthetic.east-african-innovation",
+    "jurisdiction_id": "synth-east-african-innovation",
+    "zone_name": "East African Innovation Hub",
+    "jurisdiction_stack": [
+      "synth-east-african-innovation"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-east-african-innovation",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-european-digital-bank",
+    "zone_id": "org.momentum.mez.zone.synthetic.european-digital-bank",
+    "jurisdiction_id": "synth-european-digital-bank",
+    "zone_name": "European Digital Banking Zone",
+    "jurisdiction_stack": [
+      "synth-european-digital-bank"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-european-digital-bank",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-green-finance-corridor",
+    "zone_id": "org.momentum.mez.zone.synthetic.green-finance-corridor",
+    "jurisdiction_id": "synth-green-finance-corridor",
+    "zone_name": "Green Finance and ESG Corridor",
+    "jurisdiction_stack": [
+      "synth-green-finance-corridor"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-green-finance-corridor",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "dffd1a28d38a3e39..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13e588048c48b768..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-gulf-trade-bridge",
+    "zone_id": "org.momentum.mez.zone.synthetic.gulf-trade-bridge",
+    "jurisdiction_id": "synth-gulf-trade-bridge",
+    "zone_name": "Gulf Cooperation Council Trade Bridge",
+    "jurisdiction_stack": [
+      "synth-gulf-trade-bridge"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-gulf-trade-bridge",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-indo-pacific-trade",
+    "zone_id": "org.momentum.mez.zone.synthetic.indo-pacific-trade",
+    "jurisdiction_id": "synth-indo-pacific-trade",
+    "zone_name": "Indo-Pacific Trade Corridor",
+    "jurisdiction_stack": [
+      "synth-indo-pacific-trade"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-indo-pacific-trade",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "dffd1a28d38a3e39..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13e588048c48b768..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-islamic-finance-hub",
+    "zone_id": "org.momentum.mez.zone.synthetic.islamic-finance-hub",
+    "jurisdiction_id": "synth-islamic-finance-hub",
+    "zone_name": "Islamic Finance Digital Hub",
+    "jurisdiction_stack": [
+      "synth-islamic-finance-hub"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-islamic-finance-hub",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-latam-trade-zone",
+    "zone_id": "org.momentum.mez.zone.synthetic.latam-trade-zone",
+    "jurisdiction_id": "synth-latam-trade-zone",
+    "zone_name": "Latin America Trade Zone",
+    "jurisdiction_stack": [
+      "synth-latam-trade-zone"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-latam-trade-zone",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-maritime-trade-hub",
+    "zone_id": "org.momentum.mez.zone.synthetic.maritime-trade-hub",
+    "jurisdiction_id": "synth-maritime-trade-hub",
+    "zone_name": "Maritime Trade and Logistics Hub",
+    "jurisdiction_stack": [
+      "synth-maritime-trade-hub"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-maritime-trade-hub",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 6,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "dffd1a28d38a3e39..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13e588048c48b768..."
+      },
+      {
+        "domain": "financial",
+        "digest": "89dc928a5460dc90..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "6bd125db0d30631d..."
+      },
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-mediterranean-fintech",
+    "zone_id": "org.momentum.mez.zone.synthetic.mediterranean-fintech",
+    "jurisdiction_id": "synth-mediterranean-fintech",
+    "zone_name": "Mediterranean Digital Finance Hub",
+    "jurisdiction_stack": [
+      "synth-mediterranean-fintech"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-mediterranean-fintech",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-nordics-payments",
+    "zone_id": "org.momentum.mez.zone.synthetic.nordics-payments",
+    "jurisdiction_id": "synth-nordics-payments",
+    "zone_name": "Nordic Payments Innovation Zone",
+    "jurisdiction_stack": [
+      "synth-nordics-payments"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-nordics-payments",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-pacific-islands-development",
+    "zone_id": "org.momentum.mez.zone.synthetic.pacific-islands-development",
+    "jurisdiction_id": "synth-pacific-islands-development",
+    "zone_name": "Pacific Islands Economic Development Zone",
+    "jurisdiction_stack": [
+      "synth-pacific-islands-development"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-pacific-islands-development",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-pacific-trade",
+    "zone_id": "org.momentum.mez.zone.synthetic.pacific-trade",
+    "jurisdiction_id": "synth-pacific-trade",
+    "zone_name": "Pacific Trade Hub",
+    "jurisdiction_stack": [
+      "synth-pacific-trade"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-pacific-trade",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 6,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      },
+      {
+        "domain": "financial",
+        "digest": "89dc928a5460dc90..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "6bd125db0d30631d..."
+      },
+      {
+        "domain": "financial",
+        "digest": "dffd1a28d38a3e39..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13e588048c48b768..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-south-asia-remittance",
+    "zone_id": "org.momentum.mez.zone.synthetic.south-asia-remittance",
+    "jurisdiction_id": "synth-south-asia-remittance",
+    "zone_name": "South Asia Remittance Corridor",
+    "jurisdiction_stack": [
+      "synth-south-asia-remittance"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-south-asia-remittance",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 4,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "444ddded8419d9de..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "e59056a2b9bdbf3e..."
+      },
+      {
+        "domain": "financial",
+        "digest": "dffd1a28d38a3e39..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13e588048c48b768..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-swiss-asian-bridge",
+    "zone_id": "org.momentum.mez.zone.synthetic.swiss-asian-bridge",
+    "jurisdiction_id": "synth-swiss-asian-bridge",
+    "zone_name": "Swiss-Liechtenstein-Asian Innovation Bridge",
+    "jurisdiction_stack": [
+      "synth-swiss-asian-bridge"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-swiss-asian-bridge",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 4,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "dffd1a28d38a3e39..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "13e588048c48b768..."
+      },
+      {
+        "domain": "financial",
+        "digest": "89dc928a5460dc90..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "6bd125db0d30631d..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-tools-commons-network",
+    "zone_id": "org.momentum.mez.zone.synthetic.tools-commons-network",
+    "jurisdiction_id": "synth-tools-commons-network",
+    "zone_name": "Tools for the Commons East-West Network",
+    "jurisdiction_stack": [
+      "synth-tools-commons-network"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-tools-commons-network",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing",
+      "payments",
+      "settlement",
+      "trade",
+      "digital_assets",
+      "arbitration"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.tools-commons-network.kazakhstan-uae-mexico-us",
+      "org.momentum.mez.corridor.triangle-trade.kazakhstan-china-uae",
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "synth-triangle-trade",
+    "zone_id": "org.momentum.mez.zone.synthetic.triangle-trade",
+    "jurisdiction_id": "synth-triangle-trade",
+    "zone_name": "Triangle Trade Synthetic Zone",
+    "jurisdiction_stack": [
+      "synth-triangle-trade"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-triangle-trade",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "regpack_count": 2,
+    "regpacks": [
+      {
+        "domain": "financial",
+        "digest": "edc4122738e04b5d..."
+      },
+      {
+        "domain": "sanctions",
+        "digest": "b08dc98bfab47896..."
+      }
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing",
+      "payments",
+      "settlement",
+      "trade",
+      "digital_assets",
+      "arbitration"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.triangle-trade.kazakhstan-china-uae",
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "synth-us-digital-asset",
+    "zone_id": "org.momentum.mez.zone.synthetic.us-digital-asset",
+    "jurisdiction_id": "synth-us-digital-asset",
+    "zone_name": "US Digital Asset Interstate Zone",
+    "jurisdiction_stack": [
+      "synth-us-digital-asset"
+    ],
+    "profile": "org.momentum.mez.profile.synthetic-synth-us-digital-asset",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "consumer_protection",
+      "corporate",
+      "data_privacy",
+      "kyc",
+      "licensing",
+      "sanctions",
+      "securities",
+      "tax"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "tc",
+    "zone_id": "org.momentum.mez.zone.tc",
+    "jurisdiction_id": "tc",
+    "zone_name": "Turks and Caicos",
+    "jurisdiction_stack": [
+      "tc"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "th",
+    "zone_id": "org.momentum.mez.zone.th",
+    "jurisdiction_id": "th",
+    "zone_name": "Thailand",
+    "jurisdiction_stack": [
+      "th"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "tn",
+    "zone_id": "org.momentum.mez.zone.tn",
+    "jurisdiction_id": "tn",
+    "zone_name": "Tunisia",
+    "jurisdiction_stack": [
+      "tn"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "tt",
+    "zone_id": "org.momentum.mez.zone.tt",
+    "jurisdiction_id": "tt",
+    "zone_name": "Trinidad and Tobago",
+    "jurisdiction_stack": [
+      "tt"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "tw",
+    "zone_id": "org.momentum.mez.zone.tw",
+    "jurisdiction_id": "tw",
+    "zone_name": "Taiwan",
+    "jurisdiction_stack": [
+      "tw"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "tz",
+    "zone_id": "org.momentum.mez.zone.tz",
+    "jurisdiction_id": "tz",
+    "zone_name": "Tanzania",
+    "jurisdiction_stack": [
+      "tz"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "tz-zanzibar",
+    "zone_id": "org.momentum.mez.zone.tz.zanzibar",
+    "jurisdiction_id": "tz-zanzibar",
+    "zone_name": "Zanzibar",
+    "jurisdiction_stack": [
+      "tz",
+      "tz-zanzibar"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ug",
+    "zone_id": "org.momentum.mez.zone.ug",
+    "jurisdiction_id": "ug",
+    "zone_name": "Uganda",
+    "jurisdiction_stack": [
+      "ug"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ak",
+    "zone_id": "org.momentum.mez.zone.us.ak",
+    "jurisdiction_id": "us-ak",
+    "zone_name": "Alaska",
+    "jurisdiction_stack": [
+      "us",
+      "us-ak"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-al",
+    "zone_id": "org.momentum.mez.zone.us.al",
+    "jurisdiction_id": "us-al",
+    "zone_name": "Alabama",
+    "jurisdiction_stack": [
+      "us",
+      "us-al"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ar",
+    "zone_id": "org.momentum.mez.zone.us.ar",
+    "jurisdiction_id": "us-ar",
+    "zone_name": "Arkansas",
+    "jurisdiction_stack": [
+      "us",
+      "us-ar"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-as",
+    "zone_id": "org.momentum.mez.zone.us.as",
+    "jurisdiction_id": "us-as",
+    "zone_name": "American Samoa",
+    "jurisdiction_stack": [
+      "us",
+      "us-as"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-az",
+    "zone_id": "org.momentum.mez.zone.us.az",
+    "jurisdiction_id": "us-az",
+    "zone_name": "Arizona",
+    "jurisdiction_stack": [
+      "us",
+      "us-az"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ca",
+    "zone_id": "org.momentum.mez.zone.us.ca",
+    "jurisdiction_id": "us-ca",
+    "zone_name": "California",
+    "jurisdiction_stack": [
+      "us",
+      "us-ca"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-catawba",
+    "zone_id": "org.momentum.mez.zone.us.catawba",
+    "jurisdiction_id": "us-catawba",
+    "zone_name": "Catawba Tribal Economic Zone",
+    "jurisdiction_stack": [
+      "us",
+      "us-sc",
+      "us-catawba"
+    ],
+    "profile": "org.momentum.mez.profile.charter-city",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "corporate",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing",
+      "payments",
+      "banking",
+      "arbitration",
+      "trade"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.tools-commons-network.kazakhstan-uae-mexico-us",
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-co",
+    "zone_id": "org.momentum.mez.zone.us.co",
+    "jurisdiction_id": "us-co",
+    "zone_name": "Colorado",
+    "jurisdiction_stack": [
+      "us",
+      "us-co"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ct",
+    "zone_id": "org.momentum.mez.zone.us.ct",
+    "jurisdiction_id": "us-ct",
+    "zone_name": "Connecticut",
+    "jurisdiction_stack": [
+      "us",
+      "us-ct"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-dc",
+    "zone_id": "org.momentum.mez.zone.us.dc",
+    "jurisdiction_id": "us-dc",
+    "zone_name": "District of Columbia",
+    "jurisdiction_stack": [
+      "us",
+      "us-dc"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-de",
+    "zone_id": "org.momentum.mez.zone.us.de",
+    "jurisdiction_id": "us-de",
+    "zone_name": "Delaware",
+    "jurisdiction_stack": [
+      "us",
+      "us-de"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-fl",
+    "zone_id": "org.momentum.mez.zone.us.fl",
+    "jurisdiction_id": "us-fl",
+    "zone_name": "Florida",
+    "jurisdiction_stack": [
+      "us",
+      "us-fl"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial",
+      "tax",
+      "aml",
+      "securities"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate",
+      "securities",
+      "data_protection",
+      "insurance",
+      "real_estate",
+      "trade"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "custody",
+      "data_privacy",
+      "licensing",
+      "banking",
+      "payments",
+      "clearing",
+      "settlement",
+      "digital_assets",
+      "employment",
+      "immigration",
+      "ip",
+      "consumer_protection",
+      "arbitration",
+      "trade"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.br--us-fl",
+      "org.momentum.mez.corridor.us-fl--us-ny",
+      "org.momentum.mez.corridor.us-ca--us-fl",
+      "org.momentum.mez.corridor.us-fl--us-de"
+    ],
+    "corridor_peers": [
+      "org.momentum.mez.zone.us.de",
+      "org.momentum.mez.zone.us.ny",
+      "org.momentum.mez.zone.ae-difc"
+    ]
+  },
+  {
+    "id": "us-ga",
+    "zone_id": "org.momentum.mez.zone.us.ga",
+    "jurisdiction_id": "us-ga",
+    "zone_name": "Georgia",
+    "jurisdiction_stack": [
+      "us",
+      "us-ga"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-gu",
+    "zone_id": "org.momentum.mez.zone.us.gu",
+    "jurisdiction_id": "us-gu",
+    "zone_name": "Guam",
+    "jurisdiction_stack": [
+      "us",
+      "us-gu"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-hi",
+    "zone_id": "org.momentum.mez.zone.us.hi",
+    "jurisdiction_id": "us-hi",
+    "zone_name": "Hawaii",
+    "jurisdiction_stack": [
+      "us",
+      "us-hi"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ia",
+    "zone_id": "org.momentum.mez.zone.us.ia",
+    "jurisdiction_id": "us-ia",
+    "zone_name": "Iowa",
+    "jurisdiction_stack": [
+      "us",
+      "us-ia"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-id",
+    "zone_id": "org.momentum.mez.zone.us.id",
+    "jurisdiction_id": "us-id",
+    "zone_name": "Idaho",
+    "jurisdiction_stack": [
+      "us",
+      "us-id"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-il",
+    "zone_id": "org.momentum.mez.zone.us.il",
+    "jurisdiction_id": "us-il",
+    "zone_name": "Illinois",
+    "jurisdiction_stack": [
+      "us",
+      "us-il"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-in",
+    "zone_id": "org.momentum.mez.zone.us.in",
+    "jurisdiction_id": "us-in",
+    "zone_name": "Indiana",
+    "jurisdiction_stack": [
+      "us",
+      "us-in"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ks",
+    "zone_id": "org.momentum.mez.zone.us.ks",
+    "jurisdiction_id": "us-ks",
+    "zone_name": "Kansas",
+    "jurisdiction_stack": [
+      "us",
+      "us-ks"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ky",
+    "zone_id": "org.momentum.mez.zone.us.ky",
+    "jurisdiction_id": "us-ky",
+    "zone_name": "Kentucky",
+    "jurisdiction_stack": [
+      "us",
+      "us-ky"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-la",
+    "zone_id": "org.momentum.mez.zone.us.la",
+    "jurisdiction_id": "us-la",
+    "zone_name": "Louisiana",
+    "jurisdiction_stack": [
+      "us",
+      "us-la"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ma",
+    "zone_id": "org.momentum.mez.zone.us.ma",
+    "jurisdiction_id": "us-ma",
+    "zone_name": "Massachusetts",
+    "jurisdiction_stack": [
+      "us",
+      "us-ma"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-md",
+    "zone_id": "org.momentum.mez.zone.us.md",
+    "jurisdiction_id": "us-md",
+    "zone_name": "Maryland",
+    "jurisdiction_stack": [
+      "us",
+      "us-md"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-me",
+    "zone_id": "org.momentum.mez.zone.us.me",
+    "jurisdiction_id": "us-me",
+    "zone_name": "Maine",
+    "jurisdiction_stack": [
+      "us",
+      "us-me"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-mi",
+    "zone_id": "org.momentum.mez.zone.us.mi",
+    "jurisdiction_id": "us-mi",
+    "zone_name": "Michigan",
+    "jurisdiction_stack": [
+      "us",
+      "us-mi"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-mn",
+    "zone_id": "org.momentum.mez.zone.us.mn",
+    "jurisdiction_id": "us-mn",
+    "zone_name": "Minnesota",
+    "jurisdiction_stack": [
+      "us",
+      "us-mn"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-mo",
+    "zone_id": "org.momentum.mez.zone.us.mo",
+    "jurisdiction_id": "us-mo",
+    "zone_name": "Missouri",
+    "jurisdiction_stack": [
+      "us",
+      "us-mo"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-mp",
+    "zone_id": "org.momentum.mez.zone.us.mp",
+    "jurisdiction_id": "us-mp",
+    "zone_name": "Northern Mariana Islands",
+    "jurisdiction_stack": [
+      "us",
+      "us-mp"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ms",
+    "zone_id": "org.momentum.mez.zone.us.ms",
+    "jurisdiction_id": "us-ms",
+    "zone_name": "Mississippi",
+    "jurisdiction_stack": [
+      "us",
+      "us-ms"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-mt",
+    "zone_id": "org.momentum.mez.zone.us.mt",
+    "jurisdiction_id": "us-mt",
+    "zone_name": "Montana",
+    "jurisdiction_stack": [
+      "us",
+      "us-mt"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-nc",
+    "zone_id": "org.momentum.mez.zone.us.nc",
+    "jurisdiction_id": "us-nc",
+    "zone_name": "North Carolina",
+    "jurisdiction_stack": [
+      "us",
+      "us-nc"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-nd",
+    "zone_id": "org.momentum.mez.zone.us.nd",
+    "jurisdiction_id": "us-nd",
+    "zone_name": "North Dakota",
+    "jurisdiction_stack": [
+      "us",
+      "us-nd"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ne",
+    "zone_id": "org.momentum.mez.zone.us.ne",
+    "jurisdiction_id": "us-ne",
+    "zone_name": "Nebraska",
+    "jurisdiction_stack": [
+      "us",
+      "us-ne"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-nh",
+    "zone_id": "org.momentum.mez.zone.us.nh",
+    "jurisdiction_id": "us-nh",
+    "zone_name": "New Hampshire",
+    "jurisdiction_stack": [
+      "us",
+      "us-nh"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-nj",
+    "zone_id": "org.momentum.mez.zone.us.nj",
+    "jurisdiction_id": "us-nj",
+    "zone_name": "New Jersey",
+    "jurisdiction_stack": [
+      "us",
+      "us-nj"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-nm",
+    "zone_id": "org.momentum.mez.zone.us.nm",
+    "jurisdiction_id": "us-nm",
+    "zone_name": "New Mexico",
+    "jurisdiction_stack": [
+      "us",
+      "us-nm"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-nv",
+    "zone_id": "org.momentum.mez.zone.us.nv",
+    "jurisdiction_id": "us-nv",
+    "zone_name": "Nevada",
+    "jurisdiction_stack": [
+      "us",
+      "us-nv"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ny",
+    "zone_id": "org.momentum.mez.zone.us.ny",
+    "jurisdiction_id": "us-ny",
+    "zone_name": "New York",
+    "jurisdiction_stack": [
+      "us",
+      "us-ny"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-oh",
+    "zone_id": "org.momentum.mez.zone.us.oh",
+    "jurisdiction_id": "us-oh",
+    "zone_name": "Ohio",
+    "jurisdiction_stack": [
+      "us",
+      "us-oh"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ok",
+    "zone_id": "org.momentum.mez.zone.us.ok",
+    "jurisdiction_id": "us-ok",
+    "zone_name": "Oklahoma",
+    "jurisdiction_stack": [
+      "us",
+      "us-ok"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-or",
+    "zone_id": "org.momentum.mez.zone.us.or",
+    "jurisdiction_id": "us-or",
+    "zone_name": "Oregon",
+    "jurisdiction_stack": [
+      "us",
+      "us-or"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-pa",
+    "zone_id": "org.momentum.mez.zone.us.pa",
+    "jurisdiction_id": "us-pa",
+    "zone_name": "Pennsylvania",
+    "jurisdiction_stack": [
+      "us",
+      "us-pa"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-pr",
+    "zone_id": "org.momentum.mez.zone.us.pr",
+    "jurisdiction_id": "us-pr",
+    "zone_name": "Puerto Rico",
+    "jurisdiction_stack": [
+      "us",
+      "us-pr"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ri",
+    "zone_id": "org.momentum.mez.zone.us.ri",
+    "jurisdiction_id": "us-ri",
+    "zone_name": "Rhode Island",
+    "jurisdiction_stack": [
+      "us",
+      "us-ri"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-sc",
+    "zone_id": "org.momentum.mez.zone.us.sc",
+    "jurisdiction_id": "us-sc",
+    "zone_name": "South Carolina",
+    "jurisdiction_stack": [
+      "us",
+      "us-sc"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-sd",
+    "zone_id": "org.momentum.mez.zone.us.sd",
+    "jurisdiction_id": "us-sd",
+    "zone_name": "South Dakota",
+    "jurisdiction_stack": [
+      "us",
+      "us-sd"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-tn",
+    "zone_id": "org.momentum.mez.zone.us.tn",
+    "jurisdiction_id": "us-tn",
+    "zone_name": "Tennessee",
+    "jurisdiction_stack": [
+      "us",
+      "us-tn"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-tx",
+    "zone_id": "org.momentum.mez.zone.us.tx",
+    "jurisdiction_id": "us-tx",
+    "zone_name": "Texas",
+    "jurisdiction_stack": [
+      "us",
+      "us-tx"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-ut",
+    "zone_id": "org.momentum.mez.zone.us.ut",
+    "jurisdiction_id": "us-ut",
+    "zone_name": "Utah",
+    "jurisdiction_stack": [
+      "us",
+      "us-ut"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-va",
+    "zone_id": "org.momentum.mez.zone.us.va",
+    "jurisdiction_id": "us-va",
+    "zone_name": "Virginia",
+    "jurisdiction_stack": [
+      "us",
+      "us-va"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-vi",
+    "zone_id": "org.momentum.mez.zone.us.vi",
+    "jurisdiction_id": "us-vi",
+    "zone_name": "US Virgin Islands",
+    "jurisdiction_stack": [
+      "us",
+      "us-vi"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-vt",
+    "zone_id": "org.momentum.mez.zone.us.vt",
+    "jurisdiction_id": "us-vt",
+    "zone_name": "Vermont",
+    "jurisdiction_stack": [
+      "us",
+      "us-vt"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-wa",
+    "zone_id": "org.momentum.mez.zone.us.wa",
+    "jurisdiction_id": "us-wa",
+    "zone_name": "Washington",
+    "jurisdiction_stack": [
+      "us",
+      "us-wa"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-wi",
+    "zone_id": "org.momentum.mez.zone.us.wi",
+    "jurisdiction_id": "us-wi",
+    "zone_name": "Wisconsin",
+    "jurisdiction_stack": [
+      "us",
+      "us-wi"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-wv",
+    "zone_id": "org.momentum.mez.zone.us.wv",
+    "jurisdiction_id": "us-wv",
+    "zone_name": "West Virginia",
+    "jurisdiction_stack": [
+      "us",
+      "us-wv"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "us-wy",
+    "zone_id": "org.momentum.mez.zone.us.wy",
+    "jurisdiction_id": "us-wy",
+    "zone_name": "Wyoming",
+    "jurisdiction_stack": [
+      "us",
+      "us-wy"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "uy",
+    "zone_id": "org.momentum.mez.zone.uy",
+    "jurisdiction_id": "uy",
+    "zone_name": "Uruguay",
+    "jurisdiction_stack": [
+      "uy"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "uz",
+    "zone_id": "org.momentum.mez.zone.uz",
+    "jurisdiction_id": "uz",
+    "zone_name": "Uzbekistan",
+    "jurisdiction_stack": [
+      "uz"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "vc",
+    "zone_id": "org.momentum.mez.zone.vc",
+    "jurisdiction_id": "vc",
+    "zone_name": "Saint Vincent and the Grenadines",
+    "jurisdiction_stack": [
+      "vc"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "vg",
+    "zone_id": "org.momentum.mez.zone.vg",
+    "jurisdiction_id": "vg",
+    "zone_name": "British Virgin Islands",
+    "jurisdiction_stack": [
+      "vg"
+    ],
+    "profile": "org.momentum.mez.profile.digital-financial-center",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "licensepack_domains": [
+      "financial",
+      "corporate"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy",
+      "consumer_protection"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border",
+      "org.momentum.mez.corridor.digital-cash.regulated-digital-cash"
+    ]
+  },
+  {
+    "id": "vn",
+    "zone_id": "org.momentum.mez.zone.vn",
+    "jurisdiction_id": "vn",
+    "zone_name": "Vietnam",
+    "jurisdiction_stack": [
+      "vn"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "vu",
+    "zone_id": "org.momentum.mez.zone.vu",
+    "jurisdiction_id": "vu",
+    "zone_name": "Vanuatu",
+    "jurisdiction_stack": [
+      "vu"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "ws",
+    "zone_id": "org.momentum.mez.zone.ws",
+    "jurisdiction_id": "ws",
+    "zone_name": "Samoa",
+    "jurisdiction_stack": [
+      "ws"
+    ],
+    "profile": "org.momentum.mez.profile.minimal-mvp",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "corporate",
+      "licensing"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  },
+  {
+    "id": "za",
+    "zone_id": "org.momentum.mez.zone.za",
+    "jurisdiction_id": "za",
+    "zone_name": "South Africa",
+    "jurisdiction_stack": [
+      "za"
+    ],
+    "profile": "org.momentum.mez.profile.sovereign-govos",
+    "lawpack_domains": [
+      "civil",
+      "financial"
+    ],
+    "compliance_domains": [
+      "aml",
+      "kyc",
+      "sanctions",
+      "tax",
+      "securities",
+      "corporate",
+      "licensing",
+      "data_privacy"
+    ],
+    "corridors": [
+      "org.momentum.mez.corridor.swift.iso20022-cross-border"
+    ]
+  }
+]

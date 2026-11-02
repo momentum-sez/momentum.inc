@@ -1,0 +1,337 @@
+/* ═══════════════════════════════════════
+   ANIMATIONS
+   Scroll reveals, hero entrance, particles,
+   reduced-motion, print styles
+   ═══════════════════════════════════════ */
+
+/* --- No-Preference: Full Animations --- */
+@media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+
+    /* Page-load hero entrance — eyebrow first, then per-word title, then subtitle */
+    .hero-eyebrow {
+        animation: fadeUp 700ms var(--ease-out-expo) both;
+    }
+
+    .hero-title {
+        /* Title animation handled per-word by JS; fallback for no-JS */
+        animation: fadeUp 700ms var(--ease-out-expo) both;
+        animation-delay: 120ms;
+    }
+
+    /* When JS splits into words, disable the title-level animation */
+    .hero-title.word-split {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .hero-title .word {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(16px);
+        animation: fadeUp 600ms var(--ease-out-expo) both;
+    }
+
+    .hero-subtitle { animation: fadeUp 700ms var(--ease-out-expo) both; animation-delay: 600ms; }
+
+    .stat-item {
+        animation: fadeUp 600ms var(--ease-out-expo) both;
+    }
+
+    .stat-item:nth-child(1) { animation-delay: 300ms; }
+    .stat-item:nth-child(2) { animation-delay: 400ms; }
+    .stat-item:nth-child(3) { animation-delay: 500ms; }
+    .stat-item:nth-child(4) { animation-delay: 600ms; }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Scroll-triggered reveals — unified system.
+       Legacy .reveal-on-scroll is mapped to .reveal/.visible by JS. */
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.5s var(--ease-out-expo),
+                    transform 0.5s var(--ease-out-expo);
+    }
+
+    .reveal-on-scroll.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Stagger children within grid-like containers */
+    .stagger-children.revealed > * {
+        opacity: 0;
+        animation: staggerIn 700ms var(--ease-out-expo) forwards;
+    }
+
+    .stagger-children.revealed > *:nth-child(1) { animation-delay: 0ms; }
+    .stagger-children.revealed > *:nth-child(2) { animation-delay: 60ms; }
+    .stagger-children.revealed > *:nth-child(3) { animation-delay: 120ms; }
+    .stagger-children.revealed > *:nth-child(4) { animation-delay: 180ms; }
+    .stagger-children.revealed > *:nth-child(5) { animation-delay: 240ms; }
+    .stagger-children.revealed > *:nth-child(6) { animation-delay: 300ms; }
+    .stagger-children.revealed > *:nth-child(7) { animation-delay: 360ms; }
+    .stagger-children.revealed > *:nth-child(8) { animation-delay: 420ms; }
+
+    @keyframes staggerIn {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Scroll reveal (current naming) */
+    .reveal {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.5s var(--ease-out-expo),
+                    transform 0.5s var(--ease-out-expo);
+    }
+
+    .reveal.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    .reveal-stagger > .reveal:nth-child(2) { transition-delay: 80ms; }
+    .reveal-stagger > .reveal:nth-child(3) { transition-delay: 160ms; }
+    .reveal-stagger > .reveal:nth-child(4) { transition-delay: 240ms; }
+    .reveal-stagger > .reveal:nth-child(5) { transition-delay: 320ms; }
+
+    /* Path arrow interaction */
+    .path-arrow {
+        transition: transform 350ms var(--ease-out-expo);
+    }
+
+    .path-card:hover .path-arrow {
+        transform: translateX(6px);
+    }
+
+    /* Button press feedback */
+    .btn-primary:active,
+    .btn-secondary:active {
+        transition-duration: 50ms;
+    }
+
+    /* Zone pulse ring — uses transform for cross-browser SVG compat */
+    @keyframes zone-pulse-ring {
+        0%   { transform: scale(1); opacity: 0.5; }
+        100% { transform: scale(4); opacity: 0; }
+    }
+
+    /* Sandbox breathing dot — scale pulse (compositor-only, no repaint) */
+    @keyframes sandbox-breathe {
+        0%   { transform: scale(1);   opacity: 1; }
+        50%  { transform: scale(2.2); opacity: 0.3; }
+        100% { transform: scale(1);   opacity: 1; }
+    }
+
+    @keyframes testnet-breathe {
+        0%   { transform: scale(1);   opacity: 1; }
+        50%  { transform: scale(2.2); opacity: 0.3; }
+        100% { transform: scale(1);   opacity: 1; }
+    }
+
+    /* Particles */
+    .mesh-particle {
+        fill: var(--particle);
+        opacity: 0;
+    }
+
+    .mesh-particle.active {
+        animation: particle-traverse var(--duration-particle) var(--ease-in-out-sine) forwards;
+    }
+
+    @keyframes particle-traverse {
+        0%  { opacity: 0; offset-distance: 0%; }
+        5%  { opacity: 0.8; }
+        90% { opacity: 0.8; }
+        100% { opacity: 0; offset-distance: 100%; }
+    }
+
+    /* Typing animation for code lines */
+    .code-typed .code-line {
+        opacity: 0;
+        transform: translateY(4px);
+        transition: opacity 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo);
+    }
+
+    .code-typed .code-line.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Deploy terminal cursor blink */
+    .deploy-cursor {
+        animation: cursor-blink 1s step-end infinite;
+    }
+
+    @keyframes cursor-blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+
+    .deploy-cursor.typing {
+        animation: none;
+        opacity: 1;
+    }
+
+    .deploy-cursor.done {
+        animation: cursor-blink 1.2s step-end infinite;
+    }
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .hero-title .word {
+        opacity: 1;
+        transform: none;
+    }
+
+    .code-typed .code-line {
+        opacity: 1;
+        transform: none;
+    }
+
+    .deploy-cursor {
+        opacity: 0.5;
+    }
+
+    .deploy-cmd-group,
+    .deploy-output,
+    .deploy-divider,
+    .deploy-summary {
+        opacity: 1;
+        transform: none;
+    }
+
+    .corridor-trace-comparison {
+        opacity: 1;
+        transform: none;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-primary--inverse:hover,
+    .btn-secondary--inverse:hover,
+    .path-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* --- Print + Reduced Motion --- */
+@media print, (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* --- Print --- */
+@media print {
+    body {
+        font-size: 11pt;
+        color: #000;
+        background: #fff;
+    }
+
+    .site-header,
+    .paths-section,
+    .nav-toggle {
+        display: none;
+    }
+
+    .container {
+        max-width: none;
+        padding: 0;
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .mesh-hero,
+    .mesh-legend,
+    .mesh-particle {
+        display: none;
+    }
+
+    .ne-mesh,
+    .ne-timeline {
+        display: none;
+    }
+
+    .ne-section {
+        break-inside: avoid;
+    }
+
+    .code-block {
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+
+    .bridge-section,
+    .pillars-section,
+    .stack-section {
+        break-inside: avoid;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .corridor-trace-terminal,
+    .code-panel-sticky,
+    .code-immersive {
+        break-inside: avoid;
+    }
+
+    .corridor-trace-pre {
+        height: auto;
+        overflow: visible;
+        white-space: pre-wrap;
+    }
+
+    .cta-section--dark,
+    .ne-visualizer,
+    #corridor-calc,
+    .ne-timeline {
+        display: none;
+    }
+}
